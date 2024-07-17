@@ -136,7 +136,7 @@ post-list:
 
 # for home layout
 home:
-  title: Welcome
+  title: welcome
   button_name: Home
   new_posts_title: New Articles
   new_posts_show_more_button: View More ...
@@ -173,9 +173,9 @@ privacy-policy:
 
 # constants to be replaced for
 constants:
-  greetings: Hello
-  welcome: Welcome
-  sample: Sample
+  greetings: 안녕하세요 임건우 입니다.
+  welcome: 블로그
+  
 
 # for contact form
 contact_form:
