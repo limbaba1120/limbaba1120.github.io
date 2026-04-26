@@ -20,10 +20,10 @@
   {%- comment %} get page with layout {% endcomment -%}
   {%- assign _pages = lng_pages | where_exp: "item", "item.layout == button_key" -%}
 
-  {%- comment %} to avoid multiple post-list pages {% endcomment -%}
-  {%- if site.paginate > 0 and button_key == "post-list" and _pages.size > 1 -%}
+  {%- comment %} keep only the first match per button — handles paginator pages
+       (post-list) and any environment where site.html_pages yields duplicates. {% endcomment -%}
+  {%- if _pages.size > 1 -%}
     {%- assign _tmp_page = _pages[0] -%}
-    {% comment %} create an empty array {% endcomment -%}
     {%- assign _pages = '' | split: '' -%}
     {%- assign _pages = _pages | push: _tmp_page -%}
   {%-endif-%}
