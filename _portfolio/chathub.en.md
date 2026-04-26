@@ -8,7 +8,7 @@ date: 2024-06-15
 period: 2024.03 - 2024.06 (3 months)
 role: Backend (2) · Kyonggi University team project
 tags: [Java, Spring Boot, JPA, MySQL, Naver Cloud Platform, Amazon Chime SDK, OAuth 2.0]
-permalink: /portfolio/chathub/en/
+permalink: /project/chathub/en/
 summary: A cloud-based coffee-chat service for developers, with real-time video chat built in.
 links:
   - { label: GitHub, href: https://github.com/24-1Capstone/backend }

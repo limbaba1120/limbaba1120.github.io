@@ -173,10 +173,10 @@ resume:
   title: Currículo
   button_name: Currículo
 
-# for portfolio-list layout
-portfolio-list:
-  title: Portfólio
-  button_name: Portfólio
+# for project-list layout
+project-list:
+  title: Projeto
+  button_name: Projeto
 
 # for privacy-policy layout
 privacy-policy:

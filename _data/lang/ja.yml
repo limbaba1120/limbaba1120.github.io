@@ -172,10 +172,10 @@ resume:
   title: 履歴書
   button_name: 履歴書
 
-# for portfolio-list layout
-portfolio-list:
-  title: ポートフォリオ
-  button_name: ポートフォリオ
+# for project-list layout
+project-list:
+  title: プロジェクト
+  button_name: プロジェクト
 
 # for privacy-policy layout
 privacy-policy:

@@ -23,7 +23,7 @@ baseurl: ""
 collections:
   portfolio:
     output: true
-    permalink: /portfolio/:path/
+    permalink: /project/:path/
 
 ###########################################################
 # Front Matter Defaults (https://jekyllrb.com/docs/configuration/front-matter-defaults/)
@@ -46,12 +46,12 @@ defaults:
       layout: "post"
       permalink: /:path
 
-  # for portfolio collection items (default to ko + portfolio layout)
+  # for portfolio collection items (default to ko + project layout)
   - scope:
       path: ""
       type: portfolio
     values:
-      layout: portfolio
+      layout: project
       lang: ko
 
   # example: enable setting for all pages. You may still need to enable some setting from _data/conf/posts.yml or _data/conf/main.yml

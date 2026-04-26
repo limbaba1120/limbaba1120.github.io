@@ -172,10 +172,10 @@ resume:
   title: Resume
   button_name: Resume
 
-# for portfolio-list layout
-portfolio-list:
-  title: Portfolio
-  button_name: Portfolio
+# for project-list layout
+project-list:
+  title: Project
+  button_name: Project
 
 # for privacy-policy layout
 privacy-policy:
