@@ -168,6 +168,16 @@ projects:
   read_more_text: Leia mais
   read_less_text: Leia menos
 
+# for resume layout
+resume:
+  title: Currículo
+  button_name: Currículo
+
+# for portfolio-list layout
+portfolio-list:
+  title: Portfólio
+  button_name: Portfólio
+
 # for privacy-policy layout
 privacy-policy:
   title: &privacy_policy_title Política de privacidade

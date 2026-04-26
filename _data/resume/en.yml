@@ -1,0 +1,84 @@
+# English resume data
+
+profile:
+  name: Geonwoo Lim
+  title: Backend Engineer
+  photo: /assets/img/default/profile.JPG
+  summary: |
+    Backend engineer with end-to-end experience across planning, design, development, and operations.
+    Hands-on with real-time communication (WebSocket, WebRTC), CI/CD pipelines, and database schema management. Pick up new technologies quickly and apply them effectively.
+    I work best in trust-based teams and try to bring positive energy to the room.
+  contact:
+    email: kwlim1120ss@gmail.com
+    phone: "+82 10-5892-9711"
+    github: https://github.com/limbaba1120
+
+experience: []
+
+projects:
+  - slug: omocha
+    name: OMOCHA — Limited-edition Goods Auction
+    one_liner: A trading platform where collectors auction hard-to-find limited-edition merchandise
+    period: 2024.09 - 2024.12 (3 months)
+    role: Backend (3) · Fastcampus Kernel 360 team project
+    tags: [Java, Spring Boot, Spring Data JPA, PostgreSQL, Redis, AWS, Docker, WebSocket]
+
+  - slug: look-us
+    name: Look US — Fashion Community Service
+    one_liner: A fashion community where users share daily looks and discover styles by color
+    period: 2024.07 - 2024.08 (1 month)
+    role: Backend (4) · Fastcampus Kernel 360 team project
+    tags: [Java, Spring Boot, JPA, MySQL, Redis, GCP, Nginx, Docker, GitHub Actions]
+
+  - slug: chathub
+    name: ChatHub — Developer Coffee-Chat with Live Video
+    one_liner: A coffee-chat service where developers meet online over real-time video
+    period: 2024.03 - 2024.06 (3 months)
+    role: Backend (2) · Kyonggi University team project
+    tags: [Java, Spring Boot, JPA, MySQL, Naver Cloud Platform, Amazon Chime SDK]
+
+education:
+  - school: Fastcampus — Kernel 360 Backend Bootcamp
+    degree: Backend Developer Bootcamp (Completed)
+    period: 2024.07 - 2025.01
+    notes: Full-cycle experience across planning, build, deployment, and operations
+
+  - school: Kyonggi University
+    degree: B.S. in Computer Science
+    period: 2019.03 - 2025.02
+    notes: CES 2024 · Singapore SW Project · Purdue University SW Program
+
+  - school: University of Twente (Netherlands)
+    degree: Exchange student
+    period: 2017 - 2018
+
+  - school: American School of Warsaw
+    degree: High school diploma
+    period: 2014.08 - 2017.06
+
+skills:
+  Language: [Java]
+  Framework: [Spring Boot, Spring Data JPA, Spring Security]
+  Database: [PostgreSQL, MySQL, Redis]
+  Infrastructure: [AWS, Nginx, Docker, Kubernetes, GitHub Actions]
+  Tools: [GitHub, Notion, IntelliJ]
+
+certifications:
+  - name: Engineer Information Processing
+    issuer: HRD Korea
+    date: 2024.06.18
+  - name: CSTS (SW Test Specialist) FL
+    issuer: KAIT
+    date: 2023.11.18
+  - name: SQLD
+    issuer: KDATA
+    date: 2023.10.06
+  - name: OPIc English (IH)
+    issuer: ACTFL
+    date: 2023.07.15
+
+languages:
+  - name: Korean
+    level: Native
+  - name: English
+    level: Business (OPIc IH · 10+ years living abroad)

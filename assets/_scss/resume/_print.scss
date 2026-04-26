@@ -1,0 +1,75 @@
+// Print stylesheet for /resume/ and /portfolio/<slug>/.
+// Strips the theme chrome and forces A4 layout for browser-print and Playwright PDF export.
+
+@media print {
+  @page { size: A4; margin: 0; }
+
+  html, body {
+    background: #fff !important;
+    color: #1a202c !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  // Hide theme chrome
+  .navbar,
+  .top-nav,
+  .side-nav,
+  #side-nav,
+  #main-wrapper > .footer-container,
+  .footer-container,
+  .scroll-to-top-container,
+  .lang-offer-msg-box,
+  .cookie-consent-bar,
+  .sliding-msg-box,
+  .resume-actions,
+  .no-print {
+    display: none !important;
+  }
+
+  #main-wrapper, .main-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .page-a4 {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 14mm 14mm;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    page-break-after: avoid;
+  }
+
+  .page-a4 a { color: inherit !important; text-decoration: none !important; }
+
+  // Project cards keep accent but flatten shadows
+  .resume-project-card {
+    background: #fafbfc !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  // Avoid awkward breaks
+  .resume-section,
+  .resume-item,
+  .resume-cert-list > li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .resume .resume-section-title {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  // Hide photo shadow in print
+  .resume-header-photo img {
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0;
+  }
+}

@@ -167,6 +167,16 @@ projects:
   read_more_text: 続きを読む
   read_less_text: 閉じる
 
+# for resume layout
+resume:
+  title: 履歴書
+  button_name: 履歴書
+
+# for portfolio-list layout
+portfolio-list:
+  title: ポートフォリオ
+  button_name: ポートフォリオ
+
 # for privacy-policy layout
 privacy-policy:
   title: &privacy_policy_title プライバシーポリシー

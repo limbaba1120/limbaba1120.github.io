@@ -168,6 +168,16 @@ projects:
   read_more_text: En savoir plus
   read_less_text: Réduire
 
+# for resume layout
+resume:
+  title: CV
+  button_name: CV
+
+# for portfolio-list layout
+portfolio-list:
+  title: Portfolio
+  button_name: Portfolio
+
 # for privacy-policy layout
 privacy-policy:
   title: &privacy_policy_title Politique de confidentialité

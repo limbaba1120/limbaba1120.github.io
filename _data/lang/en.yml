@@ -167,6 +167,16 @@ projects:
   read_more_text: Read more
   read_less_text: Read less
 
+# for resume layout
+resume:
+  title: Resume
+  button_name: Resume
+
+# for portfolio-list layout
+portfolio-list:
+  title: Portfolio
+  button_name: Portfolio
+
 # for privacy-policy layout
 privacy-policy:
   title: &privacy_policy_title Privacy policy

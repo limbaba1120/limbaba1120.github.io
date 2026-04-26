@@ -19,3 +19,8 @@ Thumbs.db
 
 # updating Gemfile automatically using github actions
 vendor
+
+# Node tooling for PDF export (`scripts/export-pdf.mjs`).
+node_modules
+out
+

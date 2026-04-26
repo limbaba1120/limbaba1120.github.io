@@ -1,0 +1,16 @@
+{
+  "name": "limbaba1120-resume-pdf",
+  "private": true,
+  "description": "PDF export tooling for the resume pages. Site build itself stays Ruby/Jekyll.",
+  "scripts": {
+    "build": "bundle exec jekyll build",
+    "build:dev": "JEKYLL_ENV=development bundle exec jekyll build",
+    "serve:site": "npx serve -l 4173 -s _site",
+    "export:pdf": "npm run build && node scripts/export-pdf.mjs",
+    "export:pdf:only": "node scripts/export-pdf.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.50.0",
+    "serve": "^14.2.4"
+  }
+}
