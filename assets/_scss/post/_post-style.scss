@@ -1,0 +1,375 @@
+// Post detail typography — optimized for comfortable Korean+English reading.
+// Auto-applies to every post that uses _layouts/post.md (which renders into
+// .post-container). Future posts get these defaults for free.
+//
+// Goals:
+//   - Pretendard for body, JetBrains Mono for code (Korean readability)
+//   - 760px reading width (~70 chars per line)
+//   - Body line-height 1.85, weight 400 (not 300 → too thin in Korean)
+//   - Distinct heading hierarchy (h2 with bottom border)
+//   - Dark, framed code blocks; soft blockquote with left accent
+//   - Image polish, table polish, mobile responsive
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+$post-ink:        #1a1d23; // primary text
+$post-ink-soft:   #3a414b; // secondary text
+$post-ink-muted:  #6b727b; // metadata
+$post-line:       #e5e7ea; // hairline
+$post-line-soft:  #eef0f3; // subtle separator
+$post-bg-soft:    #f7f8fa; // soft surface (inline code, blockquote)
+$post-bg-code:    #1a1d23; // code block
+$post-code-text:  #e6e9ef; // code block text
+$post-accent:     #1e3a5f; // navy accent
+$post-accent-2:   #2c4d77; // accent hover
+
+$post-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont,
+            "Apple SD Gothic Neo", "Noto Sans KR", "Roboto", sans-serif;
+$post-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+// =====================================================================
+// Container — cap width for comfortable line length
+// =====================================================================
+.post-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  font-family: $post-font;
+  color: $post-ink-soft;
+
+  // Title block
+  > .post-title h1 {
+    font-family: $post-font;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: $post-ink;
+    line-height: 1.25;
+    letter-spacing: -.02em;
+    margin: 0 0 .75rem;
+    word-break: keep-all; // Korean line-break friendly
+  }
+
+  > .meta {
+    color: $post-ink-muted;
+    font-size: .88rem;
+    margin-bottom: 1.25rem;
+  }
+
+  > hr {
+    border: 0;
+    border-top: 1px solid $post-line;
+    margin: 0 0 2.5rem;
+  }
+}
+
+// =====================================================================
+// Body — scoped to post container so other .markdown-style usages
+// (about, project, home) stay untouched.
+// =====================================================================
+.post-container .markdown-style {
+  font-family: $post-font;
+  color: $post-ink-soft;
+
+  // Reset theme defaults that hurt readability
+  p, ul, ol, li, li p {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  p {
+    margin: 0 0 1.25rem;
+    word-break: keep-all;
+  }
+
+  strong, b {
+    color: $post-ink;
+    font-weight: 700;
+  }
+
+  em, i { color: $post-ink; }
+
+  a {
+    color: $post-accent;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(30, 58, 95, .25);
+    font-weight: 500;
+    transition: color .15s, border-color .15s;
+
+    &:hover {
+      color: $post-accent-2;
+      border-bottom-color: $post-accent-2;
+    }
+  }
+
+  // -------------------------------------------------------------------
+  // Headings — clear hierarchy with subtle accent
+  // -------------------------------------------------------------------
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $post-font;
+    color: $post-ink;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    word-break: keep-all;
+    scroll-margin-top: 6rem; // anchor links land below sticky areas
+  }
+
+  h2 {
+    font-size: 1.55rem;
+    font-weight: 800;
+    margin: 3rem 0 1rem;
+    padding-bottom: .55rem;
+    border-bottom: 1px solid $post-line;
+    line-height: 1.35;
+    &:first-child { margin-top: .5rem; }
+  }
+
+  h3 {
+    font-size: 1.22rem;
+    margin: 2.25rem 0 .75rem;
+    line-height: 1.4;
+  }
+
+  h4 {
+    font-size: 1.05rem;
+    margin: 1.75rem 0 .5rem;
+    line-height: 1.4;
+  }
+
+  h5, h6 {
+    font-size: .95rem;
+    margin: 1.5rem 0 .4rem;
+    color: $post-ink-soft;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+
+  // -------------------------------------------------------------------
+  // Lists — proper indent, accent markers, comfortable spacing
+  // -------------------------------------------------------------------
+  ul, ol {
+    margin: 0 0 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin: 0 0 .4rem;
+    margin-left: 0; // override theme's negative margin
+    line-height: 1.85;
+
+    &::marker { color: $post-accent; }
+  }
+
+  li > ul, li > ol {
+    margin: .5rem 0 .25rem;
+  }
+
+  li > p {
+    margin-bottom: .5rem;
+  }
+
+  // -------------------------------------------------------------------
+  // Inline code — distinct, not jarring
+  // -------------------------------------------------------------------
+  code {
+    font-family: $post-mono;
+    font-size: .88em;
+    padding: .12em .42em;
+    background: $post-bg-soft;
+    color: $post-ink;
+    border: 1px solid $post-line;
+    border-radius: 4px;
+    font-weight: 500;
+    overflow-wrap: break-word;
+  }
+
+  // -------------------------------------------------------------------
+  // Code blocks — dark, framed, monospace
+  // -------------------------------------------------------------------
+  pre,
+  pre.highlight,
+  .highlight pre,
+  div.highlighter-rouge {
+    background: $post-bg-code !important;
+    color: $post-code-text !important;
+    font-family: $post-mono;
+    font-size: .88rem;
+    line-height: 1.65;
+    padding: 1.1rem 1.25rem;
+    border-radius: 10px;
+    border: 1px solid #2a2e36;
+    margin: 1.25rem 0 1.75rem;
+    overflow-x: auto;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+
+    code {
+      background: transparent !important;
+      color: inherit !important;
+      border: 0;
+      padding: 0;
+      font-size: inherit;
+      font-weight: 400;
+      white-space: inherit;
+    }
+  }
+
+  // Rouge syntax token colors (Monokai-ish, soft)
+  .highlight {
+    .c, .c1, .cm { color: #8a939e; font-style: italic; }       // comments
+    .k, .kd, .kn, .kt, .kr, .kp { color: #f78c6c; }              // keywords
+    .s, .s1, .s2, .sd, .se, .sh, .si, .sx, .sr, .sb { color: #c3e88d; } // strings
+    .nb, .bp, .nc, .nf, .nx, .no { color: #82b1ff; }             // builtins/functions
+    .mi, .mf, .il, .mh, .mo { color: #f78c6c; }                  // numbers
+    .o, .ow, .p { color: #c8d1da; }                               // operators
+    .nt, .na { color: #ffcb6b; }                                  // attributes
+    .nv, .vc, .vg, .vi { color: #82b1ff; }                       // variables
+    .err { color: #ff5370; background: transparent; }            // errors
+  }
+
+  // -------------------------------------------------------------------
+  // Blockquote — left-accent, soft fill, no awkward justify
+  // -------------------------------------------------------------------
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.2rem;
+    border: 0;
+    border-left: 3px solid $post-accent;
+    background: $post-bg-soft;
+    border-radius: 0 8px 8px 0;
+    text-align: left;
+    word-break: keep-all;
+
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      color: $post-ink-soft;
+      margin: 0 0 .5rem;
+      line-height: 1.75;
+
+      &:last-child { margin-bottom: 0; }
+    }
+
+    strong { color: $post-ink; }
+  }
+
+  // -------------------------------------------------------------------
+  // Images
+  // -------------------------------------------------------------------
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid $post-line;
+    margin: 1.25rem auto;
+    display: block;
+    box-shadow: 0 1px 3px rgba(20, 23, 28, .06);
+  }
+
+  p img:only-child { margin-bottom: 1rem; }
+
+  // -------------------------------------------------------------------
+  // Tables — clean rows, header background, responsive scroll
+  // -------------------------------------------------------------------
+  .table,
+  table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 1.75rem;
+    font-size: .94rem;
+    border: 1px solid $post-line;
+    border-radius: 8px;
+
+    th, td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid $post-line;
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    th {
+      background: $post-bg-soft;
+      font-weight: 700;
+      color: $post-ink;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+  }
+
+  // Override theme's narrow row + smaller font on tables
+  .table > thead > tr th,
+  .table > tbody > tr td {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .94rem;
+  }
+
+  // -------------------------------------------------------------------
+  // Horizontal rule
+  // -------------------------------------------------------------------
+  hr {
+    border: 0;
+    height: 1px;
+    background: $post-line;
+    margin: 2.5rem 0;
+  }
+
+  // -------------------------------------------------------------------
+  // Misc
+  // -------------------------------------------------------------------
+  kbd {
+    font-family: $post-mono;
+    font-size: .82em;
+    padding: .1em .5em;
+    background: #fff;
+    color: $post-ink;
+    border: 1px solid $post-line;
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+  }
+
+  // Override theme's blockquote justify on .markdown-style
+  // (re-applied here at higher specificity)
+  blockquote { text-align: left; }
+  blockquote > p { font-size: 1rem; font-weight: 400; }
+}
+
+// =====================================================================
+// Responsive
+// =====================================================================
+@media (max-width: 720px) {
+  .post-container {
+    padding: 1.75rem 1.1rem 3rem;
+
+    > .post-title h1 { font-size: 1.85rem; }
+  }
+
+  .post-container .markdown-style {
+    p, ul, ol, li, li p { font-size: .96rem; line-height: 1.8; }
+    h2 { font-size: 1.4rem; margin-top: 2.5rem; }
+    h3 { font-size: 1.1rem; margin-top: 2rem; }
+    pre, .highlight pre { font-size: .82rem; padding: .9rem 1rem; }
+  }
+}
+
+// =====================================================================
+// Print — clean printable post
+// =====================================================================
+@media print {
+  .post-container {
+    max-width: 100%;
+    padding: 0;
+
+    .markdown-style pre,
+    .markdown-style .highlight pre {
+      background: #fff !important;
+      color: $post-ink !important;
+      border: 1px solid $post-line !important;
+      box-shadow: none !important;
+      code { color: $post-ink !important; }
+    }
+  }
+}

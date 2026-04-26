@@ -2,20 +2,61 @@
   Mr. Green Jekyll Theme (https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme)
   Copyright (c) 2022 Mr. Green's Workshop https://www.MrGreensWorkshop.com
   Licensed under MIT
+
+  Customized: when a post has no `img`, derive an icon + gradient from the
+  post's category/tags so the left thumbnail area never looks empty.
 {%-endcomment-%}
 
 {%- assign image = '/assets/img/default/1x1px.png' -%}
+{%- assign has_image = false -%}
 {%- assign display = nil -%}
 {%- assign max_width = nil -%}
-{%- assign title_sub = nil -%}
 
 {%- if site.data.conf.posts.thumbnail_img and include.post.img -%}
-  {%- assign image = include.post.img -%}
-{%- else -%}
-  {%- if site.data.conf.posts.thumbnail_img_fill != true -%}
-    {%- assign display = 'display: none;' -%}
-    {%- assign max_width= "style='width:100%;'" -%}
-  {%- endif -%}
+  {%- comment -%} Skip absolute filesystem paths and 1x1 placeholder so we treat them as missing. {%-endcomment-%}
+  {%- unless include.post.img contains '1x1px.png' or include.post.img contains '/Users/' or include.post.img contains '/users/' -%}
+    {%- assign image = include.post.img -%}
+    {%- assign has_image = true -%}
+  {%- endunless -%}
+{%- endif -%}
+
+{%- if has_image == false and site.data.conf.posts.thumbnail_img_fill != true -%}
+  {%- assign display = 'display: none;' -%}
+  {%- assign max_width = "style='width:100%;'" -%}
+{%- endif -%}
+
+{%- comment -%} Category-driven placeholder shown when no real image. {%-endcomment-%}
+{%- assign cat_str = include.post.category | default: '' | downcase -%}
+{%- assign tag_str = include.post.tags | default: '' | join: ',' | downcase -%}
+{%- assign hint = cat_str | append: ',' | append: tag_str -%}
+
+{%- assign ph_icon = 'fa-pencil-square-o' -%}
+{%- assign ph_a = '#1e3a5f' -%}
+{%- assign ph_b = '#2c4d77' -%}
+
+{%- if hint contains 'docker' %}
+  {%- assign ph_icon = 'fa-cube' -%}{% assign ph_a = '#0db7ed' %}{% assign ph_b = '#0a8ab1' -%}
+{%- endif -%}
+{%- if hint contains 'jenkins' %}
+  {%- assign ph_icon = 'fa-cogs' -%}{% assign ph_a = '#d33833' %}{% assign ph_b = '#a02824' -%}
+{%- endif -%}
+{%- if hint contains 'redmine' %}
+  {%- assign ph_icon = 'fa-tasks' -%}{% assign ph_a = '#a52d2a' %}{% assign ph_b = '#7a201e' -%}
+{%- endif -%}
+{%- if hint contains 'raspberry' %}
+  {%- assign ph_icon = 'fa-microchip' -%}{% assign ph_a = '#c51a4a' %}{% assign ph_b = '#92133a' -%}
+{%- endif -%}
+{%- if hint contains 'spring' %}
+  {%- assign ph_icon = 'fa-leaf' -%}{% assign ph_a = '#6db33f' %}{% assign ph_b = '#4f8a2d' -%}
+{%- endif -%}
+{%- if hint contains 'algorithm' or hint contains '기술세미나' or hint contains 'hash' %}
+  {%- assign ph_icon = 'fa-code' -%}{% assign ph_a = '#1e3a5f' %}{% assign ph_b = '#2c4d77' -%}
+{%- endif -%}
+{%- if hint contains 'jwt' or hint contains 'oauth' or hint contains 'security' %}
+  {%- assign ph_icon = 'fa-shield' -%}{% assign ph_a = '#0f766e' %}{% assign ph_b = '#0b5650' -%}
+{%- endif -%}
+{%- if hint contains '형상관리' and ph_icon == 'fa-pencil-square-o' %}
+  {%- assign ph_icon = 'fa-cogs' -%}{% assign ph_a = '#475569' %}{% assign ph_b = '#334155' -%}
 {%- endif -%}
 
 {%- include post-list/post-custom-excerpt.liquid content = include.post.content -%}

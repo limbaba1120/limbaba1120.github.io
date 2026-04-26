@@ -16,6 +16,10 @@ layout: default
     {% include post-list/post-thumbnail-html.html
       url = post_url
       image = image
+      has_image = has_image
+      ph_icon = ph_icon
+      ph_a = ph_a
+      ph_b = ph_b
       max_width = max_width
       display = display
       title = page_title
