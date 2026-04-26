@@ -14,14 +14,21 @@
   // Hide theme chrome
   .navbar,
   .top-nav,
+  #side-nav-container,
   .side-nav,
   #side-nav,
   #main-wrapper > .footer-container,
   .footer-container,
+  .footer-wrapper,
   .scroll-to-top-container,
+  .searchbox-container,
+  #search-results,
   .lang-offer-msg-box,
+  .consent-bar,
+  .consent-settings,
   .cookie-consent-bar,
   .sliding-msg-box,
+  .slideBox,
   .resume-actions,
   .no-print {
     display: none !important;

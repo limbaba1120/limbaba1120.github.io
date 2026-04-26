@@ -27,7 +27,7 @@ if (!existsSync(SITE_DIR)) {
 await mkdir(OUT_DIR, { recursive: true });
 
 console.log(`[export-pdf] starting static server on :${PORT}`);
-const server = spawn('npx', ['serve', '-l', String(PORT), '-s', SITE_DIR], {
+const server = spawn('npx', ['serve', '-l', String(PORT), SITE_DIR], {
   stdio: ['ignore', 'pipe', 'inherit'],
 });
 

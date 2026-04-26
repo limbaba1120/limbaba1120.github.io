@@ -5,7 +5,7 @@
   "scripts": {
     "build": "bundle exec jekyll build",
     "build:dev": "JEKYLL_ENV=development bundle exec jekyll build",
-    "serve:site": "npx serve -l 4173 -s _site",
+    "serve:site": "npx serve -l 4173 _site",
     "export:pdf": "npm run build && node scripts/export-pdf.mjs",
     "export:pdf:only": "node scripts/export-pdf.mjs"
   },
