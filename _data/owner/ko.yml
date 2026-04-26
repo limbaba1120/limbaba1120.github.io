@@ -1,0 +1,38 @@
+###########################################################
+# Owner's Personal Information (Korean)
+###########################################################
+brand: "limbaba"
+brand_sub_text: "Backend Engineer"
+name: "임건우"
+
+# home page top header texts
+home:
+  top_header_line1: "$site_brand"
+  top_header_line2: "Backend Engineer"
+
+# about page sub title
+about:
+  sub_title: "Backend Engineer · 실시간 통신 / 동시성 제어 / 인프라 자동화"
+
+copyright_start_year: "2024"
+
+creative_commons:
+  license_type: "by-sa"
+
+meta_common_description: "임건우 — 실시간 통신·동시성·인프라 운영 중심으로 일하는 백엔드 엔지니어. 이력서, 프로젝트 포트폴리오, 엔지니어링 노트."
+
+contacts:
+  - github: "limbaba1120"
+
+comments:
+  disqus:
+    shortname: ""
+  giscus:
+    repo: ""
+    repo-id: ""
+    category: ""
+    category-id: ""
+
+google_analytics_id: ""
+google_site_verification: ""
+google_forms_contact_form_url: ""

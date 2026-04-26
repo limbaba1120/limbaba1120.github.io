@@ -41,7 +41,7 @@ $ab-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   // -------------------------------------------------------------------
   &-head {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.75rem;
     padding-bottom: 2.25rem;
     border-bottom: 1px solid $ab-line;
@@ -101,6 +101,34 @@ $ab-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     margin: 0;
     line-height: 1.6;
     word-break: keep-all;
+  }
+
+  // Tagline — sits inside the headline column right under the name, so it
+  // reads as the About header description rather than separate body content.
+  &-tagline {
+    margin: .85rem 0 0;
+    padding: 1rem 1.15rem;
+    border-left: 3px solid $ab-accent;
+    background: $ab-bg-soft;
+    border-radius: 0 8px 8px 0;
+    word-break: keep-all;
+
+    &-lead {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: $ab-ink;
+      margin: 0 0 .45rem;
+      line-height: 1.55;
+    }
+
+    &-body {
+      font-size: .98rem;
+      color: $ab-ink-soft;
+      margin: 0;
+      line-height: 1.7;
+
+      strong { color: $ab-ink; font-weight: 700; }
+    }
   }
 
   // -------------------------------------------------------------------
@@ -180,6 +208,8 @@ $ab-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
       border-bottom: 1px solid $ab-line;
     }
 
+    // Override theme's .markdown-style li { margin-left: -15px } which
+    // pushes bullets out beyond the heading column.
     ul, ol {
       list-style: none;
       padding: 0;
@@ -188,8 +218,9 @@ $ab-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
     li {
       position: relative;
-      padding-left: 1.25rem;
-      margin-bottom: .85rem;
+      padding-left: 1.1rem;
+      margin: 0 0 .85rem;     // includes margin-left: 0 — defeats theme rule
+      margin-left: 0;
 
       &::before {
         content: "";

@@ -20,6 +20,12 @@ layout: default
     <div class="about-page-headline">
       <p class="about-page-eyebrow">About</p>
       <h1 class="about-page-name" translate="no">{{ owner.brand }}</h1>
+      {%- if page.tagline_lead or page.tagline_body %}
+      <div class="about-page-tagline">
+        {%- if page.tagline_lead %}<p class="about-page-tagline-lead">{{ page.tagline_lead }}</p>{% endif %}
+        {%- if page.tagline_body %}<p class="about-page-tagline-body">{{ page.tagline_body }}</p>{% endif %}
+      </div>
+      {%- endif %}
     </div>
   </header>
 

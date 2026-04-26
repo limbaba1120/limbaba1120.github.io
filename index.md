@@ -4,10 +4,9 @@ lng_pair: id_home
 title: Home
 img: /assets/img/default/profile.JPG
 meta_description: 임건우 — 백엔드 개발자. 실시간 통신·동시성·인프라 운영 중심으로 일하는 백엔드 엔지니어의 이력서·포트폴리오·블로그.
+tagline_lead: I'm an Agile Developing Backend Developer.
+tagline_body: "변화하는 환경에 잘 적응하고, 협업을 중시하며, 끊임없이 배우고 빠르게 성장하는 <strong>임건우</strong>입니다."
 ---
-
-> **I'm an Agile Developing Backend Developer.**
-> 변화하는 환경에 잘 적응하고, 협업을 중시하며, 끊임없이 배우고 빠르게 성장하는 **임건우**입니다.
 
 #### 이런 걸 좋아합니다
 
