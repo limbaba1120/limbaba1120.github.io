@@ -189,7 +189,7 @@ side_and_top_nav_buttons:
     icon: "fa fa-home"
   - resume:
     icon: "fa fa-file-text-o"
-  - project-list:
+  - portfolio-list:
     icon: "fa fa-folder-open-o"
   - post-list:
     icon: "fa fa-pencil-square-o"

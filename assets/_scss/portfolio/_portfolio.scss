@@ -1,0 +1,713 @@
+// Portfolio page — long-form single page with TOC + inline blocks per project.
+// Inspired by https://resume.dongholab.com/portfolio/ko/ — content-first,
+// neutral grayscale, subtle navy accents, hero screenshot per project.
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+$pf-ink:        #14171c; // primary text
+$pf-ink-soft:   #3a414b; // body text
+$pf-ink-muted:  #6b727b; // meta text
+$pf-line:       #e5e7ea; // hairline borders
+$pf-bg-soft:    #f7f8fa; // soft surface
+$pf-bg-hero:    #f1f3f6; // hero image backdrop
+$pf-accent:     #1e3a5f; // navy accent
+$pf-accent-2:   #2c4d77; // navy hover
+
+$pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont,
+          "Apple SD Gothic Neo", "Noto Sans KR", "Roboto", sans-serif;
+
+// =====================================================================
+// Page wrapper
+// =====================================================================
+.portfolio-page {
+  font-family: $pf-font;
+  color: $pf-ink-soft;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+  line-height: 1.7;
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  a { color: $pf-accent; text-decoration: none; transition: color .15s; }
+  a:hover { color: $pf-accent-2; }
+}
+
+// =====================================================================
+// Hero header
+// =====================================================================
+.portfolio-hero {
+  text-align: left;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid $pf-line;
+  margin-bottom: 3.5rem;
+
+  &-eyebrow {
+    font-size: .78rem;
+    color: $pf-accent;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+
+    &::before {
+      content: "";
+      width: 1.4rem;
+      height: 2px;
+      background: $pf-accent;
+      border-radius: 2px;
+      display: inline-block;
+    }
+  }
+
+  &-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: $pf-ink;
+    margin: 0 0 1.25rem;
+    letter-spacing: -.02em;
+    line-height: 1.1;
+  }
+
+  &-intro {
+    font-size: 1.05rem;
+    color: $pf-ink-soft;
+    margin: 0 0 2rem;
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  &-actions {
+    display: flex;
+    gap: .65rem;
+    flex-wrap: wrap;
+  }
+}
+
+.portfolio-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: .55rem 1.1rem;
+  border-radius: 999px;
+  background: $pf-accent;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: .9rem;
+  border: 1px solid $pf-accent;
+  transition: background .15s, transform .15s;
+
+  &:hover {
+    background: $pf-accent-2;
+    color: #fff !important;
+    transform: translateY(-1px);
+  }
+
+  i { margin-right: .15rem; }
+
+  &-ghost {
+    background: transparent;
+    color: $pf-accent !important;
+    border-color: $pf-line;
+
+    &:hover {
+      background: $pf-bg-soft;
+      color: $pf-accent !important;
+    }
+  }
+}
+
+// =====================================================================
+// Overview (Projects · Primary stack · Focus areas)
+// =====================================================================
+// Shared label style (overview / approach / TOC labels)
+%pf-section-label {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: $pf-ink-muted;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+
+  &::before {
+    content: "";
+    width: .42rem;
+    height: .42rem;
+    background: $pf-accent;
+    border-radius: 999px;
+    display: inline-block;
+  }
+}
+
+.portfolio-overview {
+  margin-bottom: 3rem;
+
+  &-label { @extend %pf-section-label; }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: minmax(140px, .8fr) 1.6fr 1.4fr;
+    gap: 1px;
+    margin: 0;
+    background: $pf-line;
+    border: 1px solid $pf-line;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(20, 23, 28, .03);
+  }
+
+  &-stat {
+    background: #fff;
+    padding: 1.4rem 1.6rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+
+    dt {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: $pf-ink-muted;
+      font-weight: 700;
+    }
+
+    dd {
+      margin: 0;
+      font-size: .96rem;
+      color: $pf-ink;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+  }
+
+  &-num {
+    font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: $pf-accent;
+    letter-spacing: -.025em;
+    line-height: 1;
+    display: block;
+    margin-top: .25rem;
+  }
+}
+
+// =====================================================================
+// Engineering approach (numbered principles)
+// =====================================================================
+.portfolio-approach {
+  margin-bottom: 4rem;
+
+  &-label { @extend %pf-section-label; }
+
+  ol {
+    list-style: none;
+    counter-reset: approach;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  li {
+    counter-increment: approach;
+    position: relative;
+    padding: 1.5rem 1.6rem 1.5rem 4rem;
+    background: #fff;
+    border: 1px solid $pf-line;
+    border-radius: 12px;
+    transition: border-color .15s, box-shadow .15s, transform .15s;
+
+    &:hover {
+      border-color: rgba(30, 58, 95, .35);
+      box-shadow: 0 6px 18px rgba(20, 23, 28, .06);
+      transform: translateY(-1px);
+    }
+
+    &::before {
+      content: counter(approach, decimal-leading-zero);
+      position: absolute;
+      left: 1.4rem;
+      top: 1.55rem;
+      width: 2rem;
+      height: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+      font-size: .78rem;
+      font-weight: 700;
+      color: $pf-accent;
+      background: rgba(30, 58, 95, .08);
+      border-radius: 999px;
+      letter-spacing: .04em;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: $pf-ink;
+      margin: 0 0 .5rem;
+      line-height: 1.35;
+    }
+
+    p {
+      margin: 0;
+      font-size: .9rem;
+      color: $pf-ink-soft;
+      line-height: 1.65;
+    }
+  }
+}
+
+// =====================================================================
+// TOC
+// =====================================================================
+.portfolio-toc {
+  margin-bottom: 4rem;
+  padding: 1.5rem 1.75rem;
+  background: $pf-bg-soft;
+  border-radius: 12px;
+
+  &-label { @extend %pf-section-label; }
+
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: .35rem;
+  }
+
+  li a {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+    gap: 1rem;
+    padding: .55rem .25rem;
+    border-radius: 6px;
+    color: $pf-ink !important;
+    transition: background .15s;
+
+    &:hover {
+      background: rgba(30, 58, 95, .06);
+      color: $pf-accent !important;
+      .portfolio-toc-num { color: $pf-accent; }
+    }
+  }
+
+  &-num {
+    font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: .82rem;
+    font-weight: 700;
+    color: $pf-ink-muted;
+    letter-spacing: .04em;
+  }
+
+  &-title {
+    font-weight: 600;
+    font-size: .98rem;
+  }
+
+  &-period {
+    font-size: .8rem;
+    color: $pf-ink-muted;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+}
+
+// =====================================================================
+// Project block
+// =====================================================================
+.portfolio-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.portfolio-block {
+  scroll-margin-top: 6rem;
+
+  &-head {
+    margin-bottom: 2rem;
+  }
+
+  &-num {
+    font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    color: $pf-accent;
+    margin: 0 0 .65rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+
+    &::after {
+      content: "";
+      width: 2rem;
+      height: 2px;
+      background: $pf-accent;
+      border-radius: 2px;
+      opacity: .55;
+    }
+  }
+
+  &-meta {
+    font-size: .85rem;
+    color: $pf-ink-muted;
+    margin: 0 0 .65rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  &-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: $pf-ink;
+    margin: 0 0 .85rem;
+    letter-spacing: -.015em;
+    line-height: 1.25;
+  }
+
+  &-summary {
+    font-size: 1.02rem;
+    color: $pf-ink-soft;
+    margin: 0 0 1.25rem;
+    line-height: 1.6;
+  }
+
+  &-stack {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+
+    li {
+      font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+      font-size: .76rem;
+      padding: .25rem .65rem;
+      background: $pf-bg-soft;
+      color: $pf-ink-soft;
+      border: 1px solid $pf-line;
+      border-radius: 4px;
+      letter-spacing: .01em;
+    }
+  }
+
+  // Tags + inline links sit on the same flex row. Tags wrap; links snap right.
+  &-tagrow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .75rem 1rem;
+    margin-top: 0;
+  }
+
+  &-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .3rem .8rem;
+      font-size: .82rem;
+      font-weight: 600;
+      color: $pf-accent !important;
+      background: rgba(30, 58, 95, .06);
+      border: 1px solid rgba(30, 58, 95, .14);
+      border-radius: 999px;
+      transition: background .15s, color .15s, border-color .15s;
+      white-space: nowrap;
+
+      &:hover {
+        background: $pf-accent;
+        color: #fff !important;
+        border-color: $pf-accent;
+      }
+
+      .fa { font-size: .9em; }
+    }
+  }
+
+  // Hero screenshot — sits between header and body, framed in a soft
+  // gradient panel so it reads as a "preview" not a content image.
+  &-hero {
+    margin: 0 0 2.75rem;
+    padding: 2.25rem 1.5rem;
+    background:
+      radial-gradient(circle at 30% 0%, rgba(30, 58, 95, .07) 0%, transparent 55%),
+      linear-gradient(135deg, $pf-bg-hero 0%, $pf-bg-soft 100%);
+    border: 1px solid $pf-line;
+    border-radius: 16px;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      max-height: 420px;
+      height: auto;
+      width: auto;
+      object-fit: contain;
+      display: inline-block;
+      filter: drop-shadow(0 10px 24px rgba(20, 23, 28, .14));
+    }
+  }
+
+  &-body {
+    color: $pf-ink-soft;
+    font-size: 1rem;
+    line-height: 1.78;
+
+    h2 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: $pf-ink;
+      margin: 2.75rem 0 .85rem;
+      padding-bottom: .55rem;
+      border-bottom: 1px solid $pf-line;
+      letter-spacing: -.005em;
+      &:first-child { margin-top: 0; }
+    }
+
+    h3 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: $pf-ink;
+      margin: 1.85rem 0 .55rem;
+    }
+
+    h4 {
+      font-size: .95rem;
+      font-weight: 600;
+      color: $pf-ink;
+      margin: 1.25rem 0 .35rem;
+    }
+
+    p { margin: 0 0 1rem; }
+
+    ul, ol {
+      margin: 0 0 1rem;
+      padding-left: 1.4rem;
+    }
+
+    li {
+      margin-bottom: .35rem;
+      &::marker { color: $pf-accent; }
+    }
+
+    strong {
+      color: $pf-ink;
+      font-weight: 700;
+    }
+
+    code {
+      font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+      font-size: .88em;
+      padding: .1em .4em;
+      background: $pf-bg-soft;
+      border: 1px solid $pf-line;
+      border-radius: 4px;
+      color: $pf-ink;
+    }
+
+    pre {
+      background: #1a1d23;
+      color: #e6e9ef;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+      font-size: .88rem;
+      line-height: 1.65;
+
+      code {
+        background: transparent;
+        border: 0;
+        padding: 0;
+        color: inherit;
+        font-size: inherit;
+      }
+    }
+
+    blockquote {
+      margin: 1.25rem 0;
+      padding: .75rem 1.1rem;
+      border-left: 3px solid $pf-accent;
+      background: $pf-bg-soft;
+      color: $pf-ink-soft;
+      border-radius: 0 6px 6px 0;
+
+      p:last-child { margin-bottom: 0; }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid $pf-line;
+      margin: 1rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: .92rem;
+
+      th, td {
+        padding: .65rem .85rem;
+        border-bottom: 1px solid $pf-line;
+        text-align: left;
+      }
+
+      th {
+        background: $pf-bg-soft;
+        font-weight: 700;
+        color: $pf-ink;
+      }
+    }
+  }
+
+}
+
+.portfolio-empty {
+  text-align: center;
+  color: $pf-ink-muted;
+  padding: 4rem 0;
+}
+
+// =====================================================================
+// Detail page (direct slug URL)
+// =====================================================================
+.portfolio-detail {
+  font-family: $pf-font;
+  color: $pf-ink-soft;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  a { color: $pf-accent; text-decoration: none; }
+  a:hover { color: $pf-accent-2; }
+
+  &-back {
+    margin: 0 0 2rem;
+    a {
+      font-size: .9rem;
+      color: $pf-ink-muted !important;
+      &:hover { color: $pf-accent !important; }
+    }
+  }
+
+  &-head {
+    border-bottom: 1px solid $pf-line;
+    padding-bottom: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &-meta {
+    font-size: .85rem;
+    color: $pf-ink-muted;
+    margin: 0 0 .5rem;
+  }
+
+  &-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: $pf-ink;
+    margin: 0 0 .85rem;
+    letter-spacing: -.02em;
+    line-height: 1.2;
+  }
+
+  &-summary {
+    font-size: 1rem;
+    color: $pf-ink-soft;
+    margin: 0 0 1.25rem;
+  }
+}
+
+// =====================================================================
+// Responsive
+// =====================================================================
+@media (max-width: 720px) {
+  .portfolio-page { padding: 2.5rem 1rem 4rem; }
+
+  .portfolio-hero {
+    padding-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    &-title { font-size: 2.2rem; }
+    &-intro { font-size: 1rem; }
+  }
+
+  .portfolio-toc {
+    padding: 1rem 1.1rem;
+    margin-bottom: 3rem;
+
+    li a {
+      grid-template-columns: auto 1fr;
+      gap: .65rem;
+    }
+    &-period { display: none; }
+  }
+
+  .portfolio-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-approach ol {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+
+  .portfolio-blocks { gap: 4rem; }
+
+  .portfolio-block {
+    &-title { font-size: 1.55rem; }
+    &-hero {
+      padding: 1.25rem 1rem;
+      img { max-height: 280px; }
+    }
+  }
+
+  .portfolio-detail {
+    padding: 2rem 1rem 4rem;
+    &-title { font-size: 1.7rem; }
+  }
+}
+
+// =====================================================================
+// Print
+// =====================================================================
+@media print {
+  .no-print { display: none !important; }
+
+  .portfolio-page,
+  .portfolio-detail {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .portfolio-block { break-inside: avoid; page-break-inside: avoid; }
+  .portfolio-block-body h2 { break-after: avoid; }
+  .portfolio-toc { display: none !important; }
+  .portfolio-approach { display: none !important; }
+  .portfolio-block-hero { background: #fff; border: 1px solid $pf-line; }
+}

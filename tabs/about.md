@@ -16,6 +16,6 @@ img: ":about.jpg"
 #### 더 보기
 
 - 📄 **이력서** — [한국어](/resume/) · [English](/resume/en/)
-- 💼 **프로젝트** — [상세 보기](/project/)
+- 💼 **포트폴리오** — [상세 보기](/portfolio/)
 - 🐙 **GitHub** — [github.com/limbaba1120](https://github.com/limbaba1120)
 - ✉️ **Email** — kwlim1120ss@gmail.com

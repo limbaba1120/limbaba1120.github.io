@@ -143,9 +143,9 @@
 {% assign _r2 = site.html_pages | where: "layout", "resume-en" %}
 {% if _r1.size > 0 or _r2.size > 0 %} {% assign resume_page_exist = true %} {% endif %}
 
-{% assign _p1 = site.html_pages | where: "layout", "project-list" %}
-{% assign _p2 = site.html_pages | where: "layout", "project-list-en" %}
-{% if _p1.size > 0 or _p2.size > 0 or site.portfolio.size > 0 %} {% assign project_page_exist = true %} {% endif %}
+{% assign _p1 = site.html_pages | where: "layout", "portfolio-list" %}
+{% assign _p2 = site.html_pages | where: "layout", "portfolio-list-en" %}
+{% if _p1.size > 0 or _p2.size > 0 or site.portfolio.size > 0 %} {% assign portfolio_page_exist = true %} {% endif %}
 
 {% for owner in site.data.owner %}
   {% if owner[1].contacts.size > 0 %}
@@ -171,7 +171,7 @@
   @import "common/post-info";
 {% endif %}
 
-{% if post_exist or projects_page_exist or home_page_exist or about_page_exist or project_page_exist %}
+{% if post_exist or projects_page_exist or home_page_exist or about_page_exist or portfolio_page_exist %}
   @import "common/markdown-style";
 {% endif %}
 
@@ -276,11 +276,11 @@
   @import "projects/project-container";
 {% endif %}
 
-{% if resume_page_exist or project_page_exist %}
+{% if resume_page_exist or portfolio_page_exist %}
   @import "resume/resume";
   @import "resume/print";
 {% endif %}
 
-{% if project_page_exist %}
-  @import "project/project";
+{% if portfolio_page_exist %}
+  @import "portfolio/portfolio";
 {% endif %}

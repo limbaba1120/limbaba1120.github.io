@@ -8,6 +8,7 @@ date: 2024-06-15
 period: 2024.03 - 2024.06 (3개월)
 role: 백엔드 (2) · 경기대학교 팀프로젝트
 tags: [Java, Spring Boot, JPA, MySQL, Naver Cloud Platform, Amazon Chime SDK, OAuth 2.0]
+hero: /assets/img/portfolio/chathub/hero.jpg
 summary: 개발자들이 온라인에서 간편하게 커피챗 상대를 찾고, 실시간 화상채팅이 가능한 커피챗 서비스.
 links:
   - { label: GitHub, href: https://github.com/24-1Capstone/backend }
@@ -44,9 +45,3 @@ links:
 
 앞으로는 다른 프로젝트를 하면서 다양한 사람들과 협업을 더 많이 해야겠다고 생각했고, 새로운 기술을 배우면서 더 깊이 이해하고 빠르게 성장하는 개발자가 되고 싶다고 느꼈습니다.
 
-## TECH STACKS
-
-- **Framework**: Spring · JPA · Next.js
-- **Database**: MySQL
-- **Server & Infra**: Vercel · Naver Cloud Platform · AWS
-- **Collaboration**: GitHub · Discord

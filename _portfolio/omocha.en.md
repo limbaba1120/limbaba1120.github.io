@@ -8,7 +8,8 @@ date: 2024-12-20
 period: 2024.09 - 2024.12 (3 months)
 role: Backend (3) · Fastcampus Kernel 360 team project
 tags: [Java, Spring Boot, Spring Data JPA, PostgreSQL, Redis, AWS, Docker, RabbitMQ, WebSocket]
-permalink: /project/omocha/en/
+hero: /assets/img/portfolio/omocha/hero.jpg
+permalink: /portfolio/omocha/en/
 summary: An auction platform where collectors get a chance to own — and sellers a chance at the highest bid — for hard-to-find merchandise.
 links:
   - { label: GitHub, href: https://github.com/Kernel360/F2-omocha-BE }
@@ -64,9 +65,3 @@ When 100 users bid at the same time, **multiple bids could succeed concurrently*
 - Used **Redisson `RLock`** so that, for a given auction item, **only one bid request acquires the lock** and proceeds.
 - Built a **`@DistributedLock` annotation** with custom `waitTime` / `leaseTime`, and used **AOP** to keep business logic clean and the lock reusable as a component.
 
-## Tech stacks
-
-- **Framework**: Spring · JPA · Next.js
-- **Database**: Amazon RDS (PostgreSQL) · Redis
-- **Server & Infra**: AWS · Vercel · GitHub Actions · RabbitMQ · Docker · Grafana & Prometheus
-- **Collaboration**: GitHub · Notion · Discord

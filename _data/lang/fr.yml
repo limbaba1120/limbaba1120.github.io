@@ -173,10 +173,10 @@ resume:
   title: CV
   button_name: CV
 
-# for project-list layout
-project-list:
-  title: Projet
-  button_name: Projet
+# for portfolio-list layout
+portfolio-list:
+  title: Portfolio
+  button_name: Portfolio
 
 # for privacy-policy layout
 privacy-policy:

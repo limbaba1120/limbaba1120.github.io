@@ -8,6 +8,7 @@ date: 2024-12-20
 period: 2024.09 - 2024.12 (3개월)
 role: 백엔드 (3) · 패스트캠퍼스 Kernel 360 팀프로젝트
 tags: [Java, Spring Boot, Spring Data JPA, PostgreSQL, Redis, AWS, Docker, RabbitMQ, WebSocket]
+hero: /assets/img/portfolio/omocha/hero.jpg
 summary: 판매자는 더 높은 가격을, 구매자는 소장 기회를 얻을 수 있는 한정판 굿즈 경매 거래 플랫폼.
 links:
   - { label: GitHub, href: https://github.com/Kernel360/F2-omocha-BE }
@@ -63,9 +64,3 @@ links:
 - **Redisson의 RLock**을 활용한 분산 락을 적용해, 특정 경매 상품에 대한 입찰 요청이 들어올 때 **하나의 요청만 락을 획득해 처리**하도록 제한했습니다.
 - `@DistributedLock` 어노테이션을 통해 `waitTime`(대기 시간)과 `leaseTime`(임대 시간)을 커스텀하고, **AOP**를 활용해 비즈니스 로직 코드의 복잡도를 줄이고 재사용 가능한 분산 락 컴포넌트로 만들었습니다.
 
-## TECH STACKS
-
-- **Framework**: Spring · JPA · Next.js
-- **Database**: Amazon RDS (PostgreSQL) · Redis
-- **Server & Infra**: AWS · Vercel · GitHub Actions · RabbitMQ · Docker · Grafana & Prometheus
-- **Collaboration**: GitHub · Notion · Discord

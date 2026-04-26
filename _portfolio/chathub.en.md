@@ -8,7 +8,8 @@ date: 2024-06-15
 period: 2024.03 - 2024.06 (3 months)
 role: Backend (2) · Kyonggi University team project
 tags: [Java, Spring Boot, JPA, MySQL, Naver Cloud Platform, Amazon Chime SDK, OAuth 2.0]
-permalink: /project/chathub/en/
+hero: /assets/img/portfolio/chathub/hero.jpg
+permalink: /portfolio/chathub/en/
 summary: A cloud-based coffee-chat service for developers, with real-time video chat built in.
 links:
   - { label: GitHub, href: https://github.com/24-1Capstone/backend }
@@ -45,9 +46,3 @@ Unlike the old habit of just following tutorials, actually using the tech in a r
 
 Going forward I want to work with more diverse teams across different projects, learn new technologies more deeply, and grow into a developer who improves quickly with each project.
 
-## Tech stacks
-
-- **Framework**: Spring · JPA · Next.js
-- **Database**: MySQL
-- **Server & Infra**: Vercel · Naver Cloud Platform · AWS
-- **Collaboration**: GitHub · Discord

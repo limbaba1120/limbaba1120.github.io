@@ -89,7 +89,7 @@ layout: default
           {% if p.role %}<p class="resume-item-sub">{{ p.role }}</p>{% endif %}
           {% if p.one_liner %}<p class="resume-project-desc">{{ p.one_liner }}</p>{% endif %}
           {% if p.tags and p.tags.size > 0 %}<p class="resume-tags">{% for tag in p.tags %}<span class="resume-tag">{{ tag }}</span>{% endfor %}</p>{% endif %}
-          {% if p.slug %}{%- assign project_url = '/project/' | append: p.slug | append: '/' -%}{% if lng == 'en' %}{%- assign project_url = project_url | append: 'en/' -%}{% endif %}<a class="resume-portfolio-link no-print" href="{{ site.baseurl }}{{ project_url }}">{{ t_portfolio_link }}</a>{% endif %}
+          {% if p.slug %}{%- assign portfolio_url = '/portfolio/' | append: p.slug | append: '/' -%}{% if lng == 'en' %}{%- assign portfolio_url = portfolio_url | append: 'en/' -%}{% endif %}<a class="resume-portfolio-link no-print" href="{{ site.baseurl }}{{ portfolio_url }}">{{ t_portfolio_link }}</a>{% endif %}
         </li>
       {% endfor %}
     </ul>
