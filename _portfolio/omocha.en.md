@@ -26,33 +26,39 @@ A trading platform for limited-edition goods that are hard to find through norma
 
 ## What I owned
 
-### 1. Real-time chat
+<section class="pf-contrib" markdown="1">
+
+### Real-time chat
 
 - Bi-directional client–server communication via **WebSocket + STOMP**
 - **RabbitMQ** as the message broker for traffic monitoring
 - Frontend connected via **SockJS** and **Stomp.js** on Next.js
 
-### 2. WebP conversion + S3 + CDN
+### WebP conversion + S3 + CDN
 
 - Converted existing JPEG / PNG to **WebP** (image size **−70%**)
 - Stored on **AWS S3** behind a **CDN**, cutting image content download time from **2s to 1s**
 
-### 3. Flyway-based database migration automation
+### Flyway-based database migration automation
 
 - Multiple devs editing the same table caused conflicts and per-environment schema drift
 - Introduced **Flyway** to manage schema changes as scripts with full history
 - Eliminated DB conflicts across developers and enabled consistent deployments
 
-### 4. User feedback loop
+### User feedback loop
 
 - Collected **50+ pieces** of user feedback via surveys
 - Prioritized and shipped **10+ improvements** through agile sprints
 
-### 5. Categories & auction CRUD
+### Categories & auction CRUD
 
 - Built CRUD APIs and category classification across the domain
 
+</section>
+
 ## Troubleshooting — Concurrent bidding race condition
+
+<section class="pf-trouble" markdown="1">
 
 ### The problem
 
@@ -64,4 +70,6 @@ When 100 users bid at the same time, **multiple bids could succeed concurrently*
 - Avoided pessimistic / optimistic locks at the Repository (infra) layer — they raise exceptions and waste server resources. Instead, introduced **Redis-based distributed locking** so the application layer can fail fast.
 - Used **Redisson `RLock`** so that, for a given auction item, **only one bid request acquires the lock** and proceeds.
 - Built a **`@DistributedLock` annotation** with custom `waitTime` / `leaseTime`, and used **AOP** to keep business logic clean and the lock reusable as a component.
+
+</section>
 

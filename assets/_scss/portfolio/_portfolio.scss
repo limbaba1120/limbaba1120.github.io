@@ -1,31 +1,33 @@
-// Portfolio page — long-form single page with TOC + inline blocks per project.
-// Inspired by https://resume.dongholab.com/portfolio/ko/ — content-first,
-// neutral grayscale, subtle navy accents, hero screenshot per project.
+// Portfolio page — single long-form page that mirrors the calm, content-first
+// feel of the blog post template. Same Pretendard / 760px reading width /
+// neutral grayscale + navy accent. Project blocks are typography-led; only
+// the project hero image and TOC keep small visual frames.
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
 
-$pf-ink:        #14171c; // primary text
-$pf-ink-soft:   #3a414b; // body text
-$pf-ink-muted:  #6b727b; // meta text
-$pf-line:       #e5e7ea; // hairline borders
-$pf-bg-soft:    #f7f8fa; // soft surface
-$pf-bg-hero:    #f1f3f6; // hero image backdrop
-$pf-accent:     #1e3a5f; // navy accent
-$pf-accent-2:   #2c4d77; // navy hover
+$pf-ink:        #1a1d23; // primary text  (matches post-style)
+$pf-ink-soft:   #3a414b;
+$pf-ink-muted:  #6b727b;
+$pf-line:       #e5e7ea;
+$pf-line-soft:  #eef0f3;
+$pf-bg-soft:    #f7f8fa;
+$pf-accent:     #1e3a5f;
+$pf-accent-2:   #2c4d77;
 
 $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont,
           "Apple SD Gothic Neo", "Noto Sans KR", "Roboto", sans-serif;
+$pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
 // =====================================================================
-// Page wrapper
+// Page container — same width as blog posts so reading rhythm is shared
 // =====================================================================
 .portfolio-page {
   font-family: $pf-font;
   color: $pf-ink-soft;
-  max-width: 920px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 4rem 1.5rem 6rem;
-  line-height: 1.7;
+  padding: 3rem 1.5rem 5rem;
+  line-height: 1.78;
 
   *, *::before, *::after { box-sizing: border-box; }
 
@@ -34,55 +36,35 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 }
 
 // =====================================================================
-// Hero header
+// Hero
 // =====================================================================
 .portfolio-hero {
-  text-align: left;
-  padding-bottom: 3rem;
+  padding-bottom: 2.25rem;
   border-bottom: 1px solid $pf-line;
-  margin-bottom: 3.5rem;
-
-  &-eyebrow {
-    font-size: .78rem;
-    color: $pf-accent;
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    font-weight: 700;
-    margin: 0 0 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: .55rem;
-
-    &::before {
-      content: "";
-      width: 1.4rem;
-      height: 2px;
-      background: $pf-accent;
-      border-radius: 2px;
-      display: inline-block;
-    }
-  }
+  margin-bottom: 3rem;
 
   &-title {
-    font-size: 3rem;
+    font-family: $pf-font;
+    font-size: 2.4rem;
     font-weight: 800;
     color: $pf-ink;
-    margin: 0 0 1.25rem;
+    margin: 0 0 1rem;
     letter-spacing: -.02em;
-    line-height: 1.1;
+    line-height: 1.2;
+    word-break: keep-all;
   }
 
   &-intro {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: $pf-ink-soft;
-    margin: 0 0 2rem;
-    max-width: 640px;
-    line-height: 1.7;
+    margin: 0 0 1.75rem;
+    line-height: 1.78;
+    word-break: keep-all;
   }
 
   &-actions {
     display: flex;
-    gap: .65rem;
+    gap: .55rem;
     flex-wrap: wrap;
   }
 }
@@ -90,49 +72,50 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 .portfolio-pill {
   display: inline-flex;
   align-items: center;
-  padding: .55rem 1.1rem;
+  gap: .15rem;
+  padding: .55rem 1.05rem;
   border-radius: 999px;
   background: $pf-accent;
-  color: #fff;
+  color: #fff !important;
   font-weight: 600;
   font-size: .9rem;
   border: 1px solid $pf-accent;
-  transition: background .15s, transform .15s;
+  transition: background .15s, transform .15s, color .15s;
 
   &:hover {
     background: $pf-accent-2;
-    color: #fff;
+    color: #fff !important;
     transform: translateY(-1px);
   }
 
-  i { margin-right: .15rem; }
+  i { margin-right: .25rem; }
 
   &-ghost {
     background: transparent;
-    color: $pf-accent;
+    color: $pf-accent !important;
     border-color: $pf-line;
 
     &:hover {
       background: $pf-bg-soft;
-      color: $pf-accent;
+      color: $pf-accent !important;
+      transform: none;
     }
   }
 }
 
 // =====================================================================
-// Overview (Projects · Primary stack · Focus areas)
+// Shared section labels (overview / approach / TOC) — actual heading size
 // =====================================================================
-// Shared label style (overview / approach / TOC labels)
 %pf-section-label {
-  font-size: .75rem;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  color: $pf-ink-muted;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: $pf-ink;
   margin: 0 0 1rem;
-  display: inline-flex;
+  letter-spacing: -.01em;
+  line-height: 1.35;
+  display: flex;
   align-items: center;
-  gap: .55rem;
+  gap: .6rem;
 
   &::before {
     content: "";
@@ -140,37 +123,39 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
     height: .42rem;
     background: $pf-accent;
     border-radius: 999px;
-    display: inline-block;
+    flex-shrink: 0;
   }
 }
 
+// =====================================================================
+// Overview (Projects · Stack · Focus)
+// =====================================================================
 .portfolio-overview {
-  margin-bottom: 3rem;
+  margin-bottom: 2.75rem;
 
   &-label { @extend %pf-section-label; }
 
   &-grid {
     display: grid;
-    grid-template-columns: minmax(140px, .8fr) 1.6fr 1.4fr;
-    gap: 1px;
+    grid-template-columns: minmax(120px, .7fr) 1.6fr 1.4fr;
+    gap: 0;
     margin: 0;
-    background: $pf-line;
-    border: 1px solid $pf-line;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 1px 2px rgba(20, 23, 28, .03);
+    border-top: 1px solid $pf-line;
+    border-bottom: 1px solid $pf-line;
   }
 
   &-stat {
-    background: #fff;
-    padding: 1.4rem 1.6rem;
+    padding: 1.1rem 1.25rem;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: .45rem;
+    gap: .35rem;
+    border-right: 1px solid $pf-line;
+
+    &:last-child { border-right: 0; }
 
     dt {
-      font-size: .72rem;
+      font-size: .7rem;
       text-transform: uppercase;
       letter-spacing: .12em;
       color: $pf-ink-muted;
@@ -179,7 +164,7 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 
     dd {
       margin: 0;
-      font-size: .96rem;
+      font-size: .94rem;
       color: $pf-ink;
       font-weight: 500;
       line-height: 1.55;
@@ -187,22 +172,22 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
   }
 
   &-num {
-    font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
-    font-size: 2.4rem;
+    font-family: $pf-mono;
+    font-size: 1.85rem;
     font-weight: 800;
     color: $pf-accent;
-    letter-spacing: -.025em;
+    letter-spacing: -.02em;
     line-height: 1;
     display: block;
-    margin-top: .25rem;
+    margin-top: .1rem;
   }
 }
 
 // =====================================================================
-// Engineering approach (numbered principles)
+// Approach (numbered principles) — minimal, no card frames
 // =====================================================================
 .portfolio-approach {
-  margin-bottom: 4rem;
+  margin-bottom: 3.25rem;
 
   &-label { @extend %pf-section-label; }
 
@@ -211,58 +196,45 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
     counter-reset: approach;
     padding: 0;
     margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   li {
     counter-increment: approach;
     position: relative;
-    padding: 1.5rem 1.6rem 1.5rem 4rem;
-    background: #fff;
-    border: 1px solid $pf-line;
-    border-radius: 12px;
-    transition: border-color .15s, box-shadow .15s, transform .15s;
+    padding: 1rem 0 1rem 3rem;
+    border-bottom: 1px solid $pf-line-soft;
 
-    &:hover {
-      border-color: rgba(30, 58, 95, .35);
-      box-shadow: 0 6px 18px rgba(20, 23, 28, .06);
-      transform: translateY(-1px);
-    }
+    &:last-child { border-bottom: 0; }
 
     &::before {
       content: counter(approach, decimal-leading-zero);
       position: absolute;
-      left: 1.4rem;
-      top: 1.55rem;
-      width: 2rem;
-      height: 2rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
-      font-size: .78rem;
+      left: 0;
+      top: 1.15rem;
+      font-family: $pf-mono;
+      font-size: .82rem;
       font-weight: 700;
       color: $pf-accent;
-      background: rgba(30, 58, 95, .08);
-      border-radius: 999px;
       letter-spacing: .04em;
     }
 
     h3 {
-      font-size: 1rem;
+      font-size: .98rem;
       font-weight: 700;
       color: $pf-ink;
-      margin: 0 0 .5rem;
-      line-height: 1.35;
+      margin: 0 0 .35rem;
+      line-height: 1.4;
     }
 
     p {
       margin: 0;
-      font-size: .9rem;
+      font-size: .92rem;
       color: $pf-ink-soft;
-      line-height: 1.65;
+      line-height: 1.7;
+      word-break: keep-all;
     }
   }
 }
@@ -271,10 +243,10 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 // TOC
 // =====================================================================
 .portfolio-toc {
-  margin-bottom: 4rem;
-  padding: 1.5rem 1.75rem;
+  margin-bottom: 3.25rem;
+  padding: 1.1rem 1.4rem;
   background: $pf-bg-soft;
-  border-radius: 12px;
+  border-radius: 10px;
 
   &-label { @extend %pf-section-label; }
 
@@ -283,7 +255,7 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
     padding: 0;
     margin: 0;
     display: grid;
-    gap: .35rem;
+    gap: .15rem;
   }
 
   li a {
@@ -291,21 +263,21 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
     grid-template-columns: auto 1fr auto;
     align-items: baseline;
     gap: 1rem;
-    padding: .55rem .25rem;
-    border-radius: 6px;
+    padding: .5rem .15rem;
+    border-radius: 5px;
     color: $pf-ink;
-    transition: background .15s;
+    transition: background .15s, color .15s;
 
     &:hover {
-      background: rgba(30, 58, 95, .06);
+      background: rgba(30, 58, 95, .07);
       color: $pf-accent;
       .portfolio-toc-num { color: $pf-accent; }
     }
   }
 
   &-num {
-    font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
-    font-size: .82rem;
+    font-family: $pf-mono;
+    font-size: .8rem;
     font-weight: 700;
     color: $pf-ink-muted;
     letter-spacing: .04em;
@@ -313,11 +285,12 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 
   &-title {
     font-weight: 600;
-    font-size: .98rem;
+    font-size: .94rem;
+    word-break: keep-all;
   }
 
   &-period {
-    font-size: .8rem;
+    font-size: .78rem;
     color: $pf-ink-muted;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
@@ -325,63 +298,65 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 }
 
 // =====================================================================
-// Project block
+// Project blocks
 // =====================================================================
 .portfolio-blocks {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 4.5rem;
 }
 
 .portfolio-block {
-  scroll-margin-top: 6rem;
+  scroll-margin-top: 5rem;
 
   &-head {
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
   }
 
   &-num {
-    font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
-    font-size: 1.05rem;
-    font-weight: 800;
+    font-family: $pf-mono;
+    font-size: .92rem;
+    font-weight: 700;
     letter-spacing: .1em;
     color: $pf-accent;
-    margin: 0 0 .65rem;
+    margin: 0 0 .55rem;
     display: inline-flex;
     align-items: center;
     gap: .55rem;
 
     &::after {
       content: "";
-      width: 2rem;
+      width: 1.6rem;
       height: 2px;
       background: $pf-accent;
       border-radius: 2px;
-      opacity: .55;
+      opacity: .6;
     }
   }
 
   &-meta {
-    font-size: .85rem;
+    font-size: .82rem;
     color: $pf-ink-muted;
-    margin: 0 0 .65rem;
+    margin: 0 0 .55rem;
     font-variant-numeric: tabular-nums;
   }
 
   &-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
     font-weight: 800;
     color: $pf-ink;
-    margin: 0 0 .85rem;
+    margin: 0 0 .75rem;
     letter-spacing: -.015em;
     line-height: 1.25;
+    word-break: keep-all;
   }
 
   &-summary {
-    font-size: 1.02rem;
+    font-size: .98rem;
     color: $pf-ink-soft;
-    margin: 0 0 1.25rem;
-    line-height: 1.6;
+    margin: 0 0 1rem;
+    line-height: 1.7;
+    word-break: keep-all;
   }
 
   &-stack {
@@ -390,12 +365,12 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: .35rem;
+    gap: .3rem;
 
     li {
-      font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
-      font-size: .76rem;
-      padding: .25rem .65rem;
+      font-family: $pf-mono;
+      font-size: .74rem;
+      padding: .2rem .55rem;
       background: $pf-bg-soft;
       color: $pf-ink-soft;
       border: 1px solid $pf-line;
@@ -404,111 +379,164 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
     }
   }
 
-  // Tags + inline links sit on the same flex row. Tags wrap; links snap right.
-  &-tagrow {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: .75rem 1rem;
-    margin-top: 0;
-  }
-
-  &-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .35rem;
-
-    a {
-      display: inline-flex;
-      align-items: center;
-      gap: .35rem;
-      padding: .3rem .8rem;
-      font-size: .82rem;
-      font-weight: 600;
-      color: $pf-accent;
-      background: rgba(30, 58, 95, .06);
-      border: 1px solid rgba(30, 58, 95, .14);
-      border-radius: 999px;
-      transition: background .15s, color .15s, border-color .15s;
-      white-space: nowrap;
-
-      &:hover {
-        background: $pf-accent;
-        color: #fff;
-        border-color: $pf-accent;
-      }
-
-      .fa { font-size: .9em; }
-    }
-  }
-
-  // Hero screenshot — sits between header and body, framed in a soft
-  // gradient panel so it reads as a "preview" not a content image.
+  // Hero screenshot — sits as a regular content image with a subtle frame.
+  // (Matches the calm look of inline blog post images.)
   &-hero {
-    margin: 0 0 2.75rem;
-    padding: 2.25rem 1.5rem;
-    background:
-      radial-gradient(circle at 30% 0%, rgba(30, 58, 95, .07) 0%, transparent 55%),
-      linear-gradient(135deg, $pf-bg-hero 0%, $pf-bg-soft 100%);
-    border: 1px solid $pf-line;
-    border-radius: 16px;
+    margin: 0 0 2.25rem;
     text-align: center;
 
     img {
       max-width: 100%;
-      max-height: 420px;
+      max-height: 380px;
       height: auto;
       width: auto;
       object-fit: contain;
       display: inline-block;
-      filter: drop-shadow(0 10px 24px rgba(20, 23, 28, .14));
+      border: 1px solid $pf-line;
+      border-radius: 10px;
+      background: $pf-bg-soft;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 1px 2px rgba(20, 23, 28, .04);
     }
   }
 
+  // -------------------------------------------------------------------
+  // Body — borrows the blog post typography rules (kept inline so we
+  // don't depend on .post-container being present here)
+  // -------------------------------------------------------------------
   &-body {
     color: $pf-ink-soft;
     font-size: 1rem;
-    line-height: 1.78;
+    line-height: 1.85;
 
+    p {
+      margin: 0 0 1.15rem;
+      word-break: keep-all;
+    }
+
+    // Lead paragraph — first paragraph after the first h2.
+    // Renders the "한 줄 소개" intro in a slightly emphasized style.
+    > h2:first-child + p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: $pf-ink;
+      margin-bottom: 1.5rem;
+    }
+
+    // Section heading — readable heading, hairline divider, navy dot accent.
     h2 {
       font-size: 1.18rem;
-      font-weight: 700;
+      font-weight: 800;
       color: $pf-ink;
-      margin: 2.75rem 0 .85rem;
-      padding-bottom: .55rem;
+      margin: 2.75rem 0 1rem;
+      padding-bottom: .6rem;
       border-bottom: 1px solid $pf-line;
       letter-spacing: -.005em;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      word-break: keep-all;
+
+      &::before {
+        content: "";
+        width: .4rem;
+        height: .4rem;
+        background: $pf-accent;
+        border-radius: 999px;
+        flex-shrink: 0;
+      }
+
       &:first-child { margin-top: 0; }
     }
 
+    // Subsection — clean strong title, no decoration by default.
     h3 {
-      font-size: 1.02rem;
+      font-size: 1.08rem;
       font-weight: 700;
       color: $pf-ink;
-      margin: 1.85rem 0 .55rem;
+      margin: 2rem 0 .65rem;
+      padding: 0;
+      line-height: 1.4;
+      letter-spacing: -.005em;
+      word-break: keep-all;
+    }
+
+    // "내가 기여한 부분" subsections — auto-numbered badge.
+    // Wrap with: <section class="pf-contrib" markdown="1"> ... </section>
+    .pf-contrib {
+      counter-reset: pf-contrib-step;
+
+      h3 {
+        counter-increment: pf-contrib-step;
+        position: relative;
+        padding-left: 3.2rem;
+
+        &::before {
+          content: counter(pf-contrib-step, decimal-leading-zero);
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          font-family: $pf-mono;
+          font-size: .78rem;
+          font-weight: 700;
+          color: $pf-accent;
+          background: rgba(30, 58, 95, .08);
+          border-radius: 4px;
+          padding: .18rem .45rem;
+          letter-spacing: .04em;
+          line-height: 1;
+        }
+      }
+    }
+
+    // "트러블 슈팅" subsections — left navy bar, no number.
+    // Wrap with: <section class="pf-trouble" markdown="1"> ... </section>
+    .pf-trouble {
+      h3 {
+        padding-left: 1rem;
+        border-left: 3px solid $pf-accent;
+      }
     }
 
     h4 {
       font-size: .95rem;
       font-weight: 600;
       color: $pf-ink;
-      margin: 1.25rem 0 .35rem;
+      margin: 1.25rem 0 .4rem;
     }
 
-    p { margin: 0 0 1rem; }
-
     ul, ol {
-      margin: 0 0 1rem;
+      margin: 0 0 1.2rem;
       padding-left: 1.4rem;
     }
 
-    li {
-      margin-bottom: .35rem;
-      &::marker { color: $pf-accent; }
+    // Bullets get a subtle navy square marker via ::before so they look
+    // less generic than the default disc.
+    ul > li {
+      position: relative;
+      list-style: none;
+      padding-left: .25rem;
+      margin-bottom: .45rem;
+      line-height: 1.78;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -1rem;
+        top: .7rem;
+        width: .35rem;
+        height: .35rem;
+        background: $pf-accent;
+        border-radius: 1px;
+      }
+    }
+
+    ol > li {
+      margin-bottom: .45rem;
+      line-height: 1.78;
+      &::marker { color: $pf-accent; font-weight: 700; }
     }
 
     strong {
@@ -516,23 +544,35 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
       font-weight: 700;
     }
 
+    a {
+      color: $pf-accent;
+      border-bottom: 1px solid rgba(30, 58, 95, .25);
+      font-weight: 500;
+      transition: color .15s, border-color .15s;
+      &:hover { color: $pf-accent-2; border-bottom-color: $pf-accent-2; }
+    }
+
     code {
-      font-family: "JetBrains Mono", "SF Mono", Menlo, monospace;
+      font-family: $pf-mono;
       font-size: .88em;
-      padding: .1em .4em;
+      padding: .1em .42em;
       background: $pf-bg-soft;
       border: 1px solid $pf-line;
       border-radius: 4px;
       color: $pf-ink;
+      font-weight: 500;
     }
 
-    pre {
+    pre,
+    pre.highlight,
+    .highlight pre {
       background: #1a1d23;
       color: #e6e9ef;
-      padding: 1rem 1.25rem;
-      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+      border-radius: 10px;
+      border: 1px solid #2a2e36;
       overflow-x: auto;
-      margin: 1rem 0 1.5rem;
+      margin: 1.1rem 0 1.6rem;
       font-size: .88rem;
       line-height: 1.65;
 
@@ -542,17 +582,18 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
         padding: 0;
         color: inherit;
         font-size: inherit;
+        font-weight: 400;
       }
     }
 
     blockquote {
       margin: 1.25rem 0;
-      padding: .75rem 1.1rem;
+      padding: .85rem 1.15rem;
       border-left: 3px solid $pf-accent;
       background: $pf-bg-soft;
-      color: $pf-ink-soft;
       border-radius: 0 6px 6px 0;
-
+      text-align: left;
+      word-break: keep-all;
       p:last-child { margin-bottom: 0; }
     }
 
@@ -569,21 +610,57 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
       border-collapse: collapse;
       margin: 1rem 0 1.5rem;
       font-size: .92rem;
-
       th, td {
         padding: .65rem .85rem;
         border-bottom: 1px solid $pf-line;
         text-align: left;
       }
-
-      th {
-        background: $pf-bg-soft;
-        font-weight: 700;
-        color: $pf-ink;
-      }
+      th { background: $pf-bg-soft; font-weight: 700; color: $pf-ink; }
     }
   }
 
+  // Tag chips on top, GitHub / external links on a separate row below.
+  // Stacked column keeps the link position consistent across projects
+  // regardless of how many tags wrap.
+  &-tagrow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .85rem;
+    margin-top: 0;
+  }
+
+  &-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .25rem .75rem;
+      font-size: .8rem;
+      font-weight: 600;
+      color: $pf-accent !important;
+      background: rgba(30, 58, 95, .06);
+      border: 1px solid rgba(30, 58, 95, .14);
+      border-radius: 999px;
+      transition: background .15s, color .15s, border-color .15s;
+      white-space: nowrap;
+
+      &:hover {
+        background: $pf-accent;
+        color: #fff !important;
+        border-color: $pf-accent;
+      }
+
+      .fa { font-size: .9em; }
+    }
+  }
 }
 
 .portfolio-empty {
@@ -593,14 +670,15 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 }
 
 // =====================================================================
-// Detail page (direct slug URL)
+// Detail page (direct slug URL) — reuses block-* classes from above
 // =====================================================================
 .portfolio-detail {
   font-family: $pf-font;
   color: $pf-ink-soft;
-  max-width: 800px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 5rem;
+  padding: 2.5rem 1.5rem 5rem;
+  line-height: 1.78;
 
   *, *::before, *::after { box-sizing: border-box; }
 
@@ -608,7 +686,7 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
   a:hover { color: $pf-accent-2; }
 
   &-back {
-    margin: 0 0 2rem;
+    margin: 0 0 1.75rem;
     a {
       font-size: .9rem;
       color: $pf-ink-muted;
@@ -618,29 +696,31 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 
   &-head {
     border-bottom: 1px solid $pf-line;
-    padding-bottom: 2rem;
-    margin-bottom: 2.5rem;
+    padding-bottom: 1.75rem;
+    margin-bottom: 2.25rem;
   }
 
   &-meta {
-    font-size: .85rem;
+    font-size: .82rem;
     color: $pf-ink-muted;
     margin: 0 0 .5rem;
   }
 
   &-title {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     font-weight: 800;
     color: $pf-ink;
-    margin: 0 0 .85rem;
+    margin: 0 0 .8rem;
     letter-spacing: -.02em;
     line-height: 1.2;
+    word-break: keep-all;
   }
 
   &-summary {
-    font-size: 1rem;
+    font-size: .98rem;
     color: $pf-ink-soft;
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.1rem;
+    word-break: keep-all;
   }
 }
 
@@ -648,48 +728,45 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 // Responsive
 // =====================================================================
 @media (max-width: 720px) {
-  .portfolio-page { padding: 2.5rem 1rem 4rem; }
+  .portfolio-page { padding: 2rem 1rem 3.5rem; }
 
   .portfolio-hero {
-    padding-bottom: 2rem;
-    margin-bottom: 2.5rem;
-    &-title { font-size: 2.2rem; }
-    &-intro { font-size: 1rem; }
-  }
-
-  .portfolio-toc {
-    padding: 1rem 1.1rem;
-    margin-bottom: 3rem;
-
-    li a {
-      grid-template-columns: auto 1fr;
-      gap: .65rem;
-    }
-    &-period { display: none; }
+    margin-bottom: 2.25rem;
+    &-title { font-size: 1.85rem; }
   }
 
   .portfolio-overview-grid {
     grid-template-columns: 1fr;
   }
-
-  .portfolio-approach ol {
-    grid-template-columns: 1fr;
-    gap: .75rem;
+  .portfolio-overview-stat {
+    border-right: 0;
+    border-bottom: 1px solid $pf-line;
+    &:last-child { border-bottom: 0; }
   }
 
-  .portfolio-blocks { gap: 4rem; }
+  .portfolio-toc { padding: .9rem 1rem;
+    li a {
+      grid-template-columns: auto 1fr;
+      gap: .55rem;
+    }
+    &-period { display: none; }
+  }
+
+  .portfolio-blocks { gap: 3.5rem; }
 
   .portfolio-block {
-    &-title { font-size: 1.55rem; }
-    &-hero {
-      padding: 1.25rem 1rem;
-      img { max-height: 280px; }
+    &-title { font-size: 1.45rem; }
+    &-hero img { max-height: 260px; padding: .65rem .75rem; }
+    &-body {
+      h2 { font-size: 1.08rem; margin-top: 2rem; }
+      h3 { font-size: .98rem; }
+      pre, .highlight pre { font-size: .82rem; padding: .9rem 1rem; }
     }
   }
 
   .portfolio-detail {
-    padding: 2rem 1rem 4rem;
-    &-title { font-size: 1.7rem; }
+    padding: 1.75rem 1rem 3.5rem;
+    &-title { font-size: 1.6rem; }
   }
 }
 
@@ -709,5 +786,5 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
   .portfolio-block-body h2 { break-after: avoid; }
   .portfolio-toc { display: none !important; }
   .portfolio-approach { display: none !important; }
-  .portfolio-block-hero { background: #fff; border: 1px solid $pf-line; }
+  .portfolio-block-hero img { background: #fff; }
 }

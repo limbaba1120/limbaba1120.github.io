@@ -26,15 +26,19 @@ A coffee-chat service for developers featuring real-time, cloud-based video call
 
 ## What I owned
 
-### 1. Real-time video chat
+<section class="pf-contrib" markdown="1">
+
+### Real-time video chat
 
 - Built a high-quality video chat experience with bi-directional audio/video using the **Amazon Chime SDK**
 - Designed the backend that creates and manages chat sessions via AWS Chime SDK's **Meeting / Attendee / Voice Connector APIs**
 
-### 2. Social login (Spring Security + OAuth 2.0)
+### Social login (Spring Security + OAuth 2.0)
 
 - Streamlined sign-up and login by integrating **GitHub OAuth**, which felt natural for a developer-focused product
 - Used Spring Security with the OAuth 2.0 client library
+
+</section>
 
 ## Reflection
 

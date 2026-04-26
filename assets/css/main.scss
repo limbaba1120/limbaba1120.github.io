@@ -229,11 +229,7 @@
 {% endif %}
 
 {% if about_page_exist %}
-  @import "about/about-style";
-
-  {% if site.data.conf.others.about.show_contacts and contacts_exist %}
-    @import "about/about-contact";
-  {% endif %}
+  @import "about/about-page";
 {% endif %}
 
 {% if post_exist %}

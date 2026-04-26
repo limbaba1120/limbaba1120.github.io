@@ -1,0 +1,260 @@
+// About page — typography-led, matches blog post reading width and Pretendard
+// rhythm. Hero with circular profile photo + name + subtitle, then markdown
+// body. No bootstrap row/col grid like the theme's old about-container.
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+$ab-ink:        #1a1d23;
+$ab-ink-soft:   #3a414b;
+$ab-ink-muted:  #6b727b;
+$ab-line:       #e5e7ea;
+$ab-line-soft:  #eef0f3;
+$ab-bg-soft:    #f7f8fa;
+$ab-accent:     #1e3a5f;
+$ab-accent-2:   #2c4d77;
+
+$ab-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont,
+          "Apple SD Gothic Neo", "Noto Sans KR", "Roboto", sans-serif;
+$ab-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+
+.about-page {
+  font-family: $ab-font;
+  color: $ab-ink-soft;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+  line-height: 1.85;
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  a {
+    color: $ab-accent;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(30, 58, 95, .25);
+    font-weight: 500;
+    transition: color .15s, border-color .15s;
+    &:hover { color: $ab-accent-2; border-bottom-color: $ab-accent-2; }
+  }
+
+  // -------------------------------------------------------------------
+  // Hero
+  // -------------------------------------------------------------------
+  &-head {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    padding-bottom: 2.25rem;
+    border-bottom: 1px solid $ab-line;
+    margin-bottom: 2.5rem;
+  }
+
+  &-photo {
+    flex-shrink: 0;
+    img {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid $ab-bg-soft;
+      box-shadow: 0 4px 14px rgba(20, 23, 28, .08);
+    }
+  }
+
+  &-headline {
+    min-width: 0;
+  }
+
+  &-eyebrow {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    color: $ab-accent;
+    font-weight: 700;
+    margin: 0 0 .55rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+
+    &::before {
+      content: "";
+      width: 1.4rem;
+      height: 2px;
+      background: $ab-accent;
+      border-radius: 2px;
+      display: inline-block;
+    }
+  }
+
+  &-name {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: $ab-ink;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+    margin: 0 0 .55rem;
+    word-break: keep-all;
+  }
+
+  &-role {
+    font-size: 1rem;
+    color: $ab-ink-soft;
+    margin: 0;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+
+  // -------------------------------------------------------------------
+  // Body — same rhythm as blog posts. Override theme's .markdown-style
+  // defaults that hurt readability.
+  // -------------------------------------------------------------------
+  &-body {
+    color: $ab-ink-soft;
+    font-family: $ab-font;
+
+    p, li {
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.85;
+      word-break: keep-all;
+    }
+
+    p { margin: 0 0 1.2rem; }
+
+    strong { color: $ab-ink; font-weight: 700; }
+
+    // Drop quote — opening line ("I'm an Agile Developing Backend
+    // Developer.") rendered as a pulled quote in the source.
+    blockquote {
+      margin: 0 0 2rem;
+      padding: 1.1rem 1.25rem;
+      border-left: 3px solid $ab-accent;
+      background: $ab-bg-soft;
+      border-radius: 0 8px 8px 0;
+      text-align: left;
+      word-break: keep-all;
+
+      p {
+        font-size: 1rem;
+        color: $ab-ink;
+        margin: 0 0 .4rem;
+        line-height: 1.7;
+        &:last-child { margin-bottom: 0; }
+      }
+
+      strong { color: $ab-ink; }
+    }
+
+    h2, h3, h4, h5, h6 {
+      font-family: $ab-font;
+      color: $ab-ink;
+      letter-spacing: -.005em;
+      word-break: keep-all;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid $ab-line;
+      &:first-child { margin-top: .5rem; }
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 2rem 0 .75rem;
+    }
+
+    // Source uses #### for "이런 걸 좋아합니다" / "더 보기" — render as
+    // small section headers with a soft accent.
+    h4 {
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: $ab-accent;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid $ab-line;
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+
+      &::before {
+        content: "";
+        width: .38rem;
+        height: .38rem;
+        background: $ab-accent;
+        border-radius: 999px;
+        display: inline-block;
+      }
+    }
+
+    ul, ol {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+    }
+
+    li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: .85rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: .85rem;
+        width: .38rem;
+        height: .38rem;
+        background: $ab-accent;
+        border-radius: 999px;
+      }
+    }
+
+    code {
+      font-family: $ab-mono;
+      font-size: .88em;
+      padding: .1em .4em;
+      background: $ab-bg-soft;
+      border: 1px solid $ab-line;
+      border-radius: 4px;
+      color: $ab-ink;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: $ab-line;
+      margin: 2.5rem 0;
+    }
+  }
+}
+
+// =====================================================================
+// Responsive
+// =====================================================================
+@media (max-width: 720px) {
+  .about-page {
+    padding: 2rem 1rem 3.5rem;
+
+    &-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding-bottom: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    &-photo img { width: 110px; height: 110px; }
+
+    &-name { font-size: 2rem; }
+
+    &-body {
+      h2 { font-size: 1.2rem; }
+      p, li { font-size: .96rem; }
+    }
+  }
+}

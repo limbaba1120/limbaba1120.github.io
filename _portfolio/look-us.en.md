@@ -26,28 +26,34 @@ A fashion community service for sharing daily outfits and discovering styles by 
 
 ## What I owned
 
-### 1. CI/CD pipeline and deployment automation
+<section class="pf-contrib" markdown="1">
+
+### CI/CD pipeline and deployment automation
 
 - Set up automated builds, tests, and deploys with **GitHub Actions**
 - Gradle build → ship JAR to remote server → restart the app
 - Hardened the web tier with HTTPS via **Nginx + OpenSSL**
 
-### 2. Social login (Spring Security + OAuth 2.0)
+### Social login (Spring Security + OAuth 2.0)
 
 - Implemented social login with Spring Security and the OAuth 2.0 client library
 - Streamlined sign-up and sign-in for an easier onboarding experience
 
-### 3. Image object and color extraction
+### Image object and color extraction
 
 - On upload, the server asynchronously calls **Vision API**
 - Identifies objects in images (shirts, pants, shoes) and extracts dominant colors (RGB)
 
-### 4. Collaboration and code quality
+### Collaboration and code quality
 
 - Maintained **70%+ test coverage** across Controller / Service / Repository layers to catch bugs early
 - Found bugs and built team rapport through **pair programming and code reviews**
 
+</section>
+
 ## Troubleshooting — instance crash from accumulating Docker images
+
+<section class="pf-trouble" markdown="1">
 
 ### The problem
 
@@ -64,4 +70,6 @@ sudo docker image prune -af --filter "until=24h"
 ```
 
 The memory-overload-driven instance crashes stopped after that.
+
+</section>
 

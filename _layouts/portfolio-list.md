@@ -65,7 +65,6 @@ layout: default
 
 <div class="portfolio-page">
   <header class="portfolio-hero">
-    <p class="portfolio-hero-eyebrow">{{ t_eyebrow }}</p>
     <h1 class="portfolio-hero-title">{{ t_title }}</h1>
     <p class="portfolio-hero-intro">{{ t_intro }}</p>
     <div class="portfolio-hero-actions no-print">

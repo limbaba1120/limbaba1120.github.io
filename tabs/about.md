@@ -1,7 +1,7 @@
 ---
 layout: about
 lng_pair: id_about
-img: ":about.jpg"
+img: /assets/img/default/profile.JPG
 ---
 
 > **I'm an Agile Developing Backend Developer.**

@@ -26,28 +26,34 @@ redirect_from:
 
 ## 내가 기여한 부분
 
-### 1. CI/CD 파이프라인 구축 및 배포 자동화
+<section class="pf-contrib" markdown="1">
+
+### CI/CD 파이프라인 구축 및 배포 자동화
 
 - **GitHub Actions** 활용한 자동 배포 (코드 빌드 · 테스트 · 배포 자동화)
 - Gradle 프로젝트 빌드 → JAR 파일 원격 서버 전송 → 서버 애플리케이션 재시작
 - **Nginx + OpenSSL** 으로 HTTPS 적용해 웹 보안 강화
 
-### 2. 소셜 로그인 (Spring Security + OAuth 2.0)
+### 소셜 로그인 (Spring Security + OAuth 2.0)
 
 - Spring Security 프레임워크와 OAuth 2.0 클라이언트 라이브러리로 소셜 로그인 구현
 - 사용자가 간편하게 가입·로그인할 수 있도록 사용자 경험 개선
 
-### 3. 이미지 객체 및 색상 추출
+### 이미지 객체 및 색상 추출
 
 - 이미지가 업로드되면 **비동기로 Vision API** 호출
 - 이미지에 포함된 객체(셔츠, 바지, 신발) 식별 + 색상(RGB) 추출
 
-### 4. 협업 및 코드 품질
+### 협업 및 코드 품질
 
 - Controller / Service / Repository 계층의 **테스트 커버리지 70% 이상** 유지로 잠재적 버그 사전 예방
 - 팀원들과 **페어 프로그래밍 + 코드 리뷰**로 버그를 발견하고 친밀도도 함께 높임
 
+</section>
+
 ## 트러블 슈팅 — Docker 이미지 누적으로 인스턴스 다운
+
+<section class="pf-trouble" markdown="1">
 
 ### 문제 상황
 
@@ -64,4 +70,6 @@ sudo docker image prune -af --filter "until=24h"
 ```
 
 이후 메모리 과부하로 인한 인스턴스 다운 현상이 해소되었습니다.
+
+</section>
 
