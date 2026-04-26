@@ -11,6 +11,7 @@ layout: default
   {%- assign t_eyebrow = 'Portfolio' -%}
   {%- assign t_title = 'Portfolio' -%}
   {%- assign t_intro = 'A walkthrough of three backend projects I shipped — each one anchored on a hard problem I owned end-to-end (real-time messaging, concurrent bidding, video chat infra). For every project the page covers the context, what I built, the trickiest bug, and what stuck with me.' -%}
+  {%- assign t_alt_preview = 'preview' -%}
   {%- assign t_resume = 'View resume →' -%}
   {%- assign t_switch = '한국어' -%}
   {%- assign t_index = 'Index' -%}
@@ -37,6 +38,7 @@ layout: default
   {%- assign t_eyebrow = '포트폴리오' -%}
   {%- assign t_title = 'Portfolio' -%}
   {%- assign t_intro = '실시간 메시징·동시 입찰·화상 채팅처럼 직접 부딪쳐가며 해결한 문제 중심으로 백엔드 프로젝트 3개를 정리한 페이지입니다. 각 프로젝트마다 맥락 → 내가 만든 것 → 가장 어려웠던 문제 → 회고를 한 흐름으로 볼 수 있습니다.' -%}
+  {%- assign t_alt_preview = '미리보기' -%}
   {%- assign t_resume = '이력서 보기 →' -%}
   {%- assign t_switch = 'English' -%}
   {%- assign t_index = '목차' -%}
@@ -161,7 +163,7 @@ layout: default
 
         {%- if p.hero %}
         <figure class="portfolio-block-hero">
-          <img src="{{ site.baseurl }}{{ p.hero }}" alt="{{ p.title }} 미리보기">
+          <img src="{{ site.baseurl }}{{ p.hero }}" alt="{{ p.title }} {{ t_alt_preview }}">
         </figure>
         {%- endif %}
 

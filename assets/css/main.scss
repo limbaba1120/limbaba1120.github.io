@@ -278,7 +278,7 @@
   @import "projects/project-container";
 {% endif %}
 
-{% if resume_page_exist or portfolio_page_exist %}
+{% if resume_page_exist %}
   @import "resume/resume";
   @import "resume/print";
 {% endif %}

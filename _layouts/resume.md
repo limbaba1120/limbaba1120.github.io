@@ -45,8 +45,6 @@ layout: default
         {%- if r.profile.contact.email %}<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:{{ r.profile.contact.email }}">{{ r.profile.contact.email }}</a></li>{% endif %}
         {%- if r.profile.contact.phone %}<li><i class="fa fa-phone" aria-hidden="true"></i> {{ r.profile.contact.phone }}</li>{% endif %}
         {%- if r.profile.contact.github %}<li><i class="fa fa-github" aria-hidden="true"></i> <a href="{{ r.profile.contact.github }}">{{ r.profile.contact.github | remove: 'https://' }}</a></li>{% endif %}
-        {%- if r.profile.contact.linkedin %}<li><i class="fa fa-linkedin" aria-hidden="true"></i> <a href="{{ r.profile.contact.linkedin }}">LinkedIn</a></li>{% endif %}
-        {%- if r.profile.contact.blog %}<li><i class="fa fa-globe" aria-hidden="true"></i> <a href="{{ r.profile.contact.blog }}">{{ r.profile.contact.blog | remove: 'https://' }}</a></li>{% endif %}
       </ul>
     </div>
     {%- if r.profile.photo %}

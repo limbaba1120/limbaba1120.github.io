@@ -2,14 +2,14 @@
 title: Look US — Fashion Community Service
 slug: look-us
 lang: en
-icon: camera
-accent: "#be185d"
 date: 2024-08-30
 period: 2024.07 - 2024.08 (1 month)
 role: Backend (4) · Fastcampus Kernel 360 team project
 tags: [Java, Spring Boot, JPA, MySQL, Redis, GCP, Nginx, Docker, GitHub Actions]
 hero: /assets/img/portfolio/look-us/hero.jpg
 permalink: /portfolio/look-us/en/
+redirect_from:
+  - /project/look-us/en/
 summary: A fashion community where users share their daily looks and discover styles by color.
 links:
   - { label: GitHub, href: https://github.com/Kernel360/E2E2-LOOK-US }

@@ -11,7 +11,7 @@ category: 기술세미나
 # multiple tag entries are possible
 tags: [HashAlgorithm, Kernel360, Backend]
 # thumbnail image for post
-img: "/Users/keonwoolim/Documents/my_blog/limbaba1120.github.io/_posts/images/해시알고리즘.png"
+img: "/assets/img/posts/해시알고리즘.png"
 # disable comments on this page
 #comments_disable: true
 

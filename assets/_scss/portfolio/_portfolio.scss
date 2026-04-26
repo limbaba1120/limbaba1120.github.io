@@ -93,7 +93,7 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
   padding: .55rem 1.1rem;
   border-radius: 999px;
   background: $pf-accent;
-  color: #fff !important;
+  color: #fff;
   font-weight: 600;
   font-size: .9rem;
   border: 1px solid $pf-accent;
@@ -101,7 +101,7 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 
   &:hover {
     background: $pf-accent-2;
-    color: #fff !important;
+    color: #fff;
     transform: translateY(-1px);
   }
 
@@ -109,12 +109,12 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 
   &-ghost {
     background: transparent;
-    color: $pf-accent !important;
+    color: $pf-accent;
     border-color: $pf-line;
 
     &:hover {
       background: $pf-bg-soft;
-      color: $pf-accent !important;
+      color: $pf-accent;
     }
   }
 }
@@ -293,12 +293,12 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
     gap: 1rem;
     padding: .55rem .25rem;
     border-radius: 6px;
-    color: $pf-ink !important;
+    color: $pf-ink;
     transition: background .15s;
 
     &:hover {
       background: rgba(30, 58, 95, .06);
-      color: $pf-accent !important;
+      color: $pf-accent;
       .portfolio-toc-num { color: $pf-accent; }
     }
   }
@@ -429,7 +429,7 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
       padding: .3rem .8rem;
       font-size: .82rem;
       font-weight: 600;
-      color: $pf-accent !important;
+      color: $pf-accent;
       background: rgba(30, 58, 95, .06);
       border: 1px solid rgba(30, 58, 95, .14);
       border-radius: 999px;
@@ -438,7 +438,7 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
 
       &:hover {
         background: $pf-accent;
-        color: #fff !important;
+        color: #fff;
         border-color: $pf-accent;
       }
 
@@ -611,8 +611,8 @@ $pf-font: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont
     margin: 0 0 2rem;
     a {
       font-size: .9rem;
-      color: $pf-ink-muted !important;
-      &:hover { color: $pf-accent !important; }
+      color: $pf-ink-muted;
+      &:hover { color: $pf-accent; }
     }
   }
 

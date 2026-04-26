@@ -2,14 +2,14 @@
 title: OMOCHA — Limited-edition Goods Auction
 slug: omocha
 lang: en
-icon: gavel
-accent: "#b45309"
 date: 2024-12-20
 period: 2024.09 - 2024.12 (3 months)
 role: Backend (3) · Fastcampus Kernel 360 team project
 tags: [Java, Spring Boot, Spring Data JPA, PostgreSQL, Redis, AWS, Docker, RabbitMQ, WebSocket]
 hero: /assets/img/portfolio/omocha/hero.jpg
 permalink: /portfolio/omocha/en/
+redirect_from:
+  - /project/omocha/en/
 summary: An auction platform where collectors get a chance to own — and sellers a chance at the highest bid — for hard-to-find merchandise.
 links:
   - { label: GitHub, href: https://github.com/Kernel360/F2-omocha-BE }

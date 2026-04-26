@@ -1,5 +1,6 @@
 ---
 layout: resume
+lng_pair: id_Resume
 permalink: /resume/
 title: Resume
 lang: ko

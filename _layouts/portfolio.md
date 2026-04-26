@@ -7,9 +7,11 @@ layout: default
 
 {%- if lng == 'en' -%}
   {%- assign t_back = '← Back to portfolio' -%}
+  {%- assign t_alt_preview = 'preview' -%}
   {%- assign back_url = '/portfolio/en/' -%}
 {%- else -%}
   {%- assign t_back = '← 포트폴리오로' -%}
+  {%- assign t_alt_preview = '미리보기' -%}
   {%- assign back_url = '/portfolio/' -%}
 {%- endif -%}
 
@@ -45,7 +47,7 @@ layout: default
 
   {%- if page.hero %}
   <figure class="portfolio-block-hero">
-    <img src="{{ site.baseurl }}{{ page.hero }}" alt="{{ page.title }} 미리보기">
+    <img src="{{ site.baseurl }}{{ page.hero }}" alt="{{ page.title }} {{ t_alt_preview }}">
   </figure>
   {%- endif %}
 

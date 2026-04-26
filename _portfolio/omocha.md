@@ -2,8 +2,6 @@
 title: OMOCHA — 굿즈 경매 서비스
 slug: omocha
 lang: ko
-icon: gavel
-accent: "#b45309"
 date: 2024-12-20
 period: 2024.09 - 2024.12 (3개월)
 role: 백엔드 (3) · 패스트캠퍼스 Kernel 360 팀프로젝트
@@ -12,6 +10,9 @@ hero: /assets/img/portfolio/omocha/hero.jpg
 summary: 판매자는 더 높은 가격을, 구매자는 소장 기회를 얻을 수 있는 한정판 굿즈 경매 거래 플랫폼.
 links:
   - { label: GitHub, href: https://github.com/Kernel360/F2-omocha-BE }
+permalink: /portfolio/omocha/
+redirect_from:
+  - /project/omocha/
 ---
 
 ## 한 줄 소개

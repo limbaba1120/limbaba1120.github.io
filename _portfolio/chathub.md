@@ -2,8 +2,6 @@
 title: ChatHub — 화상채팅이 가능한 커피챗 서비스
 slug: chathub
 lang: ko
-icon: video-camera
-accent: "#0e7490"
 date: 2024-06-15
 period: 2024.03 - 2024.06 (3개월)
 role: 백엔드 (2) · 경기대학교 팀프로젝트
@@ -12,6 +10,9 @@ hero: /assets/img/portfolio/chathub/hero.jpg
 summary: 개발자들이 온라인에서 간편하게 커피챗 상대를 찾고, 실시간 화상채팅이 가능한 커피챗 서비스.
 links:
   - { label: GitHub, href: https://github.com/24-1Capstone/backend }
+permalink: /portfolio/chathub/
+redirect_from:
+  - /project/chathub/
 ---
 
 ## 한 줄 소개

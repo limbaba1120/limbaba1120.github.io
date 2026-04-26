@@ -2,8 +2,6 @@
 title: Look US — 패션 커뮤니티 서비스
 slug: look-us
 lang: ko
-icon: camera
-accent: "#be185d"
 date: 2024-08-30
 period: 2024.07 - 2024.08 (1개월)
 role: 백엔드 (4) · 패스트캠퍼스 Kernel 360 팀프로젝트
@@ -12,6 +10,9 @@ hero: /assets/img/portfolio/look-us/hero.jpg
 summary: 데일리룩을 공유하고 색상을 통해 원하는 패션 스타일을 찾는 패션 커뮤니티.
 links:
   - { label: GitHub, href: https://github.com/Kernel360/E2E2-LOOK-US }
+permalink: /portfolio/look-us/
+redirect_from:
+  - /project/look-us/
 ---
 
 ## 한 줄 소개

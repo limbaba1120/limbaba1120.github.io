@@ -1,5 +1,6 @@
 ---
 layout: portfolio-list
+lng_pair: id_Portfolio
 permalink: /portfolio/
 title: Portfolio
 lang: ko
