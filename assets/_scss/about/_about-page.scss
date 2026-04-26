@@ -167,7 +167,8 @@ $ab-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     }
 
     // Source uses #### for "이런 걸 좋아합니다" / "더 보기" — render as
-    // small section headers with a soft accent.
+    // a quiet small-caps section header. No bullet dot — list bullets
+    // below align to the same left edge as the heading text.
     h4 {
       font-size: .82rem;
       text-transform: uppercase;
@@ -177,18 +178,6 @@ $ab-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
       margin: 2.5rem 0 1rem;
       padding-bottom: .5rem;
       border-bottom: 1px solid $ab-line;
-      display: inline-flex;
-      align-items: center;
-      gap: .55rem;
-
-      &::before {
-        content: "";
-        width: .38rem;
-        height: .38rem;
-        background: $ab-accent;
-        border-radius: 999px;
-        display: inline-block;
-      }
     }
 
     ul, ol {

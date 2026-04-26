@@ -14,7 +14,7 @@ layout: default
   <header class="about-page-head">
     {%- if photo %}
     <div class="about-page-photo">
-      <img src="{{ site.baseurl }}{{ photo }}" alt="{{ owner.brand }}">
+      <img src="{{ site.baseurl }}{{ photo }}" alt="{{ owner.brand }}" loading="lazy" decoding="async">
     </div>
     {% endif -%}
     <div class="about-page-headline">

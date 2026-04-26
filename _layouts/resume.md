@@ -54,7 +54,7 @@ layout: default
     </div>
     {%- if r.profile.photo %}
     <div class="resume-header-photo">
-      <img src="{{ site.baseurl }}{{ r.profile.photo }}" alt="{{ r.profile.name }}">
+      <img src="{{ site.baseurl }}{{ r.profile.photo }}" alt="{{ r.profile.name }}" loading="lazy" decoding="async">
     </div>
     {% endif -%}
   </header>

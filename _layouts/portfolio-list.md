@@ -162,7 +162,7 @@ layout: default
 
         {%- if p.hero %}
         <figure class="portfolio-block-hero">
-          <img src="{{ site.baseurl }}{{ p.hero }}" alt="{{ p.title }} {{ t_alt_preview }}">
+          <img src="{{ site.baseurl }}{{ p.hero }}" alt="{{ p.title }} {{ t_alt_preview }}" loading="lazy" decoding="async">
         </figure>
         {%- endif %}
 

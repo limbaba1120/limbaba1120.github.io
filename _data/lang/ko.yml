@@ -1,0 +1,238 @@
+# Mr. Green Jekyll Theme (https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme)
+# Copyright (c) 2022 Mr. Green's Workshop https://www.MrGreensWorkshop.com
+# Licensed under MIT
+#
+# Korean (ko) UI labels for limbaba1120.github.io.
+
+lng:
+  name: 한국어
+  code: ko
+  country: KR
+  switch_title: 한
+  offer:
+    title: 언어
+    msg_page: 이 페이지를 한국어로 보기.
+    msg_site: 홈으로
+
+date:
+  long: "%Y년 %-m월 %-d일"
+  day: "%d"
+  year: "%Y"
+  months: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+
+not_found:
+  header: 페이지를 찾을 수 없습니다
+  line1: 요청하신 페이지를 찾을 수 없습니다.
+  line2: 메뉴 또는 사이트 검색을 이용해 보세요.
+
+no_translation_tooltip: 번역 없음
+
+navigation:
+  contact_header: 연락처
+  side_navigation_button: 사이드 메뉴
+  scroll_back_to_top: 맨 위로
+
+color_scheme_switch_tooltip: 컬러 스킴
+
+search:
+  placeholder: 검색
+  noResultText: 검색 결과가 없습니다.
+
+image_viewer:
+  load_error: 이미지를 불러올 수 없습니다.
+
+copyright:
+  additional_text: " 모든 권리 보유."
+
+creative_commons:
+  some_rights_reserved: 일부 권리 보유.
+  by: 별도로 명시되지 않은 한, 이 웹사이트의 콘텐츠는 Creative Commons Attribution 4.0 International License 에 따라 이용 가능합니다.
+  by-nd: 별도로 명시되지 않은 한, 이 웹사이트의 콘텐츠는 Creative Commons Attribution-NoDerivatives 4.0 International License 에 따라 이용 가능합니다.
+  by-sa: 별도로 명시되지 않은 한, 이 웹사이트의 콘텐츠는 Creative Commons Attribution-ShareAlike 4.0 International License 에 따라 이용 가능합니다.
+  by-nc: 별도로 명시되지 않은 한, 이 웹사이트의 콘텐츠는 Creative Commons Attribution-NonCommercial 4.0 International License 에 따라 이용 가능합니다.
+  by-nc-nd: 별도로 명시되지 않은 한, 이 웹사이트의 콘텐츠는 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License 에 따라 이용 가능합니다.
+  by-nc-sa: 별도로 명시되지 않은 한, 이 웹사이트의 콘텐츠는 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License 에 따라 이용 가능합니다.
+
+# for 404 layout
+not-found:
+  title: "404"
+
+# for post layout
+post:
+  read_time:
+    unit: "분"
+    text: " 소요"
+    word_char: c
+    per_minute: 600
+  pager_buttons:
+    older_post: "← 이전 글"
+    newer_post: "다음 글 →"
+    first_post: 처음
+    last_post: 끝
+  comments:
+    noscript: 댓글을 보려면 JavaScript 를 활성화해 주세요.
+    disqus:
+      count_title: 댓글
+      click_to_load: "댓글 불러오기"
+      consent:
+        title: 댓글 (Disqus.com)
+        text: >
+          댓글 기능은 외부 서비스에서 제공됩니다. 외부 콘텐츠를 표시하면
+          $terms 와 $privacy_policy 에 동의하는 것입니다.
+          <br>타겟 광고를 거부하려면 $settings_link 를 열고 "opt-out" 버튼을 누른 뒤 닫고
+          다시 이 페이지로 돌아와 댓글을 불러오세요.
+        terms_link_text: 이용약관
+        privacy_link_text: 개인정보 처리방침
+        settings_link_text: 이 링크
+        button:
+          load_once: 이번만 보기
+          load_and_do_not_ask_again: 항상 보기
+  table_of_contents:
+    heading: 목차
+    tooltip:
+      move: 드래그해서 이동
+      close: 닫기
+  share:
+    heading: 공유하기
+    link_copied: 링크가 복사되었습니다!
+    tooltip:
+      twitter: Twitter
+      facebook: Facebook
+      telegram: Telegram
+      linkedin: LinkedIn
+      email: 이메일
+      copy_link: 링크 복사
+
+# for post-list layout
+post-list:
+  title: 블로그
+  button_name: 블로그
+  upside_down_tabs:
+    tab:
+      all: 전체
+      categories: 카테고리
+      tags: 태그
+      years: 연도
+      clear: 비우기
+      close: 닫기
+      tooltip:
+        clear: 비우기
+        close: 닫기
+    msg:
+      property_list:
+        tags: 태그
+        category: 카테고리
+        year: 연도
+      resultFoundTitleFormat: "{property} : {thumb}"
+
+# for home layout
+home:
+  title: Home
+  button_name: 홈
+  new_posts_title: 새 글
+  new_posts_show_more_button: 더 보기 ...
+
+# for archives layout
+archives:
+  title: 보관
+  button_name: 보관
+  page_header: 보관함
+
+# for about layout
+about:
+  title: About
+  button_name: About
+  email_title: 이메일
+
+# for links layout
+links:
+  title: 링크
+  button_name: 링크
+  link_text: 사이트
+  info_text: 정보
+
+# for projects layout
+projects:
+  title: 프로젝트
+  button_name: 프로젝트
+  read_more_text: 더 보기
+  read_less_text: 접기
+
+# for resume layout
+resume:
+  title: 이력서
+  button_name: 이력서
+
+# for portfolio-list layout
+portfolio-list:
+  title: 포트폴리오
+  button_name: 포트폴리오
+
+# for privacy-policy layout
+privacy-policy:
+  title: &privacy_policy_title 개인정보 처리방침
+
+# constants to be replaced for
+constants:
+  greetings: 안녕하세요 임건우 입니다.
+  welcome: 환영합니다
+
+
+# for contact form
+contact_form:
+  button_name: 문의 폼
+  formLoadingText: 문의 폼을 불러오는 중...
+
+# for cookie consent
+cookie_consent:
+  privacy_policy_link_text: *privacy_policy_title
+  side_nav_setting_button_tooltip: &cookie_settings 쿠키 설정
+  panel_bar:
+    msg: >
+      이 웹사이트는 사이트 기능 최적화를 위해 쿠키를 사용합니다.
+      동의해 주셔야 활성화됩니다.
+    privacy_msg: $privacy_link 를 확인해 주세요.
+    buttons:
+      accept: &accept_button 모두 허용
+      settings: 사용자 설정
+      deny: &deny_button 거부
+      close: 닫기
+  panel_settings:
+    title: *cookie_settings
+    msg: >
+      이 웹사이트는 사이트 기능 최적화를 위해 쿠키를 사용합니다.
+      동의해 주셔야 활성화됩니다. 쿠키 정책을 보려면 아래 항목을 클릭하세요.
+    privacy_msg: $privacy_link 를 확인해 주세요.
+    buttons:
+      accept: *accept_button
+      save: 선택만 허용
+      deny: *deny_button
+    always_active: 항상 활성
+    consent_types:
+      necessary:
+        title: 필수 쿠키
+        info: >
+          이 쿠키는 사이트 기본 기능에 필요해 비활성화할 수 없습니다.
+          색상 테마 같은 기능을 변경할 때 설정됩니다.
+          개인 식별 정보를 저장하지 않습니다.
+          $gtag_info
+      analytics:
+        title: 성능 쿠키
+        info: $gtag_info
+      preferences:
+        title: 기능 쿠키
+        info: $gtag_info
+      advertising:
+        title: 타겟·광고 쿠키
+        info: $gtag_info
+    gtag_info:
+      ad_storage: >
+        광고 관련 저장(쿠키 등)을 활성화합니다.
+      analytics_storage: >
+        분석 관련 저장(쿠키 등) — 예: 방문 시간 측정 — 을 활성화합니다.
+      functionality_storage: >
+        사이트·앱 기능을 지원하는 저장 — 예: 언어 설정 — 을 활성화합니다.
+      personalization_storage: >
+        개인화 관련 저장 — 예: 영상 추천 — 을 활성화합니다.
+      security_storage: >
+        보안 관련 저장 — 예: 인증, 사기 방지 등 사용자 보호 — 을 활성화합니다.
