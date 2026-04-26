@@ -74,6 +74,20 @@ layout: default
   </section>
   {% endif -%}
 
+  {%- if r.skills %}
+  <section class="resume-section">
+    <h2 class="resume-section-title">{{ t_skills }}</h2>
+    <dl class="resume-skills">
+      {% for pair in r.skills %}
+        <dt>{{ pair[0] }}</dt>
+        <dd>
+          {% for skill in pair[1] %}<span class="resume-tag">{{ skill }}</span>{% endfor %}
+        </dd>
+      {% endfor %}
+    </dl>
+  </section>
+  {% endif -%}
+
   {%- if r.projects and r.projects.size > 0 %}
   <section class="resume-section">
     <h2 class="resume-section-title">{{ t_projects }}</h2>
@@ -124,20 +138,6 @@ layout: default
         {% if e.notes %}<p class="resume-notes">{{ e.notes }}</p>{% endif %}
       </div>
     {% endfor %}
-  </section>
-  {% endif -%}
-
-  {%- if r.skills %}
-  <section class="resume-section">
-    <h2 class="resume-section-title">{{ t_skills }}</h2>
-    <dl class="resume-skills">
-      {% for pair in r.skills %}
-        <dt>{{ pair[0] }}</dt>
-        <dd>
-          {% for skill in pair[1] %}<span class="resume-tag">{{ skill }}</span>{% endfor %}
-        </dd>
-      {% endfor %}
-    </dl>
   </section>
   {% endif -%}
 

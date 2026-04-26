@@ -62,9 +62,13 @@
     break-inside: avoid;
   }
 
-  // Avoid awkward breaks
-  .resume-section,
+  // Avoid awkward breaks — only at the *item* level so a long section
+  // (e.g. 주요 프로젝트) can flow across pages, but individual cards stay
+  // together. `.resume-section` itself must NOT have break-inside: avoid
+  // — otherwise a tall section gets pushed wholesale to the next page,
+  // leaving page 1 half-empty.
   .resume-item,
+  .resume-project-card,
   .resume-cert-list > li {
     break-inside: avoid;
     page-break-inside: avoid;
@@ -72,6 +76,11 @@
   .resume .resume-section-title {
     break-after: avoid;
     page-break-after: avoid;
+  }
+  // Prevent orphaned headings / single trailing lines.
+  .resume {
+    orphans: 3;
+    widows: 3;
   }
 
   // Hide photo shadow in print
