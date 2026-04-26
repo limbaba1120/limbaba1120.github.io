@@ -175,6 +175,10 @@
   @import "common/markdown-style";
 {% endif %}
 
+{% if post_exist or about_page_exist or portfolio_page_exist or resume_page_exist %}
+  @import "common/typography";
+{% endif %}
+
 {% if post_exist and site.data.conf.posts.pager_navigation_post != nil %}
   {% assign post_pager_enable = true %}
 {% endif %}
@@ -228,7 +232,7 @@
   @import "home/new-posts";
 {% endif %}
 
-{% if about_page_exist %}
+{% if about_page_exist or home_page_exist %}
   @import "about/about-page";
 {% endif %}
 

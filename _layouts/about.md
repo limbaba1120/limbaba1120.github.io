@@ -20,10 +20,6 @@ layout: default
     <div class="about-page-headline">
       <p class="about-page-eyebrow">About</p>
       <h1 class="about-page-name" translate="no">{{ owner.brand }}</h1>
-      {%- if owner.about.sub_title %}
-        {%- assign sub = owner.about.sub_title | replace: site.data.conf.main.sample_replace, site.data.lang[lng].constants.sample -%}
-        <p class="about-page-role">{{ sub }}</p>
-      {% endif -%}
     </div>
   </header>
 

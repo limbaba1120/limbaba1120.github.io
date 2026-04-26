@@ -3,7 +3,7 @@
 // neutral grayscale + navy accent. Project blocks are typography-led; only
 // the project hero image and TOC keep small visual frames.
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+// Pretendard font is loaded centrally via assets/_scss/common/_typography.scss
 
 $pf-ink:        #1a1d23; // primary text  (matches post-style)
 $pf-ink-soft:   #3a414b;

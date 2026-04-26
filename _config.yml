@@ -22,8 +22,7 @@ baseurl: ""
 ###########################################################
 collections:
   portfolio:
-    output: true
-    permalink: /portfolio/:path/
+    output: false  # long-form 메인 페이지(/portfolio/)에 모든 내용 노출, 슬러그별 디테일 페이지 비활성
 
 ###########################################################
 # Front Matter Defaults (https://jekyllrb.com/docs/configuration/front-matter-defaults/)

@@ -14,9 +14,11 @@ layout: default
   {%- assign t_certifications = 'Certifications' -%}
   {%- assign t_languages = 'Languages' -%}
   {%- assign t_print = 'Save as PDF' -%}
+  {%- assign t_download = 'Download PDF' -%}
   {%- assign t_switch = '한국어' -%}
   {%- assign t_portfolio_link = 'View details →' -%}
   {%- assign other_url = '/resume/' -%}
+  {%- assign pdf_url = '/assets/files/resume.en.pdf' -%}
 {%- else -%}
   {%- assign t_experience = '경력' -%}
   {%- assign t_projects = '주요 프로젝트' -%}
@@ -25,13 +27,16 @@ layout: default
   {%- assign t_certifications = '자격증' -%}
   {%- assign t_languages = '언어' -%}
   {%- assign t_print = 'PDF로 저장' -%}
+  {%- assign t_download = 'PDF 다운로드' -%}
   {%- assign t_switch = 'English' -%}
   {%- assign t_portfolio_link = '상세 보기 →' -%}
   {%- assign other_url = '/resume/en/' -%}
+  {%- assign pdf_url = '/assets/files/resume.ko.pdf' -%}
 {%- endif -%}
 
 <div class="resume-actions no-print">
-  <button type="button" class="resume-btn resume-btn-primary" onclick="window.print()"><i class="fa fa-download" aria-hidden="true"></i>&nbsp;{{ t_print }}</button>
+  <a class="resume-btn resume-btn-primary" href="{{ site.baseurl }}{{ pdf_url }}" download><i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp;{{ t_download }}</a>
+  <button type="button" class="resume-btn" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;{{ t_print }}</button>
   <a class="resume-btn" href="{{ site.baseurl }}{{ other_url }}"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;{{ t_switch }}</a>
 </div>
 
@@ -117,7 +122,7 @@ layout: default
           {% endif %}
           <p class="resume-project-links">
             {% if p.repo %}<a href="{{ p.repo }}" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i> {{ p.repo | remove: 'https://' }}</a>{% endif %}
-            {% if p.slug %}{%- assign portfolio_url = '/portfolio/' | append: p.slug | append: '/' -%}{% if lng == 'en' %}{%- assign portfolio_url = portfolio_url | append: 'en/' -%}{% endif %}<a class="resume-portfolio-link no-print" href="{{ site.baseurl }}{{ portfolio_url }}">{{ t_portfolio_link }}</a>{% endif %}
+            {% if p.slug %}{%- if lng == 'en' %}{%- assign portfolio_url = '/portfolio/en/#' | append: p.slug -%}{% else %}{%- assign portfolio_url = '/portfolio/#' | append: p.slug -%}{% endif %}<a class="resume-portfolio-link no-print" href="{{ site.baseurl }}{{ portfolio_url }}">{{ t_portfolio_link }}</a>{% endif %}
           </p>
         </li>
       {% endfor %}

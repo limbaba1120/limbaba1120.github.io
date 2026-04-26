@@ -1,0 +1,4 @@
+// Centralized typography fonts for new pages (post / portfolio / about / resume).
+// One @import url() so the compiled CSS doesn't repeat it across multiple files.
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
