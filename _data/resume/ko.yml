@@ -19,24 +19,74 @@ experience: []
 projects:
   - slug: omocha
     name: 굿즈 경매 서비스 [OMOCHA]
-    one_liner: 구하기 어려운 한정판 굿즈를 경매로 사고팔 수 있는 종합 거래 플랫폼
+    one_liner: 구하기 어려운 한정판 굿즈를 경매로 사고팔 수 있는 종합 거래 플랫폼.
     period: 2024.09 - 2024.12 (3개월)
-    role: 백엔드 (3명) · 패스트캠퍼스 Kernel 360 팀프로젝트
+    role: 패스트캠퍼스 Kernel 360 (팀프로젝트)
+    team: 백엔드 3명 / 프론트엔드 2명
+    repo: https://github.com/Kernel360/F2-omocha-BE
     tags: [Java, Spring Boot, Spring Data JPA, PostgreSQL, Redis, AWS, Docker, WebSocket]
+    contributions:
+      - heading: 실시간 채팅 구현
+        points:
+          - WebSocket 및 STOMP 프로토콜로 클라이언트–서버 간 양방향 통신 구현
+          - RabbitMQ 메시지 브로커로 메시지 흐름 모니터링
+      - heading: 이미지 WebP 변환 후 S3 저장
+        points:
+          - 기존 JPEG / PNG 이미지를 WebP 형식으로 변환 (용량 70% 이상 감소)
+          - AWS S3 저장 + CDN 도입으로 콘텐츠 다운로드 시간 50% 이상 단축
+      - heading: Flyway 로 데이터 마이그레이션 자동화
+        points:
+          - 운영 환경에서 같은 테이블을 여러 명이 수정할 때 충돌·환경별 스키마 불일치 발생
+          - Flyway 로 DB 스키마 변경을 스크립트로 관리, 히스토리 추적, 일관된 배포
+      - heading: 동시 입찰의 동시성 문제 해결
+        points:
+          - 100명 동시 입찰 시뮬레이션 테스트 작성 → 비관적/낙관적 락 대신 Redisson 기반 분산 락 도입
+          - "@DistributedLock 어노테이션 + AOP 로 비즈니스 로직과 분리된 재사용 가능한 락 컴포넌트 구현"
+      - heading: 카테고리 / 경매 게시글 CRUD
+        points:
+          - 도메인 전반 CRUD API 와 카테고리 분류 로직 구현
 
   - slug: look-us
     name: 패션 커뮤니티 서비스 [Look US]
-    one_liner: 데일리룩을 공유하고 색상을 통해 원하는 패션 스타일을 찾는 패션 커뮤니티
+    one_liner: 데일리룩을 공유하고 색상을 통해 원하는 패션 스타일을 찾는 패션 커뮤니티.
     period: 2024.07 - 2024.08 (1개월)
-    role: 백엔드 (4명) · 패스트캠퍼스 Kernel 360 팀프로젝트
+    role: 패스트캠퍼스 Kernel 360 (팀프로젝트)
+    team: 백엔드 4명
+    repo: https://github.com/Kernel360/E2E2-LOOK-US
     tags: [Java, Spring Boot, JPA, MySQL, Redis, GCP, Nginx, Docker, GitHub Actions]
+    contributions:
+      - heading: GitHub Actions 로 배포 자동화
+        points:
+          - Gradle 빌드 → JAR 원격 서버 전송 → 서버 애플리케이션 재시작 파이프라인
+          - Nginx + OpenSSL 로 HTTPS 적용해 웹 보안 강화
+      - heading: 이미지 속성 (객체 / 색상) 추출
+        points:
+          - 업로드 시 비동기로 Vision API 호출, 객체(셔츠·바지·신발) 식별 + 색상(RGB) 추출
+      - heading: 소셜 로그인 구현
+        points:
+          - Spring Security + OAuth 2.0 클라이언트 라이브러리로 간편 가입·로그인 환경 구축
+      - heading: 트러블슈팅 — Docker 이미지 누적
+        points:
+          - GCP 인스턴스에 미사용 Docker 이미지가 누적되어 메모리 부족 → 인스턴스 다운
+          - "워크플로우에 docker image prune -af --filter \"until=24h\" 추가해 자동 정리"
 
   - slug: chathub
     name: 화상채팅 서비스 [ChatHub]
-    one_liner: 개발자들이 온라인에서 간편하게 커피챗 상대를 찾고 실시간 화상채팅이 가능한 커피챗 서비스
+    one_liner: 개발자들이 온라인에서 간편하게 커피챗 상대를 찾고 실시간 화상채팅이 가능한 커피챗 서비스.
     period: 2024.03 - 2024.06 (3개월)
-    role: 백엔드 (2명) · 경기대학교 팀프로젝트
+    role: 경기대학교 (팀프로젝트)
+    team: 백엔드 2명 / 프론트엔드 1명
+    repo: https://github.com/24-1Capstone/backend
     tags: [Java, Spring Boot, JPA, MySQL, Naver Cloud Platform, Amazon Chime SDK]
+    contributions:
+      - heading: 실시간 화상채팅 기능 구현
+        points:
+          - Amazon Chime SDK 로 사용자 간 실시간 오디오/비디오 송수신 가능한 화상 채팅 환경 제공
+          - Meeting / Attendee / Voice Connector API 로 세션 생성·관리 백엔드 로직 개발
+      - heading: 소셜 로그인 구현
+        points:
+          - 개발자에게 친숙한 GitHub OAuth 로 회원가입·로그인 절차 간소화
+          - Spring Security + OAuth 2.0 클라이언트 라이브러리 활용
 
 education:
   - school: 패스트캠퍼스 — Kernel 360 백엔드 부트캠프
@@ -48,10 +98,6 @@ education:
     degree: 컴퓨터공학부 학사
     period: 2019.03 - 2025.02
     notes: CES 2024 참관 · Singapore SW Project · Purdue University SW Program
-
-  - school: University of Twente (Netherlands)
-    degree: 교환학생
-    period: 2017 - 2018
 
   - school: American School of Warsaw
     degree: 고등학교 졸업

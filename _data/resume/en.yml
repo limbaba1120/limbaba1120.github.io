@@ -18,24 +18,74 @@ experience: []
 projects:
   - slug: omocha
     name: OMOCHA — Limited-edition Goods Auction
-    one_liner: A trading platform where collectors auction hard-to-find limited-edition merchandise
+    one_liner: An auction platform for hard-to-find limited-edition merchandise.
     period: 2024.09 - 2024.12 (3 months)
-    role: Backend (3) · Fastcampus Kernel 360 team project
+    role: Fastcampus Kernel 360 (team project)
+    team: Backend 3 / Frontend 2
+    repo: https://github.com/Kernel360/F2-omocha-BE
     tags: [Java, Spring Boot, Spring Data JPA, PostgreSQL, Redis, AWS, Docker, WebSocket]
+    contributions:
+      - heading: Real-time chat
+        points:
+          - Bi-directional client–server communication via WebSocket + STOMP
+          - Monitored message flow with RabbitMQ as the message broker
+      - heading: WebP conversion + S3 + CDN
+        points:
+          - Converted JPEG / PNG to WebP (image size reduced 70%+)
+          - AWS S3 + CDN, cutting image download time by 50%+
+      - heading: Flyway-based database migration automation
+        points:
+          - Multiple devs editing the same table caused conflicts and per-environment schema drift
+          - Flyway managed schema changes as scripts with full history
+      - heading: Concurrent bidding race condition
+        points:
+          - 100-bidder concurrency test reproduced the issue → adopted Redisson-based distributed lock instead of pessimistic/optimistic DB locks
+          - "@DistributedLock annotation + AOP for a reusable, business-logic-free lock component"
+      - heading: Categories / auction post CRUD
+        points:
+          - CRUD APIs and category classification across the domain
 
   - slug: look-us
     name: Look US — Fashion Community Service
-    one_liner: A fashion community where users share daily looks and discover styles by color
+    one_liner: A fashion community where users share daily looks and discover styles by color.
     period: 2024.07 - 2024.08 (1 month)
-    role: Backend (4) · Fastcampus Kernel 360 team project
+    role: Fastcampus Kernel 360 (team project)
+    team: Backend 4
+    repo: https://github.com/Kernel360/E2E2-LOOK-US
     tags: [Java, Spring Boot, JPA, MySQL, Redis, GCP, Nginx, Docker, GitHub Actions]
+    contributions:
+      - heading: Deployment automation with GitHub Actions
+        points:
+          - Gradle build → ship JAR to remote server → restart the app
+          - Hardened the web tier with HTTPS via Nginx + OpenSSL
+      - heading: Image attribute extraction
+        points:
+          - Async Vision API calls on upload to identify objects (shirts, pants, shoes) and extract dominant colors (RGB)
+      - heading: Social login
+        points:
+          - Spring Security + OAuth 2.0 client library for streamlined sign-up / sign-in
+      - heading: Troubleshooting — accumulating Docker images
+        points:
+          - GCP instance crashed from un-pruned Docker images consuming memory
+          - "Added docker image prune -af --filter \"until=24h\" to the workflow for auto-cleanup"
 
   - slug: chathub
     name: ChatHub — Developer Coffee-Chat with Live Video
-    one_liner: A coffee-chat service where developers meet online over real-time video
+    one_liner: A coffee-chat service where developers meet online over real-time video.
     period: 2024.03 - 2024.06 (3 months)
-    role: Backend (2) · Kyonggi University team project
+    role: Kyonggi University (team project)
+    team: Backend 2 / Frontend 1
+    repo: https://github.com/24-1Capstone/backend
     tags: [Java, Spring Boot, JPA, MySQL, Naver Cloud Platform, Amazon Chime SDK]
+    contributions:
+      - heading: Real-time video chat
+        points:
+          - Built bi-directional audio/video chat with Amazon Chime SDK
+          - Designed backend session creation/management via Meeting / Attendee / Voice Connector APIs
+      - heading: Social login
+        points:
+          - Streamlined sign-up / login by integrating GitHub OAuth (familiar for devs)
+          - Used Spring Security with the OAuth 2.0 client library
 
 education:
   - school: Fastcampus — Kernel 360 Backend Bootcamp
@@ -47,10 +97,6 @@ education:
     degree: B.S. in Computer Science
     period: 2019.03 - 2025.02
     notes: CES 2024 · Singapore SW Project · Purdue University SW Program
-
-  - school: University of Twente (Netherlands)
-    degree: Exchange student
-    period: 2017 - 2018
 
   - school: American School of Warsaw
     degree: High school diploma

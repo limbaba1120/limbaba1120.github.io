@@ -259,10 +259,72 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
     letter-spacing: 0;
   }
 
+  // ── Project contributions ([담당한 부분])
+  .resume-contrib-list {
+    margin: 0.55rem 0 0.4rem;
+    padding-left: 0;
+    list-style: none;
+  }
+  .resume-contrib {
+    margin: 0 0 0.45rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+
+    &:last-child { margin-bottom: 0; }
+  }
+  .resume-contrib-head {
+    margin: 0 0 0.18rem;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: $resume-navy;
+    line-height: 1.4;
+  }
+  .resume-contrib-points {
+    margin: 0;
+    padding-left: 1rem;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 0.55rem;
+      margin-bottom: 0.14rem;
+      font-size: 0.83rem;
+      color: $resume-muted;
+      line-height: 1.55;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -0.05rem;
+        top: 0.55rem;
+        width: 0.28rem;
+        height: 0.28rem;
+        background: $resume-navy;
+        border-radius: 1px;
+      }
+    }
+  }
+
+  .resume-project-links {
+    margin: 0.55rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+
+    a {
+      color: $resume-navy-soft;
+      text-decoration: none;
+      &:hover { text-decoration: underline; text-underline-offset: 2px; }
+    }
+
+    .fa { margin-right: 0.18rem; }
+  }
+
   .resume-portfolio-link {
     display: inline-block;
-    margin-top: 0.4rem;
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     font-weight: 500;
     color: $resume-navy-soft;
     &:hover { text-decoration: underline; text-underline-offset: 2px; }

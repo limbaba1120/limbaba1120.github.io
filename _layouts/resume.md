@@ -84,10 +84,27 @@ layout: default
             <strong>{{ p.name }}</strong>
             {% if p.period %}<span class="resume-item-meta">{{ p.period }}</span>{% endif %}
           </div>
-          {% if p.role %}<p class="resume-item-sub">{{ p.role }}</p>{% endif %}
+          {% if p.role %}<p class="resume-item-sub">{{ p.role }}{% if p.team %} · {{ p.team }}{% endif %}</p>{% endif %}
           {% if p.one_liner %}<p class="resume-project-desc">{{ p.one_liner }}</p>{% endif %}
           {% if p.tags and p.tags.size > 0 %}<p class="resume-tags">{% for tag in p.tags %}<span class="resume-tag">{{ tag }}</span>{% endfor %}</p>{% endif %}
-          {% if p.slug %}{%- assign portfolio_url = '/portfolio/' | append: p.slug | append: '/' -%}{% if lng == 'en' %}{%- assign portfolio_url = portfolio_url | append: 'en/' -%}{% endif %}<a class="resume-portfolio-link no-print" href="{{ site.baseurl }}{{ portfolio_url }}">{{ t_portfolio_link }}</a>{% endif %}
+          {% if p.contributions and p.contributions.size > 0 %}
+          <ul class="resume-contrib-list">
+            {% for c in p.contributions %}
+              <li class="resume-contrib">
+                <p class="resume-contrib-head">{{ c.heading }}</p>
+                {% if c.points and c.points.size > 0 %}
+                <ul class="resume-contrib-points">
+                  {% for pt in c.points %}<li>{{ pt }}</li>{% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          <p class="resume-project-links">
+            {% if p.repo %}<a href="{{ p.repo }}" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i> {{ p.repo | remove: 'https://' }}</a>{% endif %}
+            {% if p.slug %}{%- assign portfolio_url = '/portfolio/' | append: p.slug | append: '/' -%}{% if lng == 'en' %}{%- assign portfolio_url = portfolio_url | append: 'en/' -%}{% endif %}<a class="resume-portfolio-link no-print" href="{{ site.baseurl }}{{ portfolio_url }}">{{ t_portfolio_link }}</a>{% endif %}
+          </p>
         </li>
       {% endfor %}
     </ul>
