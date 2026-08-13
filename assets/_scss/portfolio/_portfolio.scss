@@ -239,6 +239,57 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   }
 }
 
+.portfolio-keywords {
+  margin-top: 1.35rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid $pf-line-soft;
+
+  &-label {
+    @extend %pf-section-label;
+    margin-bottom: 1.15rem;
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    min-height: 8rem;
+    padding: 1rem .7rem;
+    text-align: center;
+    background: $pf-bg-soft;
+    border-radius: 10px;
+
+    i {
+      font-size: 2.35rem;
+      color: $pf-accent;
+      line-height: 1;
+    }
+
+    span {
+      color: $pf-ink;
+      font-size: .88rem;
+      font-weight: 650;
+      line-height: 1.45;
+      word-break: keep-all;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .portfolio-keywords ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 // =====================================================================
 // TOC
 // =====================================================================

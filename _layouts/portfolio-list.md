@@ -23,15 +23,18 @@ layout: default
   {%- assign t_stat_stack_value = 'Java · Spring Boot · JPA · MySQL / PostgreSQL · Redis' -%}
   {%- assign t_stat_focus_label = 'Focus areas' -%}
   {%- assign t_stat_focus_value = 'Real-time communication · Concurrency control · Infra automation' -%}
-  {%- assign t_approach = 'How I work' -%}
-  {%- assign t_approach_1_h = 'Reproduce before you fix' -%}
-  {%- assign t_approach_1_b = 'Wrote a 100-bidder concurrency test for OMOCHA before touching a single line of locking code — only then could I tell pessimistic vs. distributed locks apart on the actual hot path.' -%}
-  {%- assign t_approach_2_h = 'Pick locks/caches by measurement, not instinct' -%}
-  {%- assign t_approach_2_b = 'Skipped pessimistic / optimistic DB locks because they waste server resources on retries — Redisson distributed locks let the application layer fail fast.' -%}
-  {%- assign t_approach_3_h = 'Automate ops bottlenecks the moment they bite' -%}
-  {%- assign t_approach_3_b = 'Docker image accumulation crashed a GCP instance → added a `docker image prune` step. Schema drift across teammates → introduced Flyway. Manual deploys → GitHub Actions.' -%}
-  {%- assign t_approach_4_h = 'Learn new tech from official docs, not tutorials' -%}
-  {%- assign t_approach_4_b = 'Picked up Amazon Chime SDK / WebRTC by reading English-only docs and shipping it — that beat following along to videos by a wide margin.' -%}
+  {%- assign t_approach = 'About me' -%}
+  {%- assign t_approach_1_h = 'Growing together' -%}
+  {%- assign t_approach_1_b = 'I enjoy sharing what I learn and growing with others. I have shared knowledge through study groups and organized sessions for students interested in international programs.' -%}
+  {%- assign t_approach_2_h = 'Taking on new challenges' -%}
+  {%- assign t_approach_2_b = 'I actively learn new technologies and do not hesitate to take on unfamiliar problems. Through projects, I have experienced the full cycle from planning and development to testing, deployment, and operations.' -%}
+  {%- assign t_approach_3_h = 'Communicating and collaborating' -%}
+  {%- assign t_approach_3_b = 'I enjoy working with people from different backgrounds and try to bring open, positive energy to the team.' -%}
+  {%- assign t_keywords = 'A few things about me' -%}
+  {%- assign t_keyword_1 = 'I enjoy sports' -%}
+  {%- assign t_keyword_2 = '4 software certifications' -%}
+  {%- assign t_keyword_3 = '10+ years abroad' -%}
+  {%- assign t_keyword_4 = 'OPIc IH' -%}
   {%- assign other_url = '/portfolio/' -%}
   {%- assign resume_url = '/resume/en/' -%}
 {%- else -%}
@@ -50,15 +53,18 @@ layout: default
   {%- assign t_stat_stack_value = 'Java · Spring Boot · JPA · MySQL / PostgreSQL · Redis' -%}
   {%- assign t_stat_focus_label = '관심 분야' -%}
   {%- assign t_stat_focus_value = '실시간 통신 · 동시성 제어 · 인프라 자동화' -%}
-  {%- assign t_approach = '일하는 방식' -%}
-  {%- assign t_approach_1_h = '문제는 먼저 재현한다' -%}
-  {%- assign t_approach_1_b = 'OMOCHA 동시 입찰 문제는 락 코드를 한 줄도 만지기 전에 100명 동시 입찰 테스트를 먼저 작성했습니다. 그래야 비관적 락과 분산 락이 같은 핫패스에서 어떻게 다르게 동작하는지 비교할 수 있었습니다.' -%}
-  {%- assign t_approach_2_h = '락·캐시는 측정 후에 고른다' -%}
-  {%- assign t_approach_2_b = '비관적·낙관적 락은 재시도로 서버 자원을 낭비하므로 채택하지 않았고, Redisson 분산 락으로 애플리케이션 단에서 빠르게 실패 처리하도록 설계했습니다.' -%}
-  {%- assign t_approach_3_h = '운영 병목은 자동화로 해결한다' -%}
-  {%- assign t_approach_3_b = 'Docker 이미지 누적으로 GCP 인스턴스가 다운되었을 때 `docker image prune` 단계를 워크플로우에 자동화. 스키마 충돌은 Flyway, 수동 배포는 GitHub Actions로 정리했습니다.' -%}
-  {%- assign t_approach_4_h = '새 기술은 공식 문서로 깊게 학습한다' -%}
-  {%- assign t_approach_4_b = 'Amazon Chime SDK / WebRTC는 영문 공식 문서를 읽으며 직접 적용했습니다. 강의를 따라 치는 것보다 이해 깊이와 응용력에서 차이가 컸습니다.' -%}
+  {%- assign t_approach = '저는 이런 개발자입니다' -%}
+  {%- assign t_approach_1_h = '배움을 나누며 함께 성장합니다' -%}
+  {%- assign t_approach_1_b = '스터디를 통해 지식을 나누고 팀원들과 함께 성장하는 것을 좋아합니다. 해외 프로그램에 관심 있는 후배들을 위한 설명회를 열어 경험과 노하우를 공유했습니다.' -%}
+  {%- assign t_approach_2_h = '새로운 기술과 과제에 주저하지 않습니다' -%}
+  {%- assign t_approach_2_b = '새로운 기술을 적극적으로 익히고, 낯선 문제도 끝까지 해결하며 성장합니다. 여러 프로젝트에서 기획·개발·테스트·배포·운영의 전 과정을 경험했습니다.' -%}
+  {%- assign t_approach_3_h = '다양한 사람들과 소통하고 협력합니다' -%}
+  {%- assign t_approach_3_b = '서로 다른 배경을 가진 사람들과 협업하는 것을 좋아하며, 열린 태도와 긍정적인 에너지로 팀에 기여하려고 노력합니다.' -%}
+  {%- assign t_keywords = '저를 설명하는 키워드' -%}
+  {%- assign t_keyword_1 = '운동을 좋아함' -%}
+  {%- assign t_keyword_2 = 'SW 관련 자격증 4개' -%}
+  {%- assign t_keyword_3 = '해외 경험 10년 이상' -%}
+  {%- assign t_keyword_4 = 'OPIc IH' -%}
   {%- assign other_url = '/portfolio/en/' -%}
   {%- assign resume_url = '/resume/' -%}
 {%- endif -%}
@@ -107,11 +113,16 @@ layout: default
         <h3>{{ t_approach_3_h }}</h3>
         <p>{{ t_approach_3_b }}</p>
       </li>
-      <li>
-        <h3>{{ t_approach_4_h }}</h3>
-        <p>{{ t_approach_4_b }}</p>
-      </li>
     </ol>
+    <div class="portfolio-keywords" aria-label="{{ t_keywords }}">
+      <p class="portfolio-keywords-label">{{ t_keywords }}</p>
+      <ul>
+        <li><i class="fa fa-heartbeat" aria-hidden="true"></i><span>{{ t_keyword_1 }}</span></li>
+        <li><i class="fa fa-certificate" aria-hidden="true"></i><span>{{ t_keyword_2 }}</span></li>
+        <li><i class="fa fa-globe" aria-hidden="true"></i><span>{{ t_keyword_3 }}</span></li>
+        <li><i class="fa fa-comments-o" aria-hidden="true"></i><span>{{ t_keyword_4 }}</span></li>
+      </ul>
+    </div>
   </section>
 
   <nav class="portfolio-toc no-print" aria-label="{{ t_index }}">
