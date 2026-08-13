@@ -31,7 +31,7 @@ redirect_from:
 ### 실시간 채팅 구현
 
 - **WebSocket + STOMP 프로토콜**로 클라이언트–서버 간 양방향 통신 구현
-- **RabbitMQ** 메시지 브로커로 메시지 흐름 모니터링
+- **RabbitMQ**를 STOMP 메시지 브로커로 사용해 채팅 메시지를 구독자에게 중계
 - 프론트는 Next.js + SockJS / Stomp.js 로 WebSocket 연결
 
 ### 이미지 WebP 변환 + S3 + CDN

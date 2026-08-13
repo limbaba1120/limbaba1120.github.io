@@ -31,7 +31,7 @@ A trading platform for limited-edition goods that are hard to find through norma
 ### Real-time chat
 
 - Bi-directional client–server communication via **WebSocket + STOMP**
-- **RabbitMQ** as the message broker for traffic monitoring
+- Used **RabbitMQ** as the STOMP message broker to relay chat messages to subscribers
 - Frontend connected via **SockJS** and **Stomp.js** on Next.js
 
 ### WebP conversion + S3 + CDN

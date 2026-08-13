@@ -28,7 +28,7 @@ projects:
       - heading: Real-time chat
         points:
           - Bi-directional client–server communication via WebSocket + STOMP
-          - Monitored message flow with RabbitMQ as the message broker
+          - Used RabbitMQ as the STOMP message broker to relay chat messages to subscribers
       - heading: WebP conversion + S3 + CDN
         points:
           - Converted JPEG / PNG to WebP (image size reduced 70%+)
