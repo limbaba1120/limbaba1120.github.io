@@ -184,7 +184,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 }
 
 // =====================================================================
-// Approach (numbered principles) — minimal, no card frames
+// About — minimal, no card frames
 // =====================================================================
 .portfolio-approach {
   margin-bottom: 3.25rem;
@@ -193,7 +193,6 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
   ol {
     list-style: none;
-    counter-reset: approach;
     padding: 0;
     margin: 0;
     display: flex;
@@ -202,24 +201,11 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   }
 
   li {
-    counter-increment: approach;
     position: relative;
-    padding: 1rem 0 1rem 3rem;
+    padding: 1rem 0;
     border-bottom: 1px solid $pf-line-soft;
 
     &:last-child { border-bottom: 0; }
-
-    &::before {
-      content: counter(approach, decimal-leading-zero);
-      position: absolute;
-      left: 0;
-      top: 1.15rem;
-      font-family: $pf-mono;
-      font-size: .82rem;
-      font-weight: 700;
-      color: $pf-accent;
-      letter-spacing: .04em;
-    }
 
     h3 {
       font-size: .98rem;
