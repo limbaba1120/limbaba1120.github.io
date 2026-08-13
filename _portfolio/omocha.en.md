@@ -50,10 +50,6 @@ A trading platform for limited-edition goods that are hard to find through norma
 - Collected **50+ pieces** of user feedback via surveys
 - Prioritized and shipped **10+ improvements** through agile sprints
 
-### Categories & auction CRUD
-
-- Built CRUD APIs and category classification across the domain
-
 </section>
 
 ## Troubleshooting — Concurrent bidding race condition
@@ -72,4 +68,3 @@ When 100 users bid at the same time, **multiple bids could succeed concurrently*
 - Built a **`@DistributedLock` annotation** with custom `waitTime` / `leaseTime`, and used **AOP** to keep business logic clean and the lock reusable as a component.
 
 </section>
-
