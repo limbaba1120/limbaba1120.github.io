@@ -41,7 +41,7 @@ A fashion community service for sharing daily outfits and discovering styles by 
 
 ### Image object and color extraction
 
-- On upload, the server asynchronously calls **Vision API**
+- On upload, the server asynchronously calls the **Google Cloud Vision API**
 - Identifies objects in images (shirts, pants, shoes) and extracts dominant colors (RGB)
 
 ### Collaboration and code quality

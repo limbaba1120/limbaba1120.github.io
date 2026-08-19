@@ -57,7 +57,7 @@ projects:
           - Hardened the web tier with HTTPS via Nginx + OpenSSL
       - heading: Image attribute extraction
         points:
-          - Async Vision API calls on upload to identify objects (shirts, pants, shoes) and extract dominant colors (RGB)
+          - Async Google Cloud Vision API calls on upload to identify objects (shirts, pants, shoes) and extract dominant colors (RGB)
       - heading: Social login
         points:
           - Spring Security + OAuth 2.0 client library for streamlined sign-up / sign-in

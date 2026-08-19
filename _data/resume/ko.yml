@@ -58,7 +58,7 @@ projects:
           - Nginx + OpenSSL 로 HTTPS 적용해 웹 보안 강화
       - heading: 이미지 속성 (객체 / 색상) 추출
         points:
-          - 업로드 시 비동기로 Vision API 호출, 객체(셔츠·바지·신발) 식별 + 색상(RGB) 추출
+          - 업로드 시 비동기로 Google Cloud Vision API 호출, 객체(셔츠·바지·신발) 식별 + 색상(RGB) 추출
       - heading: 소셜 로그인 구현
         points:
           - Spring Security + OAuth 2.0 클라이언트 라이브러리로 간편 가입·로그인 환경 구축
