@@ -77,7 +77,7 @@ projects:
       - heading: Real-time video chat
         points:
           - Built bi-directional audio/video chat with Amazon Chime SDK
-          - Designed backend session creation/management via Meeting / Attendee / Voice Connector APIs
+          - Managed meeting and attendee lifecycles with CreateMeeting, CreateAttendee, and DeleteMeeting from the Amazon Chime SDK Meetings API
       - heading: Social login
         points:
           - Streamlined sign-up / login by integrating GitHub OAuth (familiar for devs)

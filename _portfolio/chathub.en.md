@@ -31,7 +31,8 @@ A coffee-chat service for developers featuring real-time, cloud-based video call
 ### Real-time video chat
 
 - Built a high-quality video chat experience with bi-directional audio/video using the **Amazon Chime SDK**
-- Designed the backend that creates and manages chat sessions via AWS Chime SDK's **Meeting / Attendee / Voice Connector APIs**
+- Used the AWS SDK's **Amazon Chime SDK Meetings API** to implement backend logic for creating and managing meetings and attendees
+- Created meetings with `CreateMeeting`, issued attendees and join tokens with `CreateAttendee`, and closed meetings with `DeleteMeeting`
 
 ### Social login (Spring Security + OAuth 2.0)
 
@@ -49,4 +50,3 @@ I lacked backend depth, so I leaned on lectures and the official English-languag
 Unlike the old habit of just following tutorials, actually using the tech in a real project — and shipping fixes — made me grow faster. It also made development genuinely fun.
 
 Going forward I want to work with more diverse teams across different projects, learn new technologies more deeply, and grow into a developer who improves quickly with each project.
-

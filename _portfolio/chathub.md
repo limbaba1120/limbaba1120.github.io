@@ -31,7 +31,8 @@ redirect_from:
 ### 실시간 화상 채팅 기능 구현
 
 - **Amazon Chime SDK**를 활용해 사용자 간 실시간 오디오/비디오 송수신이 가능한 화상 채팅 기능을 구현하여 고품질의 화상 채팅 환경 제공
-- AWS Chime SDK의 **Meeting / Attendee / Voice Connector API** 를 사용해 화상 채팅 세션을 생성하고 관리하는 백엔드 로직 개발
+- AWS SDK의 **Amazon Chime SDK Meetings API**를 사용해 화상회의와 참가자를 생성하고 관리하는 백엔드 로직 구현
+- `CreateMeeting`으로 회의를 생성하고, `CreateAttendee`로 참가자와 참여 토큰을 발급했으며, `DeleteMeeting`으로 회의 종료 처리
 
 ### 소셜 로그인 (Spring Security + OAuth 2.0)
 
@@ -49,4 +50,3 @@ redirect_from:
 단순히 강의만 보며 따라 하던 과거와는 다르게, 프로젝트에서 기술을 사용해보고 문제를 해결했던 경험이 개발 실력을 빠르게 향상시켜주었고, 개발에 대한 즐거움이 생겼습니다.
 
 앞으로는 다른 프로젝트를 하면서 다양한 사람들과 협업을 더 많이 해야겠다고 생각했고, 새로운 기술을 배우면서 더 깊이 이해하고 빠르게 성장하는 개발자가 되고 싶다고 느꼈습니다.
-
