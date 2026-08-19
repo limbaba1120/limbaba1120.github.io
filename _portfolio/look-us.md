@@ -37,7 +37,6 @@ redirect_from:
 ### 소셜 로그인 (Spring Security + OAuth 2.0)
 
 - Spring Security 프레임워크와 OAuth 2.0 클라이언트 라이브러리로 소셜 로그인 구현
-- 사용자가 간편하게 가입·로그인할 수 있도록 사용자 경험 개선
 
 ### 이미지 객체 및 색상 추출
 

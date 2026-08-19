@@ -61,7 +61,7 @@ projects:
           - 업로드 시 비동기로 Google Cloud Vision API 호출, 객체(셔츠·바지·신발) 식별 + 색상(RGB) 추출
       - heading: 소셜 로그인 구현
         points:
-          - Spring Security + OAuth 2.0 클라이언트 라이브러리로 간편 가입·로그인 환경 구축
+          - Spring Security + OAuth 2.0 클라이언트 라이브러리로 소셜 회원가입 및 로그인 구현
       - heading: 트러블슈팅 — Docker 이미지 누적
         points:
           - GCP 인스턴스에 미사용 Docker 이미지가 누적되어 디스크 사용률 90% 이상 → 디스크 공간 부족으로 서버 불안정

@@ -37,7 +37,6 @@ A fashion community service for sharing daily outfits and discovering styles by 
 ### Social login (Spring Security + OAuth 2.0)
 
 - Implemented social login with Spring Security and the OAuth 2.0 client library
-- Streamlined sign-up and sign-in for an easier onboarding experience
 
 ### Image object and color extraction
 

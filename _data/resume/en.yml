@@ -60,7 +60,7 @@ projects:
           - Async Google Cloud Vision API calls on upload to identify objects (shirts, pants, shoes) and extract dominant colors (RGB)
       - heading: Social login
         points:
-          - Spring Security + OAuth 2.0 client library for streamlined sign-up / sign-in
+          - Implemented social sign-up and login with Spring Security and the OAuth 2.0 client library
       - heading: Troubleshooting — accumulating Docker images
         points:
           - Unused Docker images pushed GCP instance disk usage above 90%, causing server instability
