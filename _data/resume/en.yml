@@ -76,7 +76,7 @@ projects:
     contributions:
       - heading: Real-time video chat
         points:
-          - Built bi-directional audio/video chat with Amazon Chime SDK
+          - Built real-time bi-directional audio and video communication with Amazon Chime SDK
           - Managed meeting and attendee lifecycles with CreateMeeting, CreateAttendee, and DeleteMeeting from the Amazon Chime SDK Meetings API
       - heading: Social login
         points:

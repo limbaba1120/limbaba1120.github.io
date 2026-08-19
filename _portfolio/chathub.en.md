@@ -30,7 +30,7 @@ A coffee-chat service for developers featuring real-time, cloud-based video call
 
 ### Real-time video chat
 
-- Built a high-quality video chat experience with bi-directional audio/video using the **Amazon Chime SDK**
+- Built real-time bi-directional audio and video communication with the **Amazon Chime SDK**
 - Used the AWS SDK's **Amazon Chime SDK Meetings API** to implement backend logic for creating and managing meetings and attendees
 - Created meetings with `CreateMeeting`, issued attendees and join tokens with `CreateAttendee`, and closed meetings with `DeleteMeeting`
 

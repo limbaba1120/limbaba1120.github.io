@@ -30,7 +30,7 @@ redirect_from:
 
 ### 실시간 화상 채팅 기능 구현
 
-- **Amazon Chime SDK**를 활용해 사용자 간 실시간 오디오/비디오 송수신이 가능한 화상 채팅 기능을 구현하여 고품질의 화상 채팅 환경 제공
+- **Amazon Chime SDK**를 활용해 사용자 간 실시간 오디오·비디오 송수신이 가능한 화상채팅 기능 구현
 - AWS SDK의 **Amazon Chime SDK Meetings API**를 사용해 화상회의와 참가자를 생성하고 관리하는 백엔드 로직 구현
 - `CreateMeeting`으로 회의를 생성하고, `CreateAttendee`로 참가자와 참여 토큰을 발급했으며, `DeleteMeeting`으로 회의 종료 처리
 
