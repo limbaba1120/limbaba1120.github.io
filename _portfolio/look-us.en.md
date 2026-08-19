@@ -47,7 +47,7 @@ A fashion community service for sharing daily outfits and discovering styles by 
 ### Collaboration and code quality
 
 - Maintained **70%+ test coverage** across Controller / Service / Repository layers to catch bugs early
-- Found bugs and built team rapport through **pair programming and code reviews**
+- Found bugs and improved code quality through **pair programming and code reviews**
 
 </section>
 
