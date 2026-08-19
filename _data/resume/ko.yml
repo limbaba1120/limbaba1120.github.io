@@ -63,7 +63,7 @@ projects:
           - Spring Security + OAuth 2.0 클라이언트 라이브러리로 간편 가입·로그인 환경 구축
       - heading: 트러블슈팅 — Docker 이미지 누적
         points:
-          - GCP 인스턴스에 미사용 Docker 이미지가 누적되어 메모리 부족 → 인스턴스 다운
+          - GCP 인스턴스에 미사용 Docker 이미지가 누적되어 디스크 사용률 90% 이상 → 디스크 공간 부족으로 서버 불안정
           - "워크플로우에 docker image prune -af --filter \"until=24h\" 추가해 자동 정리"
 
   - slug: chathub

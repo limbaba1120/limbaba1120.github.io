@@ -62,7 +62,7 @@ projects:
           - Spring Security + OAuth 2.0 client library for streamlined sign-up / sign-in
       - heading: Troubleshooting — accumulating Docker images
         points:
-          - GCP instance crashed from un-pruned Docker images consuming memory
+          - Unused Docker images pushed GCP instance disk usage above 90%, causing server instability
           - "Added docker image prune -af --filter \"until=24h\" to the workflow for auto-cleanup"
 
   - slug: chathub

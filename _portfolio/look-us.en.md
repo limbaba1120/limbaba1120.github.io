@@ -57,19 +57,17 @@ A fashion community service for sharing daily outfits and discovering styles by 
 
 ### The problem
 
-Every new deploy left **un-pruned Docker images on the GCP instance**, steadily growing memory usage. Eventually performance degraded and the instance crashed.
+Each deployment left **unused Docker images on the GCP instance**, driving disk usage above 90%. The lack of disk space made the server unstable.
 
 ### The fix
 
 - Logs alone didn't surface the cause. Reviewing the **GitHub Actions workflow** revealed that the **image-pruning step was missing**.
-- After restarting the instance, Docker image CPU usage check showed **memory usage above 90%**.
 - Added the following command to the workflow to **auto-delete unused images older than 24 hours**:
 
 ```bash
 sudo docker image prune -af --filter "until=24h"
 ```
 
-The memory-overload-driven instance crashes stopped after that.
+This resolved the server instability caused by insufficient disk space.
 
 </section>
-
