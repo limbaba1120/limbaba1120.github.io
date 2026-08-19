@@ -29,6 +29,7 @@ projects:
         points:
           - Bi-directional client–server communication via WebSocket + STOMP
           - Used RabbitMQ as the STOMP message broker to relay chat messages to subscribers
+          - Directly implemented the chat UI and WebSocket connection in Next.js using SockJS and Stomp.js
       - heading: WebP conversion + S3 + CDN
         points:
           - Converted JPEG / PNG to WebP (image size reduced 70%+)
