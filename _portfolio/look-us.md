@@ -30,8 +30,8 @@ redirect_from:
 
 ### CI/CD 파이프라인 구축 및 배포 자동화
 
-- **GitHub Actions** 활용한 자동 배포 (코드 빌드 · 테스트 · 배포 자동화)
-- Gradle 프로젝트 빌드 → JAR 파일 원격 서버 전송 → 서버 애플리케이션 재시작
+- **GitHub Actions**를 활용한 빌드·배포 자동화
+- Gradle 빌드 → Docker 이미지 생성·Docker Hub 푸시 → SSH로 GCP 서버 접속 → Docker Compose 재배포
 - **Nginx + OpenSSL** 으로 HTTPS 적용해 웹 보안 강화
 
 ### 소셜 로그인 (Spring Security + OAuth 2.0)

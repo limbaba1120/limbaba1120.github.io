@@ -30,8 +30,8 @@ A fashion community service for sharing daily outfits and discovering styles by 
 
 ### CI/CD pipeline and deployment automation
 
-- Set up automated builds, tests, and deploys with **GitHub Actions**
-- Gradle build → ship JAR to remote server → restart the app
+- Automated builds and deployments with **GitHub Actions**
+- Gradle build → build and push a Docker image to Docker Hub → connect to the GCP server via SSH → redeploy with Docker Compose
 - Hardened the web tier with HTTPS via **Nginx + OpenSSL**
 
 ### Social login (Spring Security + OAuth 2.0)

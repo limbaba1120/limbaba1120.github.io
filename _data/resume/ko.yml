@@ -52,9 +52,9 @@ projects:
     repo: https://github.com/Kernel360/E2E2-LOOK-US
     tags: [Java, Spring Boot, JPA, MySQL, Redis, GCP, Nginx, Docker, GitHub Actions]
     contributions:
-      - heading: GitHub Actions 로 배포 자동화
+      - heading: GitHub Actions로 빌드·배포 자동화
         points:
-          - Gradle 빌드 → JAR 원격 서버 전송 → 서버 애플리케이션 재시작 파이프라인
+          - Gradle 빌드 → Docker 이미지 생성·Docker Hub 푸시 → SSH로 GCP 서버 접속 → Docker Compose 재배포
           - Nginx + OpenSSL 로 HTTPS 적용해 웹 보안 강화
       - heading: 이미지 속성 (객체 / 색상) 추출
         points:
