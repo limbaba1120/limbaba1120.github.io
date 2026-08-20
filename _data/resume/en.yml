@@ -34,10 +34,11 @@ projects:
         points:
           - Converted JPEG / PNG to WebP (image size reduced 70%+)
           - AWS S3 + CDN, cutting image download time by 50%+
-      - heading: Flyway-based database migration automation
+      - heading: Database schema versioning and automated updates with Flyway
         points:
-          - Multiple devs editing the same table caused conflicts and per-environment schema drift
-          - Flyway managed schema changes as scripts with full history
+          - Schema changes were missed as multiple developers modified tables, causing database structures to differ between development and production
+          - Managed table creation and modification history as versioned SQL files with Flyway
+          - Applied only pending database changes in order based on migration history, keeping development and production schemas consistent
       - heading: Concurrent bidding race condition
         points:
           - Reproduced the issue with a 100-bidder concurrency test → applied Redis-based distributed locking so only one request at a time processes a bid for a given auction item

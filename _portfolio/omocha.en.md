@@ -39,11 +39,11 @@ A trading platform for limited-edition goods that are hard to find through norma
 - Converted existing JPEG / PNG to **WebP** (image size **−70%**)
 - Stored on **AWS S3** behind a **CDN**, cutting image content download time from **2s to 1s**
 
-### Flyway-based database migration automation
+### Database schema versioning and automated updates with Flyway
 
-- Multiple devs editing the same table caused conflicts and per-environment schema drift
-- Introduced **Flyway** to manage schema changes as scripts with full history
-- Eliminated DB conflicts across developers and enabled consistent deployments
+- Schema changes were missed as multiple developers modified tables, causing database structures to differ between development and production
+- Introduced **Flyway** to manage table creation and modification history as versioned SQL files
+- Configured Flyway to check the migration history and apply only pending database changes in order, keeping development and production schemas consistent
 
 ### User feedback loop
 
