@@ -34,10 +34,10 @@ A trading platform for limited-edition goods that are hard to find through norma
 - Used **RabbitMQ** as the STOMP message broker to relay chat messages to subscribers
 - Directly implemented the chat UI and WebSocket connection in **Next.js** using **SockJS** and **Stomp.js**
 
-### WebP conversion + S3 + CDN
+### WebP conversion + S3 + CloudFront
 
 - Converted existing JPEG / PNG to **WebP** (image size **−70%**)
-- Stored on **AWS S3** behind a **CDN**, cutting image content download time from **2s to 1s**
+- Stored images in **AWS S3** and delivered them through **Amazon CloudFront**, cutting image content download time from **2s to 1s**
 
 ### Database schema versioning and automated updates with Flyway
 

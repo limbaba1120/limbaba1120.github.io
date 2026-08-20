@@ -34,10 +34,10 @@ redirect_from:
 - **RabbitMQ**를 STOMP 메시지 브로커로 사용해 채팅 메시지를 구독자에게 중계
 - **Next.js**에서 **SockJS와 Stomp.js**를 사용해 WebSocket 연결 및 채팅 UI 직접 구현
 
-### 이미지 WebP 변환 + S3 + CDN
+### 이미지 WebP 변환 + S3 + CloudFront
 
 - 기존 JPEG / PNG 이미지를 **WebP 형식으로 변환** (이미지 용량 **70% 감소**)
-- 변환된 이미지를 **AWS S3**에 저장 후 **CDN** 도입으로 콘텐츠 다운로드 시간 **2초 → 1초** 단축
+- 변환된 이미지를 **AWS S3**에 저장하고 **Amazon CloudFront**를 적용해 콘텐츠 다운로드 시간 **2초 → 1초** 단축
 
 ### Flyway 기반 DB 스키마 버전 관리 및 자동 반영
 
