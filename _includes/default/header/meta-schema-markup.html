@@ -101,11 +101,12 @@
 
 {%- if publisher_id == person_id or author_id == person_id or copyright_id == person_id or thing_id == person_id -%}
   {%- include multi_lng/get-page-by-layout.liquid layout = 'about' -%}
+  {%- assign person_page_url = layout_page_url | default: base_url -%}
   {%-capture person_meta_ld_json %}
       "@type": "Person"
       ,"@id": "{{ person_id }}"
       ,"name": "{{ meta_author }}"
-      ,"url": "{{ layout_page_url }}"
+      ,"url": "{{ person_page_url }}"
     {%- if meta_about_image %}
       ,"image": "{{ meta_about_image }}"
     {%- endif %}

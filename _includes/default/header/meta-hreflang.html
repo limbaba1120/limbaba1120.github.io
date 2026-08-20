@@ -8,8 +8,9 @@
 {%- if lng_page_pair.size > 1 %}
   {%- for lng_page in lng_page_pair %}
     {%- include multi_lng/get-lng-by-url.liquid url=lng_page.url -%}
-    {%- include multi_lng/get-lng-code.liquid lng = get_lng country = include.open_graph joinWith = "_" %}
-    {%- if get_lng == lng and include.head == nil %}
+    {%- assign lng_page_lng = lng_page.lang | default: get_lng -%}
+    {%- include multi_lng/get-lng-code.liquid lng = lng_page_lng country = include.open_graph joinWith = "_" %}
+    {%- if lng_page.url == page.url and include.head == nil %}
       {%- if include.hreflang %}
         <link rel="canonical" href="{{ lng_page.url | absolute_url }}" />
       {%- endif %}
@@ -21,16 +22,16 @@
         <meta property="og:locale:alternate" content="{{ lng_code }}">
       {%- endif %}
     {%- endif %}
-    {%- if get_lng == site.data.conf.main.default_lng %}
+    {%- if lng_page_lng == site.data.conf.main.default_lng %}
       {%- if include.hreflang %}
         <{{ include.head }}link rel="alternate" hreflang="x-default" href="{{ lng_page.url | absolute_url }}" />
       {%- endif %}
     {%- endif %}
     {%- if include.hreflang %}
-      {%- include multi_lng/get-lng-code.liquid lng = get_lng %}
+      {%- include multi_lng/get-lng-code.liquid lng = lng_page_lng %}
       <{{ include.head }}link rel="alternate" hreflang="{{ lng_code }}" href="{{ lng_page.url | absolute_url }}" />
       {%- if site.data.conf.main.html_lng_with_country_code %}
-        <{{ include.head }}link rel="alternate" hreflang="{{ get_lng }}" href="{{ lng_page.url | absolute_url }}" />
+        <{{ include.head }}link rel="alternate" hreflang="{{ lng_page_lng }}" href="{{ lng_page.url | absolute_url }}" />
       {%- endif %}
     {%- endif %}
   {%- endfor %}

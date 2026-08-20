@@ -6,7 +6,7 @@
 layout: util/compress
 ---
 {%- include multi_lng/get-lng-by-url.liquid -%}
-{%- assign lng = get_lng -%}
+{%- assign lng = page.lang | default: get_lng -%}
 {%- assign default_dark = nil -%}
 {% if site.data.conf.main.color_scheme_default_dark
   and site.data.conf.main.color_scheme_switch_side_nav != true
