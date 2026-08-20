@@ -40,7 +40,7 @@ projects:
           - Flyway managed schema changes as scripts with full history
       - heading: Concurrent bidding race condition
         points:
-          - 100-bidder concurrency test reproduced the issue → adopted Redisson-based distributed lock instead of pessimistic/optimistic DB locks
+          - Reproduced the issue with a 100-bidder concurrency test → applied Redis-based distributed locking so only one request at a time processes a bid for a given auction item
           - "@DistributedLock annotation + AOP for a reusable, business-logic-free lock component"
   - slug: look-us
     name: Look US — Fashion Community Service

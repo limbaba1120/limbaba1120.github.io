@@ -63,8 +63,7 @@ When 100 users bid at the same time, **multiple bids could succeed concurrently*
 ### The fix
 
 - Wrote a **test that simulates concurrent bidders** to reliably reproduce the issue and pin down the root cause.
-- Avoided pessimistic / optimistic locks at the Repository (infra) layer — they raise exceptions and waste server resources. Instead, introduced **Redis-based distributed locking** so the application layer can fail fast.
-- Used **Redisson `RLock`** so that, for a given auction item, **only one bid request acquires the lock** and proceeds.
+- Introduced **Redis-based distributed locking** to control concurrent bids, allowing only **one request at a time** to process a bid for a given auction item.
 - Built a **`@DistributedLock` annotation** with custom `waitTime` / `leaseTime`, and used **AOP** to keep business logic clean and the lock reusable as a component.
 
 </section>
