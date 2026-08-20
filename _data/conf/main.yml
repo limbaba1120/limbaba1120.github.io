@@ -279,7 +279,7 @@ meta:
   open_graph_locale: true
   schema_markup: true
   # use base url with languages suffixes.
-  schema_markup_base_url_with_lang: true
+  schema_markup_base_url_with_lang: false
   # organization, person, "" (set to "" to disable) (this will be only added to index.html)
   schema_markup_thing: "person"
   # organization, person "" (set to "" to disable)
