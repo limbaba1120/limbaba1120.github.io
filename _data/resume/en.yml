@@ -81,7 +81,7 @@ projects:
           - Managed meeting and attendee lifecycles with CreateMeeting, CreateAttendee, and DeleteMeeting from the Amazon Chime SDK Meetings API
       - heading: Social login
         points:
-          - Streamlined sign-up / login by integrating GitHub OAuth (familiar for devs)
+          - Implemented social sign-up and login with GitHub OAuth
           - Used Spring Security with the OAuth 2.0 client library
 
 education:

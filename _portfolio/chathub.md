@@ -36,7 +36,7 @@ redirect_from:
 
 ### 소셜 로그인 (Spring Security + OAuth 2.0)
 
-- 개발자들에게 친숙한 **GitHub OAuth**를 활용해 회원가입 및 로그인 절차 간소화
+- **GitHub OAuth**를 활용해 소셜 회원가입 및 로그인 구현
 - Spring Security 프레임워크와 OAuth 2.0 클라이언트 라이브러리를 활용
 
 </section>

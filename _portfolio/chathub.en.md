@@ -36,7 +36,7 @@ A coffee-chat service for developers featuring real-time, cloud-based video call
 
 ### Social login (Spring Security + OAuth 2.0)
 
-- Streamlined sign-up and login by integrating **GitHub OAuth**, which felt natural for a developer-focused product
+- Implemented social sign-up and login with **GitHub OAuth**
 - Used Spring Security with the OAuth 2.0 client library
 
 </section>
