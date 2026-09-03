@@ -37,7 +37,7 @@ redirect_from:
 ### 이미지 WebP 변환 + S3 + CloudFront
 
 - 기존 JPEG / PNG 이미지를 **WebP 형식으로 변환** (이미지 용량 **70% 감소**)
-- 변환된 이미지를 **AWS S3**에 저장하고 **Amazon CloudFront**를 적용해 콘텐츠 다운로드 시간 **2초 → 1초** 단축
+- **AWS S3 + Amazon CloudFront** 적용으로 콘텐츠 다운로드 시간 **약 50% 단축**
 
 ### Flyway 기반 DB 스키마 버전 관리 및 자동 반영
 

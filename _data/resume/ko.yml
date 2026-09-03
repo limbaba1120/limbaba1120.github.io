@@ -34,7 +34,7 @@ projects:
       - heading: 이미지 WebP 변환 + S3 + CloudFront
         points:
           - 기존 JPEG / PNG 이미지를 WebP 형식으로 변환 (용량 70% 이상 감소)
-          - AWS S3 저장 + Amazon CloudFront 적용으로 콘텐츠 다운로드 시간 50% 이상 단축
+          - AWS S3 + Amazon CloudFront 적용으로 콘텐츠 다운로드 시간 약 50% 단축
       - heading: Flyway 기반 DB 스키마 버전 관리 및 자동 반영
         points:
           - 여러 개발자가 테이블을 수정하면서 변경 내역이 누락되고, 개발·운영 환경의 데이터베이스 구조가 달라지는 문제 발생
