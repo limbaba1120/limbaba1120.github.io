@@ -20,6 +20,21 @@
   {%- comment %} get page with layout {% endcomment -%}
   {%- assign _pages = lng_pages | where_exp: "item", "item.layout == button_key" -%}
 
+  {%- comment %} English pages use language suffixes at the end of their URLs,
+       while the original theme expects `/en/...`. Resolve the three published
+       English navigation routes explicitly when the generic filter has no match. {% endcomment -%}
+  {%- if _pages.size == 0 and lng == 'en' -%}
+    {%- assign target_url = nil -%}
+    {%- case button_key -%}
+      {%- when 'home' -%}{%- assign target_url = '/' -%}
+      {%- when 'resume' -%}{%- assign target_url = '/resume/en/' -%}
+      {%- when 'portfolio-list' -%}{%- assign target_url = '/portfolio/en/' -%}
+    {%- endcase -%}
+    {%- if target_url -%}
+      {%- assign _pages = site.html_pages | where: 'url', target_url -%}
+    {%- endif -%}
+  {%- endif -%}
+
   {%- comment %} keep only the first match per button — handles paginator pages
        (post-list) and any environment where site.html_pages yields duplicates. {% endcomment -%}
   {%- if _pages.size > 1 -%}
