@@ -4,6 +4,17 @@
   Licensed under MIT
 {%-endcomment-%}
 
+{%- if page.url contains '/en/' -%}
+  {%- assign home_class = '' -%}
+  {%- assign resume_class = '' -%}
+  {%- assign portfolio_class = '' -%}
+  {%- if page.url == '/resume/en/' -%}{%- assign resume_class = 'active-page' -%}{%- endif -%}
+  {%- if page.url == '/portfolio/en/' -%}{%- assign portfolio_class = 'active-page' -%}{%- endif -%}
+  <li><a href="{{ site.baseurl }}/" class="{{ home_class }} {{ include.effect }}"><i class="fa-fw fa fa-home" aria-hidden="true"></i> Home</a></li>
+  <li><a href="{{ site.baseurl }}/resume/en/" class="{{ resume_class }} {{ include.effect }}"><i class="fa-fw fa fa-file-text-o" aria-hidden="true"></i> Resume</a></li>
+  <li><a href="{{ site.baseurl }}/portfolio/en/" class="{{ portfolio_class }} {{ include.effect }}"><i class="fa-fw fa fa-folder-open-o" aria-hidden="true"></i> Portfolio</a></li>
+{%- else -%}
+
 {%- include multi_lng/get-pages-by-lng.liquid pages = site.html_pages -%}
 
 {%- comment %} get blog page {% endcomment -%}
@@ -19,21 +30,6 @@
   {%- assign button_key = button | first | first %}
   {%- comment %} get page with layout {% endcomment -%}
   {%- assign _pages = lng_pages | where_exp: "item", "item.layout == button_key" -%}
-
-  {%- comment %} English pages use language suffixes at the end of their URLs,
-       while the original theme expects `/en/...`. Resolve the three published
-       English navigation routes explicitly from the page language. {% endcomment -%}
-  {%- if page.lang == 'en' -%}
-    {%- assign target_url = nil -%}
-    {%- case button_key -%}
-      {%- when 'home' -%}{%- assign target_url = '/' -%}
-      {%- when 'resume' -%}{%- assign target_url = '/resume/en/' -%}
-      {%- when 'portfolio-list' -%}{%- assign target_url = '/portfolio/en/' -%}
-    {%- endcase -%}
-    {%- if target_url -%}
-      {%- assign _pages = site.html_pages | where: 'url', target_url -%}
-    {%- endif -%}
-  {%- endif -%}
 
   {%- comment %} keep only the first match per button — handles paginator pages
        (post-list) and any environment where site.html_pages yields duplicates. {% endcomment -%}
@@ -60,3 +56,4 @@
     <li {{active_style}}><a href="{{ site.baseurl }}{{ _page.url }}" class="{{ active_class }} {{ include.effect }}">{{ icon_tag }}{{ button_name }}</a></li>
   {%- endfor -%}
 {%- endfor -%}
+{%- endif -%}
