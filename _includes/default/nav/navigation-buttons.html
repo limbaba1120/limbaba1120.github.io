@@ -22,8 +22,8 @@
 
   {%- comment %} English pages use language suffixes at the end of their URLs,
        while the original theme expects `/en/...`. Resolve the three published
-       English navigation routes explicitly when the generic filter has no match. {% endcomment -%}
-  {%- if _pages.size == 0 and lng == 'en' -%}
+       English navigation routes explicitly from the page language. {% endcomment -%}
+  {%- if page.lang == 'en' -%}
     {%- assign target_url = nil -%}
     {%- case button_key -%}
       {%- when 'home' -%}{%- assign target_url = '/' -%}
