@@ -1,5 +1,5 @@
 ---
-layout: portfolio-list-en
+layout: portfolio-list
 lng_pair: id_Portfolio
 permalink: /portfolio/en/
 title: Portfolio (English)

@@ -1,5 +1,5 @@
 ---
-layout: resume-en
+layout: resume
 lng_pair: id_Resume
 permalink: /resume/en/
 title: Resume (English)

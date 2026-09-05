@@ -12,6 +12,11 @@
 {%- comment -%} create an empty array {%- endcomment -%}
 {%- assign lng_pages = '' | split: '' -%}
 {%- for lng_page in include.pages -%}
+  {%- comment -%} The root home page is shared by every language. {%- endcomment -%}
+  {%- if lng_page.layout == 'home' -%}
+    {%- assign lng_pages = lng_pages | push: lng_page -%}
+    {%- continue -%}
+  {%- endif -%}
   {%- include multi_lng/get-lng-by-url.liquid url = lng_page.url -%}
   {%- assign candidate_lng = lng_page.lang | default: get_lng -%}
   {%- if candidate_lng != current_page_lng -%}{%- continue -%}{%- endif -%}
