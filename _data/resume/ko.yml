@@ -33,7 +33,7 @@ projects:
           - Next.js에서 SockJS와 Stomp.js를 사용해 WebSocket 연결 및 채팅 UI 직접 구현
       - heading: 이미지 WebP 변환 + S3 + CloudFront
         points:
-          - 기존 JPEG / PNG 이미지를 WebP 형식으로 변환 (용량 70% 이상 감소)
+          - 기존 JPEG / PNG 이미지를 WebP 형식으로 변환 (용량 약 70% 감소)
           - AWS S3 + Amazon CloudFront 적용으로 콘텐츠 다운로드 시간 약 50% 단축
       - heading: Flyway 기반 DB 스키마 버전 관리 및 자동 반영
         points:

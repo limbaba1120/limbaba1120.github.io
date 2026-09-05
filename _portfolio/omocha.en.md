@@ -36,7 +36,7 @@ A trading platform for limited-edition goods that are hard to find through norma
 
 ### WebP conversion + S3 + CloudFront
 
-- Converted existing JPEG / PNG to **WebP** (image size **−70%**)
+- Converted existing JPEG / PNG to **WebP** (image size reduced by **approximately 70%**)
 - Reduced content download time by **approximately 50%** with **AWS S3 + Amazon CloudFront**
 
 ### Database schema versioning and automated updates with Flyway

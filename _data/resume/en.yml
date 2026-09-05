@@ -32,7 +32,7 @@ projects:
           - Directly implemented the chat UI and WebSocket connection in Next.js using SockJS and Stomp.js
       - heading: WebP conversion + S3 + CloudFront
         points:
-          - Converted JPEG / PNG to WebP (image size reduced 70%+)
+          - Converted JPEG / PNG to WebP (image size reduced by approximately 70%)
           - AWS S3 + Amazon CloudFront, cutting content download time by approximately 50%
       - heading: Database schema versioning and automated updates with Flyway
         points:
