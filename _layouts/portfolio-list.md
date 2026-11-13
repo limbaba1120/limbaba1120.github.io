@@ -107,24 +107,6 @@ layout: default
     </div>
   </section>
 
-  <section class="portfolio-overview" aria-label="{{ t_overview }}">
-    <p class="portfolio-overview-label">{{ t_overview }}</p>
-    <dl class="portfolio-overview-grid">
-      <div class="portfolio-overview-stat">
-        <dt>{{ t_stat_count_label }}</dt>
-        <dd><span class="portfolio-overview-num">{{ items.size }}</span></dd>
-      </div>
-      <div class="portfolio-overview-stat">
-        <dt>{{ t_stat_stack_label }}</dt>
-        <dd>{{ t_stat_stack_value }}</dd>
-      </div>
-      <div class="portfolio-overview-stat">
-        <dt>{{ t_stat_focus_label }}</dt>
-        <dd>{{ t_stat_focus_value }}</dd>
-      </div>
-    </dl>
-  </section>
-
   <nav class="portfolio-toc no-print" aria-label="{{ t_index }}">
     <p class="portfolio-toc-label">{{ t_index }}</p>
     <ol>
@@ -147,7 +129,7 @@ layout: default
       <article class="portfolio-block" id="{{ p.slug }}">
         <header class="portfolio-block-head">
           <p class="portfolio-block-num">{{ num }}</p>
-          <p class="portfolio-block-meta">{{ p.period }}{% if p.role %} · {{ p.role }}{% endif %}</p>
+          <p class="portfolio-block-meta"><span>{{ p.period }}</span>{% if p.role %}<span>{{ p.role }}</span>{% endif %}</p>
           <h2 class="portfolio-block-title">{{ p.title }}</h2>
           {%- if p.tags or p.links %}
           <div class="portfolio-block-tagrow">

@@ -35,8 +35,7 @@ layout: default
 {%- endif -%}
 
 <div class="resume-actions no-print">
-  <a class="resume-btn resume-btn-primary" href="{{ site.baseurl }}{{ pdf_url }}" download><i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp;{{ t_download }}</a>
-  <button type="button" class="resume-btn" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;{{ t_print }}</button>
+  <button type="button" class="resume-btn resume-btn-primary" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;{{ t_print }}</button>
   <a class="resume-btn" href="{{ site.baseurl }}{{ other_url }}"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;{{ t_switch }}</a>
 </div>
 
