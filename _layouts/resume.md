@@ -2,6 +2,10 @@
 layout: default
 # Resume layout — renders from _data/resume/<lang>.yml using page.lang
 ---
+{% if page.lang == 'ko' %}
+{% include resume-career.html %}
+{% else %}
+
 {%- assign lng = page.lang | default: 'ko' -%}
 {%- assign r = site.data.resume[lng] -%}
 
@@ -174,3 +178,5 @@ layout: default
   </section>
   {% endif -%}
 </article>
+
+{% endif %}

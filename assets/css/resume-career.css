@@ -1,0 +1,92 @@
+
+.career-company{font-size:23px;margin:0;font-weight:750}.career-service{color:#4a5568;font-size:14px;line-height:1.7}.career-service strong{color:#253752;font-weight:600}.career-stack{font-size:12px;color:#718096;line-height:1.7;margin-top:8px!important}.career-work{margin-top:20px;break-inside:avoid}.career-work h4{font-size:15px;color:#263d62;margin:0 0 7px;font-weight:700}.career-work ul{margin:0;padding-left:18px}.career-work li{font-size:13.5px;color:#4a5568;line-height:1.75;margin:5px 0}.career-work li::marker{color:#60718a}.career-work strong{color:#253752;font-weight:650}.career-skills{display:grid;grid-template-columns:150px 1fr;margin:0;font-size:13.5px}.career-skills dt,.career-skills dd{margin:0;padding:9px 0;border-bottom:1px solid #e1e6ed}.career-skills dt{color:#657185;font-weight:650;padding-right:15px}.career-skills dd{color:#253047}.preview-nav{display:flex;justify-content:center;gap:18px;align-items:center;font:13px sans-serif;color:#637087}.preview-nav button{border:1px solid #ccd4df;border-radius:6px;background:white;color:#293e64;padding:8px 12px;cursor:pointer}.resume .career-section{margin-bottom:32px}@media(max-width:600px){.career-skills{grid-template-columns:110px 1fr;font-size:12px}.career-company{font-size:20px}.preview-nav{flex-wrap:wrap}}@media print{.preview-nav{display:none!important}.career-work{break-inside:avoid}.career-section{break-inside:auto!important}}
+
+
+    .resume,.resume *{box-sizing:border-box}
+    .resume.first-page{width:210mm;min-height:297mm;padding:11mm 14mm;font-size:12px}
+    .first-page .identity-line{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px;margin-bottom:8px}
+    .first-page .identity-line .resume-name{margin:0}
+    .first-page .identity-line .resume-title{margin:0;padding-left:15px;border-left:1px solid #ccd5de;font-size:14px;line-height:1.2;font-weight:600;color:#436971}
+    .first-page .career-intro-lead{font-size:12px;line-height:1.55;color:#4a5568;margin:0 0 6px}
+    .first-page .career-intro-lead strong{font-weight:700;color:inherit}
+    .first-page .resume-header{gap:14px;margin-bottom:12px;padding-bottom:11px;border-bottom:2px solid #293e64}
+    .first-page .resume-header-photo img{width:76px;height:88px;object-fit:cover}
+    .first-page .resume-name{font-size:28px}.first-page .resume-title{font-size:13px;margin-bottom:5px}
+    .first-page .resume-summary{font-size:12px;line-height:1.55;margin:5px 0 7px}
+    .first-page .resume-contact{font-size:11px;gap:7px 16px}
+    .first-page .resume-section,.first-page .resume-section:first-of-type{margin-top:13px}
+    .first-page .resume-section-title{font-size:16px;margin:0 0 8px;padding:0 0 5px;letter-spacing:0}
+    .first-page .career-skills{grid-template-columns:132px 1fr;font-size:11.7px;line-height:1.5}
+    .first-page .career-skills dt,.first-page .career-skills dd{padding:5px 0}
+    .first-page .credentials-row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .first-page .credentials-row .resume-item{margin-bottom:7px}
+    .first-page .credentials-row .resume-item-head{display:block;margin:0;line-height:1.4}
+    .first-page .credentials-row .resume-item-head strong{font-size:11.5px;display:block}
+    .first-page .credentials-row .resume-item-meta{font-size:10.5px;margin:0}
+    .first-page .credentials-row .resume-item-sub{font-size:10.5px;margin:0;line-height:1.4}
+    .first-page .credentials-row .resume-notes{font-size:10px;line-height:1.4;margin:2px 0 0;color:#647185}
+    .first-page .resume-cert-list>li{display:grid;grid-template-columns:1fr auto;gap:1px 7px;padding:5px 0}
+    .first-page .resume-cert-list strong{font-size:11.5px;grid-column:1;grid-row:1}
+    .first-page .resume-cert-list .resume-cert-issuer{font-size:10px;grid-column:1;grid-row:2}
+    .first-page .resume-cert-list .resume-item-meta{grid-column:2;grid-row:1;font-size:10.5px}
+    .first-page .career-company{font-size:18px}.first-page .career-section .resume-item-meta{font-size:11px}
+    .first-page .career-section .resume-item-sub{font-size:11.5px;margin:0}
+    .first-page .career-service{font-size:11.5px;line-height:1.5;margin:4px 0}
+    .first-page .career-stack{font-size:10px;line-height:1.4;margin:4px 0 0!important}
+    .first-page .career-work{margin-top:10px}.first-page .career-work h4{font-size:12.2px;margin:0 0 3px}
+    .first-page .career-work li{font-size:11.5px;line-height:1.55;margin:3px 0}
+    .first-page .career-section{margin-bottom:0}
+    .first-page .career-role-inline{font-size:11.5px;font-weight:500;color:#657185;display:inline-block;border-left:1px solid #d8dfe7;padding-left:10px;margin-left:8px;vertical-align:middle}
+    .first-page .career-service{background:#f5f7f9;border-radius:5px;padding:8px 11px;margin:8px 0 5px;line-height:1.6}
+    .first-page .career-service-heading{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+    .first-page .career-service-heading strong{font-size:12px}
+    .first-page .career-service-heading>span{font-size:10.5px;color:#52647a;font-weight:500}
+    .first-page .career-service-description{display:block;color:#647185;font-size:10.5px}
+    .first-page .career-stack{color:#657185;margin:0 0 6px!important;font-size:9.8px}
+    .first-page .career-work{margin-top:8px;padding-top:8px;border-top:1px solid #e4e9ef}
+    .first-page .career-work h4{display:flex;align-items:baseline;gap:8px;font-size:12px;margin-bottom:4px}
+    .first-page .work-index{color:#647b89;font-size:10px;letter-spacing:.04em;font-weight:600}
+    .first-page .career-work ul{padding-left:30px}
+    .first-page .career-work li{padding-left:0;margin:3px 0;color:#4a5568}
+    .first-page .career-work li::marker{color:#91a0b0;font-size:9px}
+    .first-page .career-work strong{color:#293e64}
+    .projects-page{margin-top:24px}
+    @media(max-width:790px){.resume.first-page{width:100%;padding:24px}.first-page .credentials-row{gap:16px}}
+    @media(max-width:500px){.first-page .credentials-row{grid-template-columns:1fr}.first-page .career-skills{grid-template-columns:110px 1fr}.first-page .resume-summary{font-size:13px}.first-page .career-work li{font-size:13px}}
+    /* Shared typography for every resume section and contribution. */
+    .resume .resume-section-title,.resume.first-page .resume-section-title{font-family:inherit;font-size:16px;font-weight:700;line-height:1.5;letter-spacing:0;color:#192638;margin:0 0 10px;padding:0 0 7px;border-bottom:1px solid #e2e8ed}
+    .resume .resume-contrib-head,.resume.first-page .career-work h4{font-family:inherit;font-size:13px;font-weight:700;color:#192638;line-height:1.6;margin:0 0 4px;display:block}
+    .resume .resume-contrib-points li,.resume.first-page .career-work li{font-family:inherit;font-size:12px;line-height:1.65;color:#344254;margin:3px 0;padding-left:0}
+    .resume.first-page .career-work{margin-top:11px;padding-top:0;border:0}
+    .resume.first-page .career-work ul{list-style:none;padding-left:14px}
+    .resume.first-page .career-work li::before{width:3px;height:3px;border-radius:50%;left:-12px;top:9px;background:#356469}
+    .resume.first-page .career-work strong{color:#192638;font-weight:650}
+    .resume.first-page .career-service{background:transparent;border-radius:0;padding:0;margin:7px 0 8px;color:#344254}
+    .resume.first-page .career-service-heading{gap:10px}
+    .resume.first-page .career-service-heading strong{font-size:13px;color:#192638}
+    .resume.first-page .career-service-heading>span{font-size:11px;color:#687582}
+    .resume.first-page .career-service-description{font-size:11px;color:#687582;margin:2px 0}
+    .resume.first-page .career-stack{display:flex;flex-wrap:wrap;gap:4px;margin:7px 0 12px!important}
+    .resume.first-page .career-stack .resume-tag,.resume .resume-project-card .resume-tag{font-size:10.5px;padding:3px 6px;margin:0;line-height:1.5;background:#f5f7f8;color:#5b6974;border-radius:3px;font-weight:400}
+    .resume.first-page .career-company,.resume .resume-project-card .resume-project-name{font-size:20px;color:#192638;line-height:1.4;font-weight:700;letter-spacing:-.025em}
+    .resume.first-page .resume-header-photo img{width:104px;height:124px;object-fit:cover;border-radius:7px}
+    .resume.first-page .resume-contact{font-size:10px;gap:5px 15px;line-height:1.5}
+    .resume.first-page .resume-contact li{gap:5px}
+    .resume.first-page .resume-contact svg{width:12px;height:12px;flex:0 0 12px}
+    .resume.first-page .career-service{padding:0 0 0 10px;border-left:2px solid #dce5e7;margin:8px 0 9px;line-height:1.6}
+    .resume.first-page .career-service-heading{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .resume.first-page .career-service-heading strong{font-size:13px;line-height:1.5;color:#192638}
+    .resume.first-page .career-service-heading .service-scale{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:#687582;line-height:1.5}
+    .resume.first-page .service-scale b{font-weight:600;color:#43656b}
+    .resume.first-page .service-scale i{display:inline-block;height:9px;width:1px;background:#d6dfe4;margin:0 5px}
+    .resume.first-page .career-service-description{margin:2px 0 4px;font-size:11px;color:#687582}
+    .resume.first-page .career-service-scope{display:flex;align-items:baseline;gap:9px;font-size:11.5px;color:#344254}
+    .resume.first-page .scope-label{flex:0 0 auto;font-size:10px;font-weight:600;color:#687582}
+    @media(max-width:500px){.resume.first-page .resume-header-photo img{width:88px;height:105px}.resume.first-page .career-service-scope{display:block}.resume.first-page .scope-label{display:block;margin-bottom:2px}}
+    .resume.first-page .career-company-description{font-size:12px;line-height:1.7;color:#344254;margin:9px 0}
+    .resume.first-page .career-highlights{padding-left:15px;margin:14px 0 0;list-style:none}
+    .resume.first-page .career-highlights li{font-size:12.5px;line-height:1.75;margin:8px 0;color:#344254;word-break:keep-all;break-inside:avoid}
+    .resume.first-page .career-highlights li::before{top:10px}
+    .resume.first-page .career-highlights strong{font-weight:600;color:#192638}
+    @page{size:A4;margin:0}
+    @media print{html,body{margin:0!important;padding:0!important;background:white!important}.preview-nav{display:none!important}.resume.first-page{width:210mm;min-height:297mm;padding:11mm 14mm!important;margin:0!important;border:0;box-shadow:none;border-radius:0;break-after:page}.projects-page{margin:0!important;box-shadow:none;border:0;border-radius:0}.first-page .credentials-row{grid-template-columns:1fr 1fr}.first-page .resume-header{display:flex!important}.first-page .resume-header-photo{display:block!important}.first-page .resume-section{break-inside:auto}.first-page .career-work{break-inside:avoid}}
