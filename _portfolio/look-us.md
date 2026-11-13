@@ -4,7 +4,7 @@ slug: look-us
 lang: ko
 date: 2024-08-30
 period: 2024.07 - 2024.08 (1개월)
-role: 백엔드 (4) · 패스트캠퍼스 Kernel 360 팀프로젝트
+role: 패스트캠퍼스 Kernel 360 팀프로젝트 · 백엔드 4명
 tags: [Java, Spring Boot, JPA, MySQL, Redis, GCP, Nginx, Docker, GitHub Actions]
 hero: /assets/img/portfolio/look-us/hero.jpg
 summary: 데일리룩을 공유하고 색상을 통해 원하는 패션 스타일을 찾는 패션 커뮤니티.
@@ -19,22 +19,18 @@ redirect_from:
 
 데일리룩을 공유하고 색상을 통해 원하는 패션 스타일을 찾는 패션 커뮤니티 서비스입니다. 기획·설계·개발·운영까지 팀원들과 협업하며 진행했습니다.
 
-## 팀 구성
 
-- 백엔드 4명
-- 협업 도구: GitHub · Notion · Discord
-
-## 내가 기여한 부분
+## 주요 기여
 
 <section class="pf-contrib" markdown="1">
 
-### CI/CD 파이프라인 구축 및 배포 자동화
+### 빌드·배포 자동화
 
 - **GitHub Actions**를 활용한 빌드·배포 자동화
 - Gradle 빌드 → Docker 이미지 생성·Docker Hub 푸시 → SSH로 GCP 서버 접속 → Docker Compose 재배포
 - **Nginx + OpenSSL** 으로 HTTPS 적용해 웹 보안 강화
 
-### 소셜 로그인 (Spring Security + OAuth 2.0)
+### 소셜 회원가입·로그인
 
 - Spring Security 프레임워크와 OAuth 2.0 클라이언트 라이브러리로 소셜 로그인 구현
 
@@ -50,7 +46,7 @@ redirect_from:
 
 </section>
 
-## 트러블 슈팅 — Docker 이미지 누적으로 인스턴스 다운
+## 문제 해결 · 배포 서버의 디스크 공간 부족
 
 <section class="pf-trouble" markdown="1">
 

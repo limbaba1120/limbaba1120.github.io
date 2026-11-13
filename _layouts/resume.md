@@ -46,17 +46,18 @@ layout: default
       <h1 class="resume-name">{{ r.profile.name }}</h1>
       {%- if r.profile.title %}<p class="resume-title">{{ r.profile.title }}</p>{% endif %}
       {%- if r.profile.summary %}<p class="resume-summary">{{ r.profile.summary | newline_to_br }}</p>{% endif %}
-      <ul class="resume-contact">
-        {%- if r.profile.contact.email %}<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:{{ r.profile.contact.email }}">{{ r.profile.contact.email }}</a></li>{% endif %}
-        {%- if r.profile.contact.phone %}<li><i class="fa fa-phone" aria-hidden="true"></i> {{ r.profile.contact.phone }}</li>{% endif %}
-        {%- if r.profile.contact.github %}<li><i class="fa fa-github" aria-hidden="true"></i> <a href="{{ r.profile.contact.github }}">{{ r.profile.contact.github | remove: 'https://' }}</a></li>{% endif %}
-      </ul>
+
     </div>
     {%- if r.profile.photo %}
     <div class="resume-header-photo">
       <img src="{{ site.baseurl }}{{ r.profile.photo }}" alt="{{ r.profile.name }}" loading="lazy" decoding="async">
     </div>
     {% endif -%}
+      <ul class="resume-contact">
+        {%- if r.profile.contact.email %}<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:{{ r.profile.contact.email }}">{{ r.profile.contact.email }}</a></li>{% endif %}
+        {%- if r.profile.contact.phone %}<li><i class="fa fa-phone" aria-hidden="true"></i> {{ r.profile.contact.phone }}</li>{% endif %}
+        {%- if r.profile.contact.github %}<li><i class="fa fa-github" aria-hidden="true"></i> <a href="{{ r.profile.contact.github }}">{{ r.profile.contact.github | remove: 'https://' }}</a></li>{% endif %}
+      </ul>
   </header>
 
   {%- if r.experience and r.experience.size > 0 %}
@@ -100,11 +101,11 @@ layout: default
       {% for p in r.projects %}
         <li class="resume-project-card">
           <div class="resume-item-head">
-            <strong>{{ p.name }}</strong>
+            <h3 class="resume-project-name">{{ p.display_name | default: p.name }}{% if p.category %}<span class="resume-project-category">{{ p.category }}</span>{% endif %}</h3>
             {% if p.period %}<span class="resume-item-meta">{{ p.period }}</span>{% endif %}
           </div>
-          {% if p.role %}<p class="resume-item-sub">{{ p.role }}{% if p.team %} · {{ p.team }}{% endif %}</p>{% endif %}
           {% if p.one_liner %}<p class="resume-project-desc">{{ p.one_liner }}</p>{% endif %}
+          {% if p.role or p.team %}<p class="resume-project-context">{% if p.role %}<span>{{ p.role }}</span>{% endif %}{% if p.team %}<span>{{ p.team }}</span>{% endif %}</p>{% endif %}
           {% if p.tags and p.tags.size > 0 %}<p class="resume-tags">{% for tag in p.tags %}<span class="resume-tag">{{ tag }}</span>{% endfor %}</p>{% endif %}
           {% if p.contributions and p.contributions.size > 0 %}
           <ul class="resume-contrib-list">

@@ -10,7 +10,7 @@ layout: default
 {%- if lng == 'en' -%}
   {%- assign t_eyebrow = 'Portfolio' -%}
   {%- assign t_title = 'Portfolio' -%}
-  {%- assign t_intro = 'I adapt well to changing environments, value collaboration, and continuously learn and grow quickly.' -%}
+  {%- assign t_intro = 'Backend projects spanning real-time communication, concurrency control, and deployment automation. Explore my contributions and the problems I solved.' -%}
   {%- assign t_alt_preview = 'preview' -%}
   {%- assign t_resume = 'View resume →' -%}
   {%- assign t_switch = '한국어' -%}
@@ -40,7 +40,7 @@ layout: default
 {%- else -%}
   {%- assign t_eyebrow = '포트폴리오' -%}
   {%- assign t_title = 'Portfolio' -%}
-  {%- assign t_intro = '변화하는 환경에 적응 잘하고, 협업을 중시하며 끊임없이 배우고 빠르게 성장하는 임건우입니다.' -%}
+  {%- assign t_intro = '실시간 통신, 동시성 제어, 배포 자동화를 구현한 백엔드 프로젝트입니다. 서비스별 담당 기능과 문제 해결 과정을 정리했습니다.' -%}
   {%- assign t_alt_preview = '미리보기' -%}
   {%- assign t_resume = '이력서 보기 →' -%}
   {%- assign t_switch = 'English' -%}
@@ -71,8 +71,8 @@ layout: default
 
 <div class="portfolio-page">
   <header class="portfolio-hero">
+    <p class="portfolio-eyebrow">BACKEND DEVELOPER · {{ site.data.resume[lng].profile.name }}</p>
     <h1 class="portfolio-hero-title">{{ t_title }}</h1>
-    <p class="portfolio-hero-intro">{{ t_intro }}</p>
     <div class="portfolio-hero-actions no-print">
       <a class="portfolio-pill" href="{{ site.baseurl }}{{ resume_url }}"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;{{ t_resume }}</a>
       <a class="portfolio-pill portfolio-pill-ghost" href="{{ site.baseurl }}{{ other_url }}"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;{{ t_switch }}</a>
@@ -80,24 +80,6 @@ layout: default
   </header>
 
   {%- if items.size > 0 %}
-  <section class="portfolio-overview" aria-label="{{ t_overview }}">
-    <p class="portfolio-overview-label">{{ t_overview }}</p>
-    <dl class="portfolio-overview-grid">
-      <div class="portfolio-overview-stat">
-        <dt>{{ t_stat_count_label }}</dt>
-        <dd><span class="portfolio-overview-num">{{ items.size }}</span></dd>
-      </div>
-      <div class="portfolio-overview-stat">
-        <dt>{{ t_stat_stack_label }}</dt>
-        <dd>{{ t_stat_stack_value }}</dd>
-      </div>
-      <div class="portfolio-overview-stat">
-        <dt>{{ t_stat_focus_label }}</dt>
-        <dd>{{ t_stat_focus_value }}</dd>
-      </div>
-    </dl>
-  </section>
-
   <section class="portfolio-approach" aria-label="{{ t_approach }}">
     <p class="portfolio-approach-label">{{ t_approach }}</p>
     <ol>
@@ -125,6 +107,24 @@ layout: default
     </div>
   </section>
 
+  <section class="portfolio-overview" aria-label="{{ t_overview }}">
+    <p class="portfolio-overview-label">{{ t_overview }}</p>
+    <dl class="portfolio-overview-grid">
+      <div class="portfolio-overview-stat">
+        <dt>{{ t_stat_count_label }}</dt>
+        <dd><span class="portfolio-overview-num">{{ items.size }}</span></dd>
+      </div>
+      <div class="portfolio-overview-stat">
+        <dt>{{ t_stat_stack_label }}</dt>
+        <dd>{{ t_stat_stack_value }}</dd>
+      </div>
+      <div class="portfolio-overview-stat">
+        <dt>{{ t_stat_focus_label }}</dt>
+        <dd>{{ t_stat_focus_value }}</dd>
+      </div>
+    </dl>
+  </section>
+
   <nav class="portfolio-toc no-print" aria-label="{{ t_index }}">
     <p class="portfolio-toc-label">{{ t_index }}</p>
     <ol>
@@ -133,7 +133,7 @@ layout: default
         <li>
           <a href="#{{ p.slug }}">
             <span class="portfolio-toc-num">{{ num }}</span>
-            <span class="portfolio-toc-title">{{ p.title }}</span>
+            <span class="portfolio-toc-title">{{ p.title }}<small>{{ p.summary }}</small></span>
             <span class="portfolio-toc-period">{{ p.period }}</span>
           </a>
         </li>
@@ -149,7 +149,6 @@ layout: default
           <p class="portfolio-block-num">{{ num }}</p>
           <p class="portfolio-block-meta">{{ p.period }}{% if p.role %} · {{ p.role }}{% endif %}</p>
           <h2 class="portfolio-block-title">{{ p.title }}</h2>
-          {%- if p.summary %}<p class="portfolio-block-summary">{{ p.summary }}</p>{% endif -%}
           {%- if p.tags or p.links %}
           <div class="portfolio-block-tagrow">
             {%- if p.tags %}

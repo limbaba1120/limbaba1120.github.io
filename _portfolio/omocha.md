@@ -4,7 +4,7 @@ slug: omocha
 lang: ko
 date: 2024-12-20
 period: 2024.09 - 2024.12 (3개월)
-role: 백엔드 (3) · 패스트캠퍼스 Kernel 360 팀프로젝트
+role: 패스트캠퍼스 Kernel 360 팀프로젝트 · 백엔드 3명 / 프론트엔드 2명
 tags: [Java, Spring Boot, Spring Data JPA, PostgreSQL, Redis, AWS, Docker, RabbitMQ, WebSocket]
 hero: /assets/img/portfolio/omocha/hero.jpg
 summary: 판매자는 더 높은 가격을, 구매자는 소장 기회를 얻을 수 있는 한정판 굿즈 경매 거래 플랫폼.
@@ -19,12 +19,8 @@ redirect_from:
 
 구하기 어려운 한정판 굿즈를 경매로 사고팔 수 있는 종합 거래 플랫폼입니다. 기획·개발·운영을 팀원들과 협업하며 진행했습니다.
 
-## 팀 구성
 
-- 백엔드 3명 / 프론트엔드 2명
-- 협업 도구: GitHub · Notion · Discord
-
-## 내가 기여한 부분
+## 주요 기여
 
 <section class="pf-contrib" markdown="1">
 
@@ -34,12 +30,12 @@ redirect_from:
 - **RabbitMQ**를 STOMP 메시지 브로커로 사용해 채팅 메시지를 구독자에게 중계
 - **Next.js**에서 **SockJS와 Stomp.js**를 사용해 WebSocket 연결 및 채팅 UI 직접 구현
 
-### 이미지 WebP 변환 + S3 + CloudFront
+### 이미지 용량 및 다운로드 시간 개선
 
 - 기존 JPEG / PNG 이미지를 **WebP 형식으로 변환** (이미지 용량 **약 70% 감소**)
 - **AWS S3 + Amazon CloudFront** 적용으로 콘텐츠 다운로드 시간 **약 50% 단축**
 
-### Flyway 기반 DB 스키마 버전 관리 및 자동 반영
+### DB 변경 이력 관리와 환경 일관성 확보
 
 - 여러 개발자가 테이블을 수정하면서 변경 내역이 누락되고, 개발·운영 환경의 데이터베이스 구조가 달라지는 문제 발생
 - **Flyway**를 도입해 테이블 생성·수정 내역을 버전별 SQL 파일로 관리
@@ -52,7 +48,7 @@ redirect_from:
 
 </section>
 
-## 트러블 슈팅 — 동시 입찰의 동시성 문제
+## 문제 해결 · 동시 입찰 처리
 
 <section class="pf-trouble" markdown="1">
 

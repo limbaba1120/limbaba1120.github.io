@@ -23,7 +23,6 @@ layout: default
   <header class="portfolio-detail-head">
     <p class="portfolio-detail-meta">{{ page.period }}{% if page.role %} · {{ page.role }}{% endif %}</p>
     <h1 class="portfolio-detail-title">{{ page.title }}</h1>
-    {%- if page.summary %}<p class="portfolio-detail-summary">{{ page.summary }}</p>{% endif %}
     {%- if page.tags or page.links %}
     <div class="portfolio-block-tagrow">
       {%- if page.tags %}

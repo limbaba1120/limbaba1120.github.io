@@ -26,7 +26,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   color: $pf-ink-soft;
   max-width: 760px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 5rem;
+  padding: 48px 24px 80px;
   line-height: 1.78;
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -39,32 +39,32 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 // Hero
 // =====================================================================
 .portfolio-hero {
-  padding-bottom: 2.25rem;
+  padding-bottom: 36px;
   border-bottom: 1px solid $pf-line;
-  margin-bottom: 3rem;
+  margin-bottom: 48px;
 
   &-title {
     font-family: $pf-font;
-    font-size: 2.4rem;
+    font-size: 38.4px;
     font-weight: 800;
     color: $pf-ink;
-    margin: 0 0 1rem;
+    margin: 0 0 16px;
     letter-spacing: -.02em;
     line-height: 1.2;
     word-break: keep-all;
   }
 
   &-intro {
-    font-size: 1rem;
+    font-size: 16px;
     color: $pf-ink-soft;
-    margin: 0 0 1.75rem;
+    margin: 0 0 28px;
     line-height: 1.78;
     word-break: keep-all;
   }
 
   &-actions {
     display: flex;
-    gap: .55rem;
+    gap: 8.8px;
     flex-wrap: wrap;
   }
 }
@@ -72,13 +72,13 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 .portfolio-pill {
   display: inline-flex;
   align-items: center;
-  gap: .15rem;
-  padding: .55rem 1.05rem;
+  gap: 2.4px;
+  padding: 8.8px 16.8px;
   border-radius: 999px;
   background: $pf-accent;
   color: #fff !important;
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 14.4px;
   border: 1px solid $pf-accent;
   transition: background .15s, transform .15s, color .15s;
 
@@ -88,7 +88,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     transform: translateY(-1px);
   }
 
-  i { margin-right: .25rem; }
+  i { margin-right: 4px; }
 
   &-ghost {
     background: transparent;
@@ -107,20 +107,20 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 // Shared section labels (overview / approach / TOC) — actual heading size
 // =====================================================================
 %pf-section-label {
-  font-size: 1.15rem;
+  font-size: 18.4px;
   font-weight: 800;
   color: $pf-ink;
-  margin: 0 0 1rem;
+  margin: 0 0 16px;
   letter-spacing: -.01em;
   line-height: 1.35;
   display: flex;
   align-items: center;
-  gap: .6rem;
+  gap: 9.6px;
 
   &::before {
     content: "";
-    width: .42rem;
-    height: .42rem;
+    width: 6.72px;
+    height: 6.72px;
     background: $pf-accent;
     border-radius: 999px;
     flex-shrink: 0;
@@ -131,7 +131,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 // Overview (Projects · Stack · Focus)
 // =====================================================================
 .portfolio-overview {
-  margin-bottom: 2.75rem;
+  margin-bottom: 44px;
 
   &-label { @extend %pf-section-label; }
 
@@ -145,17 +145,17 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   }
 
   &-stat {
-    padding: 1.1rem 1.25rem;
+    padding: 17.6px 20px;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: .35rem;
+    gap: 5.6px;
     border-right: 1px solid $pf-line;
 
     &:last-child { border-right: 0; }
 
     dt {
-      font-size: .7rem;
+      font-size: 11.2px;
       text-transform: uppercase;
       letter-spacing: .12em;
       color: $pf-ink-muted;
@@ -164,7 +164,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
     dd {
       margin: 0;
-      font-size: .94rem;
+      font-size: 15.04px;
       color: $pf-ink;
       font-weight: 500;
       line-height: 1.55;
@@ -173,13 +173,13 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
   &-num {
     font-family: $pf-mono;
-    font-size: 1.85rem;
+    font-size: 29.6px;
     font-weight: 800;
     color: $pf-accent;
     letter-spacing: -.02em;
     line-height: 1;
     display: block;
-    margin-top: .1rem;
+    margin-top: 1.6px;
   }
 }
 
@@ -187,7 +187,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 // About — minimal, no card frames
 // =====================================================================
 .portfolio-approach {
-  margin-bottom: 3.25rem;
+  margin-bottom: 52px;
 
   &-label { @extend %pf-section-label; }
 
@@ -202,22 +202,22 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
   li {
     position: relative;
-    padding: 1rem 0;
+    padding: 16px 0;
     border-bottom: 1px solid $pf-line-soft;
 
     &:last-child { border-bottom: 0; }
 
     h3 {
-      font-size: .98rem;
+      font-size: 15.68px;
       font-weight: 700;
       color: $pf-ink;
-      margin: 0 0 .35rem;
+      margin: 0 0 5.6px;
       line-height: 1.4;
     }
 
     p {
       margin: 0;
-      font-size: .92rem;
+      font-size: 14.72px;
       color: $pf-ink-soft;
       line-height: 1.7;
       word-break: keep-all;
@@ -226,20 +226,20 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 }
 
 .portfolio-keywords {
-  margin-top: 1.35rem;
-  padding-top: 1.35rem;
+  margin-top: 21.6px;
+  padding-top: 21.6px;
   border-top: 1px solid $pf-line-soft;
 
   &-label {
     @extend %pf-section-label;
-    margin-bottom: 1.15rem;
+    margin-bottom: 18.4px;
   }
 
   ul {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 16px;
     padding: 0;
     margin: 0;
   }
@@ -249,22 +249,22 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: .75rem;
-    min-height: 8rem;
-    padding: 1rem .7rem;
+    gap: 12px;
+    min-height: 128px;
+    padding: 16px 11.2px;
     text-align: center;
     background: $pf-bg-soft;
     border-radius: 10px;
 
     i {
-      font-size: 2.35rem;
+      font-size: 37.6px;
       color: $pf-accent;
       line-height: 1;
     }
 
     span {
       color: $pf-ink;
-      font-size: .88rem;
+      font-size: 14.08px;
       font-weight: 650;
       line-height: 1.45;
       word-break: keep-all;
@@ -280,8 +280,8 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 // TOC
 // =====================================================================
 .portfolio-toc {
-  margin-bottom: 3.25rem;
-  padding: 1.1rem 1.4rem;
+  margin-bottom: 52px;
+  padding: 17.6px 22.4px;
   background: $pf-bg-soft;
   border-radius: 10px;
 
@@ -292,15 +292,15 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     padding: 0;
     margin: 0;
     display: grid;
-    gap: .15rem;
+    gap: 2.4px;
   }
 
   li a {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: baseline;
-    gap: 1rem;
-    padding: .5rem .15rem;
+    gap: 16px;
+    padding: 8px 2.4px;
     border-radius: 5px;
     color: $pf-ink;
     transition: background .15s, color .15s;
@@ -314,7 +314,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
   &-num {
     font-family: $pf-mono;
-    font-size: .8rem;
+    font-size: 12.8px;
     font-weight: 700;
     color: $pf-ink-muted;
     letter-spacing: .04em;
@@ -322,12 +322,12 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
   &-title {
     font-weight: 600;
-    font-size: .94rem;
+    font-size: 15.04px;
     word-break: keep-all;
   }
 
   &-period {
-    font-size: .78rem;
+    font-size: 12.48px;
     color: $pf-ink-muted;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
@@ -340,30 +340,30 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 .portfolio-blocks {
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
+  gap: 72px;
 }
 
 .portfolio-block {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 80px;
 
   &-head {
-    margin-bottom: 1.75rem;
+    margin-bottom: 28px;
   }
 
   &-num {
     font-family: $pf-mono;
-    font-size: .92rem;
+    font-size: 14.72px;
     font-weight: 700;
     letter-spacing: .1em;
     color: $pf-accent;
-    margin: 0 0 .55rem;
+    margin: 0 0 8.8px;
     display: inline-flex;
     align-items: center;
-    gap: .55rem;
+    gap: 8.8px;
 
     &::after {
       content: "";
-      width: 1.6rem;
+      width: 25.6px;
       height: 2px;
       background: $pf-accent;
       border-radius: 2px;
@@ -372,26 +372,26 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   }
 
   &-meta {
-    font-size: .82rem;
+    font-size: 13.12px;
     color: $pf-ink-muted;
-    margin: 0 0 .55rem;
+    margin: 0 0 8.8px;
     font-variant-numeric: tabular-nums;
   }
 
   &-title {
-    font-size: 1.85rem;
+    font-size: 29.6px;
     font-weight: 800;
     color: $pf-ink;
-    margin: 0 0 .75rem;
+    margin: 0 0 12px;
     letter-spacing: -.015em;
     line-height: 1.25;
     word-break: keep-all;
   }
 
   &-summary {
-    font-size: .98rem;
+    font-size: 15.68px;
     color: $pf-ink-soft;
-    margin: 0 0 1rem;
+    margin: 0 0 16px;
     line-height: 1.7;
     word-break: keep-all;
   }
@@ -402,12 +402,12 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: .3rem;
+    gap: 4.8px;
 
     li {
       font-family: $pf-mono;
-      font-size: .74rem;
-      padding: .2rem .55rem;
+      font-size: 11.84px;
+      padding: 3.2px 8.8px;
       background: $pf-bg-soft;
       color: $pf-ink-soft;
       border: 1px solid $pf-line;
@@ -419,7 +419,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   // Hero screenshot — sits as a regular content image with a subtle frame.
   // (Matches the calm look of inline blog post images.)
   &-hero {
-    margin: 0 0 2.25rem;
+    margin: 0 0 36px;
     text-align: center;
 
     img {
@@ -432,7 +432,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
       border: 1px solid $pf-line;
       border-radius: 10px;
       background: $pf-bg-soft;
-      padding: 1rem 1.25rem;
+      padding: 16px 20px;
       box-shadow: 0 1px 2px rgba(20, 23, 28, .04);
     }
   }
@@ -443,42 +443,42 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   // -------------------------------------------------------------------
   &-body {
     color: $pf-ink-soft;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.85;
 
     p {
-      margin: 0 0 1.15rem;
+      margin: 0 0 18.4px;
       word-break: keep-all;
     }
 
     // Lead paragraph — first paragraph after the first h2.
     // Renders the "한 줄 소개" intro in a slightly emphasized style.
     > h2:first-child + p {
-      font-size: 1.08rem;
+      font-size: 17.28px;
       line-height: 1.75;
       color: $pf-ink;
-      margin-bottom: 1.5rem;
+      margin-bottom: 24px;
     }
 
     // Section heading — readable heading, hairline divider, navy dot accent.
     h2 {
-      font-size: 1.18rem;
+      font-size: 18.88px;
       font-weight: 800;
       color: $pf-ink;
-      margin: 2.75rem 0 1rem;
-      padding-bottom: .6rem;
+      margin: 44px 0 16px;
+      padding-bottom: 9.6px;
       border-bottom: 1px solid $pf-line;
       letter-spacing: -.005em;
       line-height: 1.4;
       display: flex;
       align-items: center;
-      gap: .55rem;
+      gap: 8.8px;
       word-break: keep-all;
 
       &::before {
         content: "";
-        width: .4rem;
-        height: .4rem;
+        width: 6.4px;
+        height: 6.4px;
         background: $pf-accent;
         border-radius: 999px;
         flex-shrink: 0;
@@ -489,10 +489,10 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
     // Subsection — clean strong title, no decoration by default.
     h3 {
-      font-size: 1.08rem;
+      font-size: 17.28px;
       font-weight: 700;
       color: $pf-ink;
-      margin: 2rem 0 .65rem;
+      margin: 32px 0 10.4px;
       padding: 0;
       line-height: 1.4;
       letter-spacing: -.005em;
@@ -507,7 +507,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
       h3 {
         counter-increment: pf-contrib-step;
         position: relative;
-        padding-left: 3.2rem;
+        padding-left: 51.2px;
 
         &::before {
           content: counter(pf-contrib-step, decimal-leading-zero);
@@ -516,12 +516,12 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
           top: 50%;
           transform: translateY(-50%);
           font-family: $pf-mono;
-          font-size: .78rem;
+          font-size: 12.48px;
           font-weight: 700;
           color: $pf-accent;
           background: rgba(30, 58, 95, .08);
           border-radius: 4px;
-          padding: .18rem .45rem;
+          padding: 2.88px 7.2px;
           letter-spacing: .04em;
           line-height: 1;
         }
@@ -532,21 +532,21 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     // Wrap with: <section class="pf-trouble" markdown="1"> ... </section>
     .pf-trouble {
       h3 {
-        padding-left: 1rem;
+        padding-left: 16px;
         border-left: 3px solid $pf-accent;
       }
     }
 
     h4 {
-      font-size: .95rem;
+      font-size: 15.2px;
       font-weight: 600;
       color: $pf-ink;
-      margin: 1.25rem 0 .4rem;
+      margin: 20px 0 6.4px;
     }
 
     ul, ol {
-      margin: 0 0 1.2rem;
-      padding-left: 1.4rem;
+      margin: 0 0 19.2px;
+      padding-left: 22.4px;
     }
 
     // Bullets get a subtle navy square marker via ::before so they look
@@ -554,24 +554,24 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     ul > li {
       position: relative;
       list-style: none;
-      padding-left: .25rem;
-      margin-bottom: .45rem;
+      padding-left: 4px;
+      margin-bottom: 7.2px;
       line-height: 1.78;
 
       &::before {
         content: "";
         position: absolute;
-        left: -1rem;
-        top: .7rem;
-        width: .35rem;
-        height: .35rem;
+        left: -16px;
+        top: 11.2px;
+        width: 5.6px;
+        height: 5.6px;
         background: $pf-accent;
         border-radius: 1px;
       }
     }
 
     ol > li {
-      margin-bottom: .45rem;
+      margin-bottom: 7.2px;
       line-height: 1.78;
       &::marker { color: $pf-accent; font-weight: 700; }
     }
@@ -605,12 +605,12 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     .highlight pre {
       background: #1a1d23;
       color: #e6e9ef;
-      padding: 1.1rem 1.25rem;
+      padding: 17.6px 20px;
       border-radius: 10px;
       border: 1px solid #2a2e36;
       overflow-x: auto;
-      margin: 1.1rem 0 1.6rem;
-      font-size: .88rem;
+      margin: 17.6px 0 25.6px;
+      font-size: 14.08px;
       line-height: 1.65;
 
       code {
@@ -624,8 +624,8 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     }
 
     blockquote {
-      margin: 1.25rem 0;
-      padding: .85rem 1.15rem;
+      margin: 20px 0;
+      padding: 13.6px 18.4px;
       border-left: 3px solid $pf-accent;
       background: $pf-bg-soft;
       border-radius: 0 6px 6px 0;
@@ -639,16 +639,16 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
       height: auto;
       border-radius: 8px;
       border: 1px solid $pf-line;
-      margin: 1rem 0;
+      margin: 16px 0;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1rem 0 1.5rem;
-      font-size: .92rem;
+      margin: 16px 0 24px;
+      font-size: 14.72px;
       th, td {
-        padding: .65rem .85rem;
+        padding: 10.4px 13.6px;
         border-bottom: 1px solid $pf-line;
         text-align: left;
       }
@@ -663,7 +663,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: .85rem;
+    gap: 13.6px;
     margin-top: 0;
   }
 
@@ -673,14 +673,14 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: .35rem;
+    gap: 5.6px;
 
     a {
       display: inline-flex;
       align-items: center;
-      gap: .35rem;
-      padding: .25rem .75rem;
-      font-size: .8rem;
+      gap: 5.6px;
+      padding: 4px 12px;
+      font-size: 12.8px;
       font-weight: 600;
       color: $pf-accent !important;
       background: rgba(30, 58, 95, .06);
@@ -703,7 +703,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 .portfolio-empty {
   text-align: center;
   color: $pf-ink-muted;
-  padding: 4rem 0;
+  padding: 64px 0;
 }
 
 // =====================================================================
@@ -714,7 +714,7 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   color: $pf-ink-soft;
   max-width: 760px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 5rem;
+  padding: 40px 24px 80px;
   line-height: 1.78;
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -723,9 +723,9 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   a:hover { color: $pf-accent-2; }
 
   &-back {
-    margin: 0 0 1.75rem;
+    margin: 0 0 28px;
     a {
-      font-size: .9rem;
+      font-size: 14.4px;
       color: $pf-ink-muted;
       &:hover { color: $pf-accent; }
     }
@@ -733,30 +733,30 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
   &-head {
     border-bottom: 1px solid $pf-line;
-    padding-bottom: 1.75rem;
-    margin-bottom: 2.25rem;
+    padding-bottom: 28px;
+    margin-bottom: 36px;
   }
 
   &-meta {
-    font-size: .82rem;
+    font-size: 13.12px;
     color: $pf-ink-muted;
-    margin: 0 0 .5rem;
+    margin: 0 0 8px;
   }
 
   &-title {
-    font-size: 2.1rem;
+    font-size: 33.6px;
     font-weight: 800;
     color: $pf-ink;
-    margin: 0 0 .8rem;
+    margin: 0 0 12.8px;
     letter-spacing: -.02em;
     line-height: 1.2;
     word-break: keep-all;
   }
 
   &-summary {
-    font-size: .98rem;
+    font-size: 15.68px;
     color: $pf-ink-soft;
-    margin: 0 0 1.1rem;
+    margin: 0 0 17.6px;
     word-break: keep-all;
   }
 }
@@ -765,11 +765,11 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 // Responsive
 // =====================================================================
 @media (max-width: 720px) {
-  .portfolio-page { padding: 2rem 1rem 3.5rem; }
+  .portfolio-page { padding: 32px 16px 56px; }
 
   .portfolio-hero {
-    margin-bottom: 2.25rem;
-    &-title { font-size: 1.85rem; }
+    margin-bottom: 36px;
+    &-title { font-size: 29.6px; }
   }
 
   .portfolio-overview-grid {
@@ -781,29 +781,29 @@ $pf-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
     &:last-child { border-bottom: 0; }
   }
 
-  .portfolio-toc { padding: .9rem 1rem;
+  .portfolio-toc { padding: 14.4px 16px;
     li a {
       grid-template-columns: auto 1fr;
-      gap: .55rem;
+      gap: 8.8px;
     }
     &-period { display: none; }
   }
 
-  .portfolio-blocks { gap: 3.5rem; }
+  .portfolio-blocks { gap: 56px; }
 
   .portfolio-block {
-    &-title { font-size: 1.45rem; }
-    &-hero img { max-height: 260px; padding: .65rem .75rem; }
+    &-title { font-size: 23.2px; }
+    &-hero img { max-height: 260px; padding: 10.4px 12px; }
     &-body {
-      h2 { font-size: 1.08rem; margin-top: 2rem; }
-      h3 { font-size: .98rem; }
-      pre, .highlight pre { font-size: .82rem; padding: .9rem 1rem; }
+      h2 { font-size: 17.28px; margin-top: 32px; }
+      h3 { font-size: 15.68px; }
+      pre, .highlight pre { font-size: 13.12px; padding: 14.4px 16px; }
     }
   }
 
   .portfolio-detail {
-    padding: 1.75rem 1rem 3.5rem;
-    &-title { font-size: 1.6rem; }
+    padding: 28px 16px 56px;
+    &-title { font-size: 25.6px; }
   }
 }
 

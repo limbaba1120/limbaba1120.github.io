@@ -1,6 +1,5 @@
 // Resume page styles — modern, dongholab-inspired with refined typography and card layout.
 
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 $resume-navy: #1e3a5f;
 $resume-navy-deep: #0f2942;
@@ -45,9 +44,9 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
 // ── Toolbar (outside the page; hidden on print)
 .resume-actions {
   max-width: 210mm;
-  margin: 1.4rem auto 0.8rem;
+  margin: 22.4px auto 12.8px;
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
   justify-content: flex-end;
   padding: 0 18mm;
 }
@@ -57,8 +56,8 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
   color: $resume-navy;
   border: 1px solid $resume-border-strong;
   border-radius: 6px;
-  padding: 0.45rem 0.95rem;
-  font-size: 0.86rem;
+  padding: 7.2px 15.2px;
+  font-size: 13.76px;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
@@ -85,10 +84,10 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
   // ── Header (2-column flex: text + photo)
   .resume-header {
     display: flex;
-    gap: 1.8rem;
+    gap: 28.8px;
     align-items: flex-start;
-    margin-bottom: 1.8rem;
-    padding-bottom: 1.4rem;
+    margin-bottom: 28.8px;
+    padding-bottom: 22.4px;
     border-bottom: 4px double $resume-navy;
   }
   .resume-header-text { flex: 1; min-width: 0; }
@@ -105,7 +104,7 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
   }
 
   .resume-name {
-    font-size: 2.4rem;
+    font-size: 38.4px;
     font-weight: 800;
     margin: 0 0 0.05em;
     letter-spacing: -0.02em;
@@ -113,14 +112,14 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
   }
   .resume-title {
     color: $resume-navy-soft;
-    font-size: 1.05rem;
+    font-size: 16.8px;
     font-weight: 600;
     margin: 0 0 0.6em;
     letter-spacing: 0.01em;
   }
   .resume-summary {
     margin: 0.4em 0 1em;
-    font-size: 0.93rem;
+    font-size: 14.88px;
     color: $resume-muted;
     line-height: 1.7;
   }
@@ -130,8 +129,8 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem 1.1rem;
-    font-size: 0.86rem;
+    gap: 5.6px 17.6px;
+    font-size: 13.76px;
     color: $resume-muted;
     li { color: inherit; display: inline-flex; align-items: center; gap: 0.35em; }
     a { color: $resume-navy-soft; }
@@ -140,15 +139,15 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
 
   // ── Section
   .resume-section {
-    margin-top: 1.6rem;
-    &:first-of-type { margin-top: 1.4rem; }
+    margin-top: 25.6px;
+    &:first-of-type { margin-top: 22.4px; }
   }
   .resume-section-title {
-    font-size: 0.95rem;
+    font-size: 15.2px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    margin: 0 0 1rem;
+    margin: 0 0 16px;
     padding-bottom: 0.5em;
     position: relative;
     color: $resume-navy-deep;
@@ -167,7 +166,7 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
 
   // ── Item (job / education entry)
   .resume-item {
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
     page-break-inside: avoid;
     break-inside: avoid;
     &:last-child { margin-bottom: 0; }
@@ -175,24 +174,24 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
   .resume-item-head {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.2rem 0.6rem;
+    gap: 3.2px 9.6px;
     align-items: baseline;
     margin-bottom: 0.15em;
     strong {
       font-weight: 700;
       color: $resume-text;
-      font-size: 1rem;
+      font-size: 16px;
     }
   }
   .resume-item-sub {
     color: $resume-navy-soft;
-    font-size: 0.9rem;
+    font-size: 14.4px;
     font-weight: 500;
     margin: 0 0 0.3em;
   }
   .resume-item-meta {
     color: $resume-meta;
-    font-size: 0.83rem;
+    font-size: 13.28px;
     margin-left: auto;
     font-weight: 400;
     font-variant-numeric: tabular-nums;
@@ -200,12 +199,12 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
 
   // ── Bullets
   .resume-bullets {
-    margin: 0.3rem 0 0 1.05rem;
+    margin: 4.8px 0 0 16.8px;
     padding: 0;
     list-style: disc;
     li {
-      margin: 0.2rem 0;
-      font-size: 0.91rem;
+      margin: 3.2px 0;
+      font-size: 14.56px;
       color: $resume-text;
       &::marker { color: $resume-navy-soft; }
     }
@@ -219,8 +218,8 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
   }
   .resume-project-card {
     position: relative;
-    padding: 0.85rem 1rem 0.95rem 1.1rem;
-    margin-bottom: 0.85rem;
+    padding: 13.6px 16px 15.2px 17.6px;
+    margin-bottom: 13.6px;
     background: $resume-bg-card;
     border: 1px solid $resume-border;
     border-left: 3px solid $resume-navy;
@@ -230,10 +229,10 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
 
     &:last-child { margin-bottom: 0; }
 
-    .resume-item-head strong { font-size: 1.02rem; }
+    .resume-item-head strong { font-size: 16.32px; }
     .resume-project-desc {
       margin: 0.25em 0 0.5em;
-      font-size: 0.9rem;
+      font-size: 14.4px;
       color: $resume-muted;
       line-height: 1.6;
     }
@@ -241,64 +240,64 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
 
   // ── Tech tags / skill chips
   .resume-tags {
-    margin: 0.4rem 0 0;
+    margin: 6.4px 0 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.3rem;
+    gap: 4.8px;
   }
   .resume-tag {
     display: inline-block;
     background: $resume-tag-bg;
     color: $resume-tag-text;
-    padding: 0.16rem 0.55rem;
+    padding: 2.56px 8.8px;
     border-radius: 4px;
-    font-size: 0.76rem;
+    font-size: 12.16px;
     font-weight: 500;
     line-height: 1.55;
-    margin: 0 0.22rem 0.22rem 0;
+    margin: 0 3.52px 3.52px 0;
     letter-spacing: 0;
   }
 
   // ── Project contributions ([담당한 부분])
   .resume-contrib-list {
-    margin: 0.55rem 0 0.4rem;
+    margin: 8.8px 0 6.4px;
     padding-left: 0;
     list-style: none;
   }
   .resume-contrib {
-    margin: 0 0 0.45rem;
+    margin: 0 0 7.2px;
     page-break-inside: avoid;
     break-inside: avoid;
 
     &:last-child { margin-bottom: 0; }
   }
   .resume-contrib-head {
-    margin: 0 0 0.18rem;
-    font-size: 0.86rem;
+    margin: 0 0 2.88px;
+    font-size: 13.76px;
     font-weight: 700;
     color: $resume-navy;
     line-height: 1.4;
   }
   .resume-contrib-points {
     margin: 0;
-    padding-left: 1rem;
+    padding-left: 16px;
     list-style: none;
 
     li {
       position: relative;
-      padding-left: 0.55rem;
-      margin-bottom: 0.14rem;
-      font-size: 0.83rem;
+      padding-left: 8.8px;
+      margin-bottom: 2.24px;
+      font-size: 13.28px;
       color: $resume-muted;
       line-height: 1.55;
 
       &::before {
         content: "";
         position: absolute;
-        left: -0.05rem;
-        top: 0.55rem;
-        width: 0.28rem;
-        height: 0.28rem;
+        left: -0.8px;
+        top: 8.8px;
+        width: 4.48px;
+        height: 4.48px;
         background: $resume-navy;
         border-radius: 1px;
       }
@@ -306,11 +305,11 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
   }
 
   .resume-project-links {
-    margin: 0.55rem 0 0;
+    margin: 8.8px 0 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0 1rem;
-    font-size: 0.82rem;
+    gap: 0 16px;
+    font-size: 13.12px;
     line-height: 1.5;
 
     a {
@@ -319,12 +318,12 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
       &:hover { text-decoration: underline; text-underline-offset: 2px; }
     }
 
-    .fa { margin-right: 0.18rem; }
+    .fa { margin-right: 2.88px; }
   }
 
   .resume-portfolio-link {
     display: inline-block;
-    font-size: 0.82rem;
+    font-size: 13.12px;
     font-weight: 500;
     color: $resume-navy-soft;
     &:hover { text-decoration: underline; text-underline-offset: 2px; }
@@ -334,23 +333,23 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
   .resume-skills {
     margin: 0;
     display: grid;
-    grid-template-columns: 7.5rem 1fr;
-    gap: 0.7rem 1.2rem;
+    grid-template-columns: 120px 1fr;
+    gap: 11.2px 19.2px;
     align-items: start;
 
     dt {
-      font-size: 0.76rem;
+      font-size: 12.16px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: $resume-navy;
-      padding-top: 0.32rem;
+      padding-top: 5.12px;
     }
     dd {
       margin: 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.32rem 0.4rem;
+      gap: 5.12px 6.4px;
 
       .resume-tag { margin: 0; }
     }
@@ -365,14 +364,14 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
-      gap: 0.4rem 0.7rem;
-      padding: 0.4rem 0;
+      gap: 6.4px 11.2px;
+      padding: 6.4px 0;
       border-bottom: 1px dashed $resume-border;
       &:last-child { border-bottom: none; }
       strong { color: $resume-text; font-weight: 600; }
     }
-    .resume-cert-issuer { color: $resume-muted; font-size: 0.88rem; }
-    .resume-item-meta { font-size: 0.83rem; }
+    .resume-cert-issuer { color: $resume-muted; font-size: 14.08px; }
+    .resume-item-meta { font-size: 13.28px; }
   }
 
   // ── Languages
@@ -382,20 +381,20 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
+    gap: 8px 24px;
     > li {
       display: inline-flex;
       align-items: baseline;
-      gap: 0.5rem;
+      gap: 8px;
       strong { color: $resume-navy; font-weight: 600; }
-      span { color: $resume-muted; font-size: 0.9rem; }
+      span { color: $resume-muted; font-size: 14.4px; }
     }
   }
 
   .resume-notes {
-    font-size: 0.86rem;
+    font-size: 13.76px;
     color: $resume-muted;
-    margin-top: 0.2rem;
+    margin-top: 3.2px;
   }
 }
 
@@ -411,16 +410,16 @@ $resume-font-stack: "Pretendard Variable", Pretendard, "Noto Sans KR",
   .resume {
     .resume-header {
       flex-direction: column-reverse;
-      gap: 1rem;
+      gap: 16px;
     }
     .resume-header-photo img { width: 90px; height: 90px; }
-    .resume-name { font-size: 1.85rem; }
+    .resume-name { font-size: 29.6px; }
 
     .resume-skills {
       grid-template-columns: 1fr;
-      gap: 0.15rem 0;
-      dt { padding-top: 0.5rem; }
-      dd { margin-bottom: 0.5rem; }
+      gap: 2.4px 0;
+      dt { padding-top: 8px; }
+      dd { margin-bottom: 8px; }
     }
     .resume-item-meta {
       margin-left: 0;

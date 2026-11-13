@@ -19,6 +19,8 @@ experience: []
 projects:
   - slug: omocha
     name: 굿즈 경매 서비스 [OMOCHA]
+    display_name: OMOCHA
+    category: 굿즈 경매 서비스
     one_liner: 구하기 어려운 한정판 굿즈를 경매로 사고팔 수 있는 종합 거래 플랫폼.
     period: 2024.09 - 2024.12 (3개월)
     role: 패스트캠퍼스 Kernel 360 (팀프로젝트)
@@ -31,11 +33,11 @@ projects:
           - WebSocket 및 STOMP 프로토콜로 클라이언트–서버 간 양방향 통신 구현
           - RabbitMQ를 STOMP 메시지 브로커로 사용해 채팅 메시지를 구독자에게 중계
           - Next.js에서 SockJS와 Stomp.js를 사용해 WebSocket 연결 및 채팅 UI 직접 구현
-      - heading: 이미지 WebP 변환 + S3 + CloudFront
+      - heading: 이미지 용량 및 다운로드 시간 개선
         points:
           - 기존 JPEG / PNG 이미지를 WebP 형식으로 변환 (용량 약 70% 감소)
           - AWS S3 + Amazon CloudFront 적용으로 콘텐츠 다운로드 시간 약 50% 단축
-      - heading: Flyway 기반 DB 스키마 버전 관리 및 자동 반영
+      - heading: DB 변경 이력 관리와 환경 일관성 확보
         points:
           - 여러 개발자가 테이블을 수정하면서 변경 내역이 누락되고, 개발·운영 환경의 데이터베이스 구조가 달라지는 문제 발생
           - Flyway로 테이블 생성·수정 내역을 버전별 SQL 파일로 관리
@@ -46,6 +48,8 @@ projects:
           - "@DistributedLock 어노테이션 + AOP 로 비즈니스 로직과 분리된 재사용 가능한 락 컴포넌트 구현"
   - slug: look-us
     name: 패션 커뮤니티 서비스 [Look US]
+    display_name: Look US
+    category: 패션 커뮤니티 서비스
     one_liner: 데일리룩을 공유하고 색상을 통해 원하는 패션 스타일을 찾는 패션 커뮤니티.
     period: 2024.07 - 2024.08 (1개월)
     role: 패스트캠퍼스 Kernel 360 (팀프로젝트)
@@ -70,6 +74,8 @@ projects:
 
   - slug: chathub
     name: 화상채팅 서비스 [ChatHub]
+    display_name: ChatHub
+    category: 화상채팅 서비스
     one_liner: 개발자들이 온라인에서 간편하게 커피챗 상대를 찾고 실시간 화상채팅이 가능한 커피챗 서비스.
     period: 2024.03 - 2024.06 (3개월)
     role: 경기대학교 (팀프로젝트)
@@ -80,11 +86,10 @@ projects:
       - heading: 실시간 화상채팅 기능 구현
         points:
           - Amazon Chime SDK를 활용해 사용자 간 실시간 오디오·비디오 송수신이 가능한 화상채팅 기능 구현
-          - Amazon Chime SDK Meetings API의 CreateMeeting·CreateAttendee·DeleteMeeting으로 회의와 참가자 생명주기 관리
+          - Meetings API로 회의 생성·종료, 참가자 등록과 참여 토큰 발급 처리
       - heading: 소셜 로그인 구현
         points:
-          - GitHub OAuth를 활용해 소셜 회원가입 및 로그인 구현
-          - Spring Security + OAuth 2.0 클라이언트 라이브러리 활용
+          - Spring Security와 OAuth 2.0 클라이언트로 GitHub 회원가입·로그인 구현
 
 education:
   - school: 패스트캠퍼스 — Kernel 360 백엔드 부트캠프
@@ -120,7 +125,7 @@ certifications:
     date: 2023.10.06
   - name: OPIc 영어 (IH)
     issuer: ACTFL
-    date: 2023.07.15
+    date: 2026.09.10
 
 languages:
   - name: 한국어

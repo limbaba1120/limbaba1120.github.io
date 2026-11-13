@@ -1,0 +1,242 @@
+// Career pages use explicit type sizes: the legacy theme's root is 10px.
+// Scope markdown resets here so blog posts retain their original styling.
+$career-font: "Pretendard", "Apple SD Gothic Neo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$career-ink: #192638;
+$career-muted: #586575;
+$career-accent: #356469;
+$career-line: #e2e8ed;
+
+.resume, .portfolio-page, .portfolio-detail {
+  font-family: $career-font;
+  color: $career-ink;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: anywhere;
+  p, ul, ol { font-weight: 400; }
+  a:focus-visible, button:focus-visible { outline: 2px solid $career-accent; outline-offset: 4px; }
+}
+.resume-actions { flex-wrap: wrap; padding: 0; margin: 24px auto 16px; }
+.resume-btn { font-family: $career-font; font-size: 13px; min-height: 40px; }
+.page-a4 { padding: 52px 48px; border: 1px solid $career-line; border-radius: 12px; box-shadow: 0 8px 32px rgba(25,38,56,.04); }
+.resume {
+  .resume-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 24px; }
+  .resume-header-text { min-width: 0; }
+  .resume-header > .resume-contact { grid-column: 1 / -1; font-size: 13px; gap: 10px 20px; }
+  .resume-contact svg { width: 15px; height: 15px; flex: 0 0 15px; color: #29466b; }
+  .resume-header { border-bottom: 2px solid #294c51; padding-bottom: 28px; margin-bottom: 32px; }
+  .resume-name { font-size: 36px; font-weight: 700; }
+  .resume-title { font-size: 16px; color: $career-accent; margin: 10px 0 14px; }
+  .resume-summary { font-size: 14px; line-height: 1.8; color: $career-muted; word-break: keep-all; }
+  .resume-header-photo img { width: 92px; height: 112px; max-width: none; border-radius: 6px; box-shadow: none; }
+  .resume-contact { font-size: 12px; gap: 8px 16px; }
+  .resume-section { margin-top: 36px; }
+  .resume-section-title { font-size: 19px; letter-spacing: -.02em; padding-bottom: 12px; margin-bottom: 20px; color: $career-ink; text-transform: none; }
+  .resume-section-title::before { display: none; }
+  .resume-project-card { background: transparent; border: 0; border-radius: 0; padding: 0 0 26px; margin: 0 0 26px; border-bottom: 1px solid $career-line; }
+  .resume-project-card:last-child { padding-bottom: 0; border-bottom: 0; }
+  .resume-project-card .resume-item-head strong { font-size: 19px; letter-spacing: -.025em; }
+  .resume-project-name { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; font-size: 22px; font-weight: 700; color: $career-ink; line-height: 1.4; margin: 0; letter-spacing: -.025em; }
+  .resume-project-category { font-size: 12px; font-weight: 500; color: $career-accent; letter-spacing: 0; }
+  .resume-project-context { display: flex; flex-wrap: wrap; gap: 4px 16px; color: $career-muted; font-size: 12px; line-height: 1.7; margin: 0 0 12px; }
+  .resume-project-context span + span { border-left: 1px solid $career-line; padding-left: 16px; }
+  .resume-item-meta { font-size: 12px; color: $career-muted; }
+  .resume-item-sub { font-size: 13px; color: $career-muted; margin: 6px 0; }
+  .resume-project-card .resume-project-desc { font-size: 14px; line-height: 1.7; margin: 10px 0 12px; color: #344254; }
+  .resume-tag { background: #f0f4f5; color: #52626e; font-size: 11px; font-weight: 400; padding: 4px 8px; border-radius: 4px; }
+  .resume-contrib-list { margin-top: 20px; }
+  .resume-contrib { margin-bottom: 17px; }
+  .resume-contrib-head { font-size: 14px; line-height: 1.6; color: $career-ink; margin-bottom: 5px; }
+  .resume-contrib-points { padding-left: 14px; }
+  .resume-contrib-points li { font-size: 13px; line-height: 1.8; padding-left: 0; margin-bottom: 4px; color: #344254; word-break: keep-all; }
+  .resume-contrib-points li::before { width: 3px; height: 3px; border-radius: 50%; left: -12px; top: 10px; background: $career-accent; }
+  .resume-project-links { margin-top: 14px; font-size: 12px; }
+  .resume-skills { grid-template-columns: 108px 1fr; gap: 12px 16px; }
+  .resume-skills dt { font-size: 12px; letter-spacing: 0; text-transform: none; color: $career-muted; }
+}
+
+.portfolio-page, .portfolio-detail { max-width: 880px; padding: 48px 40px 64px; background: #fff; border: 1px solid $career-line; border-radius: 12px; }
+.portfolio-eyebrow { font-size: 11px; font-weight: 600 !important; letter-spacing: 1.6px; color: $career-accent; margin: 0 0 16px; }
+.portfolio-hero { border-bottom: 2px solid #294c51; margin-bottom: 32px; padding-bottom: 28px; }
+.portfolio-hero-title { font-size: 38px; font-weight: 700; color: $career-ink; }
+.portfolio-hero-intro { font-size: 16px; color: $career-muted; line-height: 1.8; max-width: 640px; }
+.portfolio-pill { font-size: 13px; padding: 9px 14px; border-radius: 6px; }
+.portfolio-overview-grid { background: #f5f8f8; border: 0; border-radius: 6px; }
+.portfolio-overview-stat { padding: 18px; }
+.portfolio-overview-stat dd { font-size: 13px; }
+.portfolio-overview-num { font-family: $career-font; font-size: 28px; color: $career-accent; }
+.portfolio-overview-label, .portfolio-toc-label, .portfolio-approach-label, .portfolio-keywords-label { font-size: 18px; font-weight: 700; }
+.portfolio-overview-label::before, .portfolio-toc-label::before, .portfolio-approach-label::before, .portfolio-keywords-label::before { display: none; }
+.portfolio-toc { padding: 0; background: transparent; margin-bottom: 48px; }
+.portfolio-toc li a { grid-template-columns: 24px 1fr auto; padding: 18px 0; border-bottom: 1px solid $career-line; gap: 14px; }
+.portfolio-toc-title { font-size: 15px; }
+.portfolio-toc-title small { display: block; font-size: 12px; font-weight: 400; color: $career-muted; line-height: 1.7; margin-top: 5px; }
+.portfolio-toc-num { font-family: $career-font; font-size: 12px; color: $career-accent; }
+.portfolio-toc-period { font-size: 11px; }
+.portfolio-blocks { gap: 64px; }
+.portfolio-block + .portfolio-block { border-top: 2px solid #294c51; padding-top: 40px; }
+.portfolio-block-num { font-family: $career-font; font-size: 12px; color: $career-accent; }
+.portfolio-block-title { font-size: 27px; font-weight: 700; line-height: 1.4; color: $career-ink; }
+.portfolio-block-meta { font-size: 12px; color: $career-muted; }
+.portfolio-block-summary { font-size: 15px; line-height: 1.8; }
+.portfolio-block-stack li { font-family: $career-font; font-size: 11px; border: 0; background: #f0f4f5; padding: 4px 8px; }
+.portfolio-block-links a { font-size: 12px; border-radius: 5px; }
+.portfolio-block-hero { text-align: left; margin-bottom: 32px; }
+.portfolio-block-hero img { max-height: 300px; padding: 12px; box-shadow: none; border-radius: 6px; }
+.portfolio-block-body.markdown-style {
+  font-size: 15px; line-height: 1.8; color: #344254;
+  p, ul, ol, li, li p { font-family: $career-font; font-size: 15px; font-weight: 400; line-height: 1.8; }
+  p { margin: 0 0 14px; word-break: keep-all; }
+  ul, ol { margin: 0 0 20px; padding-left: 20px; }
+  li { margin-left: 0; margin-bottom: 7px; padding-left: 0; word-break: keep-all; }
+  ul > li::before { width: 3px; height: 3px; top: 12px; left: -14px; border-radius: 50%; background: $career-accent; }
+  h2 { font-family: $career-font; font-size: 20px; line-height: 1.5; margin: 36px 0 18px; padding-bottom: 12px; font-weight: 700; color: $career-ink; }
+  h2::before { display: none; }
+  h3 { font-family: $career-font; font-size: 17px; line-height: 1.5; margin: 26px 0 12px; color: $career-ink; }
+  h4 { font-size: 15px; }
+  > h2:first-child + p { font-size: 15px; }
+  strong { font-size: inherit; font-weight: 600; color: $career-ink; }
+  code { font-family: inherit; font-size: .93em; font-weight: 400; padding: 0; border: 0; background: transparent; color: #356469; }
+  pre { font-size: 12px; line-height: 1.7; border-radius: 6px; }
+  pre code { font-family: "SFMono-Regular", Consolas, monospace; font-size: inherit; color: inherit; white-space: pre; }
+  .pf-contrib h3 { padding-left: 34px; }
+  .pf-contrib h3::before { font-family: $career-font; font-size: 11px; background: transparent; color: $career-accent; padding: 0; }
+  .pf-contrib h3 + p { margin-left: 34px; }
+  .pf-contrib ul { margin-left: 34px; }
+  .pf-trouble { border-left: 2px solid #cbdcde; padding-left: 20px; }
+  .pf-trouble h3 { border: 0; padding-left: 0; }
+  table th, table td { font-size: 13px; line-height: 1.7; }
+  blockquote { border-right: 0; margin: 18px 0; padding: 16px; }
+  blockquote p { font-size: 15px; }
+}
+.portfolio-approach { margin-top: 56px; margin-bottom: 0; border-top: 1px solid $career-line; padding-top: 28px; }
+.portfolio-approach li h3 { font-size: 15px; }
+.portfolio-approach li p { font-size: 14px; color: $career-muted; }
+.portfolio-keywords li { min-height: 0; padding: 14px 8px; }
+.portfolio-keywords li i { font-size: 20px; }
+.portfolio-keywords li span { font-size: 12px; }
+
+// Compact profile: retain the original statements without oversized cards.
+.portfolio-page .portfolio-approach { margin: 0 0 32px; padding: 0; border: 0; }
+.portfolio-page .portfolio-approach ol { margin: 0; }
+.portfolio-page .portfolio-approach > ol { counter-reset: approach; }
+.portfolio-page .portfolio-approach > ol > li { display: block; position: relative; padding: 18px 0 18px 36px; counter-increment: approach; }
+.portfolio-page .portfolio-approach > ol > li::before { content: counter(approach, decimal-leading-zero); position: absolute; left: 0; top: 21px; font-size: 11px; font-weight: 600; color: #527173; }
+.portfolio-page .portfolio-approach li h3 { font-size: 15px; line-height: 1.6; margin: 0 0 7px; word-break: keep-all; }
+.portfolio-page .portfolio-approach li p { font-size: 13px; line-height: 1.7; margin: 0; }
+.portfolio-page .portfolio-keywords { margin-top: 24px; padding-top: 0; border: 0; }
+.portfolio-page .portfolio-keywords-label { font-size: 12px; color: #687582; margin-bottom: 8px; }
+.portfolio-page .portfolio-keywords ul { display: flex; flex-wrap: wrap; gap: 7px; }
+.portfolio-page .portfolio-keywords li { display: inline-flex; flex-direction: row; gap: 7px; padding: 6px 10px; min-height: 0; border: 0; border-radius: 5px; background: #f5f7f8; }
+.portfolio-page .portfolio-keywords li i { font-size: 13px; }
+.portfolio-page .portfolio-keywords li span { font-size: 11px; font-weight: 500; }
+.portfolio-block-links svg { width: 14px; height: 14px; }
+.portfolio-block-hero img { width: auto; max-width: 100%; max-height: 280px; object-fit: contain; }
+.portfolio-page .portfolio-keywords ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.portfolio-page .portfolio-keywords li { display: flex; flex-direction: column; justify-content: center; gap: 12px; min-height: 116px; padding: 20px 8px; border-radius: 14px; }
+.portfolio-page .portfolio-keywords li i { font-size: 30px; color: #243b61; }
+.portfolio-page .portfolio-keywords li span { font-size: 12px; font-weight: 600; }
+.portfolio-page .portfolio-keywords-label { margin-bottom: 12px; }
+.portfolio-toc a, .portfolio-toc a:hover, .portfolio-block-links a, .portfolio-block-links a:hover { text-decoration: none; }
+.portfolio-block-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 20px; align-items: center; }
+.portfolio-block-head .portfolio-block-num { grid-column: 1 / -1; }
+.portfolio-block-head .portfolio-block-meta { grid-column: 1 / -1; }
+.portfolio-block-head .portfolio-block-title { grid-column: 1; grid-row: 3; margin-bottom: 14px; }
+.portfolio-block-head .portfolio-block-tagrow { display: contents; }
+.portfolio-block-head .portfolio-block-stack { grid-column: 1 / -1; grid-row: 4; }
+.portfolio-block-head .portfolio-block-links { grid-column: 2; grid-row: 3; margin-bottom: 14px; }
+.portfolio-block-links a { padding: 8px 12px; min-height: 36px; background: #f5f7f9; border: 1px solid #dce3e9; border-radius: 7px; font-weight: 600; }
+.portfolio-block-body.markdown-style .pf-reflection { border-left: 2px solid #cbdcde; padding: 4px 0 4px 20px; }
+.portfolio-block-body.markdown-style .pf-reflection p { margin-bottom: 18px; }
+.portfolio-block-body.markdown-style .pf-reflection p:last-child { margin-bottom: 0; }
+@media (max-width: 640px) {
+  .portfolio-page .portfolio-approach li { grid-template-columns: 1fr; gap: 3px; }
+  .portfolio-page .portfolio-keywords ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portfolio-block-head { grid-template-columns: minmax(0, 1fr); }
+  .portfolio-block-head .portfolio-block-title { grid-column: 1; grid-row: 3; }
+  .portfolio-block-head .portfolio-block-links { grid-column: 1; grid-row: 4; justify-self: start; }
+  .portfolio-block-head .portfolio-block-stack { grid-row: 5; }
+}
+
+// Matching section headings for the profile and keyword cards.
+.portfolio-page .portfolio-approach-label,
+.portfolio-page .portfolio-keywords-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #192638;
+  font-family: $career-font;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -.025em;
+  margin: 0 0 18px;
+  word-break: keep-all;
+}
+.portfolio-page .portfolio-approach-label::before,
+.portfolio-page .portfolio-keywords-label::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 17px;
+  flex: 0 0 4px;
+  border-radius: 2px;
+  background: #527173;
+}
+.portfolio-page .portfolio-approach-label::after,
+.portfolio-page .portfolio-keywords-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e2e8ed;
+  margin-left: 6px;
+}
+.portfolio-page .portfolio-keywords-label { font-size: 15px; margin-bottom: 16px; }
+.portfolio-page .portfolio-keywords-label::before { height: 14px; }
+
+// Compact project introductions keep attention on the service and its purpose.
+.resume .resume-project-card {
+  .resume-item-head { align-items: baseline; gap: 8px 20px; margin-bottom: 8px; }
+  .resume-project-name { font-size: 23px; gap: 8px 12px; }
+  .resume-project-category { font-size: 11px; font-weight: 400; color: #687982; }
+  .resume-item-meta { font-size: 11px; color: #687582; }
+  .resume-project-desc { margin: 0 0 16px; font-size: 14px; line-height: 1.75; }
+  .resume-project-context { flex-direction: row; flex-wrap: wrap; gap: 2px 8px; font-size: 11px; line-height: 1.7; margin: 0 0 14px; color: #687582; }
+  .resume-project-context span + span { border: 0; padding-left: 0; }
+  .resume-project-context span + span::before { content: "·"; margin-right: 8px; color: #89949c; }
+  .resume-tags { gap: 5px; margin: 0; }
+  .resume-tag { font-size: 10.5px; padding: 3px 6px; margin: 0; line-height: 1.5; background: #f5f7f8; color: #5b6974; border-radius: 3px; }
+}
+
+@media (max-width: 640px) {
+  .page-a4, .portfolio-page, .portfolio-detail { padding: 28px 20px; border-radius: 0; }
+  .resume-actions { padding: 0 16px; justify-content: flex-start; }
+  .resume .resume-header { flex-direction: row; gap: 16px; }
+  .resume .resume-project-name { font-size: 20px; }
+  .resume .resume-project-context { flex-direction: row; flex-wrap: wrap; gap: 2px 8px; }
+  .resume .resume-project-context span + span { border: 0; padding-left: 0; }
+  .resume .resume-header-photo img { width: 64px; height: 80px; }
+  .resume .resume-name { font-size: 29px; }
+  .resume .resume-skills { grid-template-columns: 1fr; gap: 6px; }
+  .resume .resume-project-card .resume-item-head strong { font-size: 18px; }
+  .portfolio-hero-title { font-size: 30px; }
+  .portfolio-block-title { font-size: 23px; }
+  .portfolio-overview-grid { grid-template-columns: 1fr; }
+  .portfolio-toc li a { grid-template-columns: 20px 1fr; }
+  .portfolio-toc-period { display: none; }
+  .portfolio-block-body.markdown-style .pf-contrib ul { margin-left: 0; }
+  .portfolio-block-body.markdown-style .pf-contrib h3 + p { margin-left: 0; }
+}
+@media print {
+  @page { size: A4; margin: 14mm; }
+  .page-a4 { width: 100%; min-height: 0; padding: 0; border: 0; border-radius: 0; }
+  .resume .resume-name { font-size: 28px; }
+  .resume .resume-section { margin-top: 22px; }
+  .resume .resume-section-title { font-size: 17px; }
+  .resume .resume-project-card { background: #fff !important; break-inside: auto; page-break-inside: auto; }
+  .resume .resume-contrib { break-inside: avoid; }
+  .resume .resume-contrib-points li { font-size: 12px; }
+  .resume .resume-item-head, .resume .resume-item-sub, .resume .resume-project-desc, .resume .resume-tags, .resume .resume-contrib-head { break-after: avoid; }
+  .portfolio-page, .portfolio-detail { border: 0; padding: 0; }
+  .portfolio-block { break-inside: auto; page-break-inside: auto; }
+  .portfolio-block-body h2, .portfolio-block-body h3 { break-after: avoid; }
+}
