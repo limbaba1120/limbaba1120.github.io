@@ -59,3 +59,8 @@
     .pf-reflection p { break-inside: avoid; }
   }
 }
+
+@media print {
+  .resume .resume-project-card .resume-item-head { break-inside: avoid; }
+  .resume .resume-project-links a { min-height: 0; padding: 4px 7px; font-size: 8pt; }
+}
