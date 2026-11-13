@@ -6,5 +6,5 @@ title: Resume (English)
 lang: en
 sitemap: true
 img: /assets/img/default/profile.JPG
-meta_description: limbaba — Backend Engineer. Real-time communication, concurrency control, and infra automation projects.
+meta_description: Geonwoo Lim — Backend Engineer. CashWalk backend development and operations, concurrency control, and AWS infrastructure optimization.
 ---

@@ -1,128 +1,188 @@
-# English resume data
-
+---
 profile:
   name: Geonwoo Lim
   title: Backend Engineer
-  photo: /assets/img/default/profile.JPG
+  photo: "/assets/img/default/profile.JPG"
   summary: |
-    Backend engineer with end-to-end experience across planning, design, development, and operations.
-    Hands-on with real-time communication (WebSocket, WebRTC), CI/CD pipelines, and database schema management. Pick up new technologies quickly and apply them effectively.
-    I work best in trust-based teams and try to bring positive energy to the room.
+    Built and operated backend services for CashWalk, a health and wellness app with 4M DAU and 6M MAU, using TypeScript, NestJS, Express, and AWS.
+    I believe a great service is complete when it runs reliably, not just when its features are built. I investigate even small anomalies, learn the technologies needed to resolve them, and document my decisions and lessons to share with teammates.
   contact:
     email: kwlim1120ss@gmail.com
     phone: "+82 10-5892-9711"
     github: https://github.com/limbaba1120
-
-experience: []
-
+experience:
+- company: Nudge Healthcare
+  role: Backend Engineer
+  period: Apr 2025 – Jul 2026
+  description: 'Nudge Healthcare operates CashWalk, a health and wellness app that
+    rewards users with points for walking, serving 4M daily and 6M monthly active
+    users. Developed and operated backend services for mini-games, rewarded broadcasts
+    and quizzes, the local community, and step-based point rewards. '
+  bullets:
+  - Standardized concurrency control across point credit and debit APIs to address
+    duplicate point awards.
+  - Optimized AWS data infrastructure, reducing monthly DynamoDB costs by approximately
+    10% and Redis Engine CPU from 80–90% to around 30%.
+  - Addressed cache stampedes to reduce server load when cached data expires.
+  - Documented services with Claude and configured AI agents for planning, design,
+    implementation, and verification.
+  - Created a shared Notion incident report template covering causes, impact, response,
+    and prevention, and shared resolution examples across service teams.
 projects:
-  - slug: omocha
-    name: OMOCHA — Limited-edition Goods Auction
-    one_liner: An auction platform for hard-to-find limited-edition merchandise.
-    period: 2024.09 - 2024.12 (3 months)
-    role: Fastcampus Kernel 360 (team project)
-    team: Backend 3 / Frontend 2
-    repo: https://github.com/Kernel360/F2-omocha-BE
-    tags: [Java, Spring Boot, Spring Data JPA, PostgreSQL, Redis, AWS, Docker, WebSocket]
-    contributions:
-      - heading: Real-time chat
-        points:
-          - Bi-directional client–server communication via WebSocket + STOMP
-          - Used RabbitMQ as the STOMP message broker to relay chat messages to subscribers
-          - Directly implemented the chat UI and WebSocket connection in Next.js using SockJS and Stomp.js
-      - heading: WebP conversion + S3 + CloudFront
-        points:
-          - Converted JPEG / PNG to WebP (image size reduced by approximately 70%)
-          - AWS S3 + Amazon CloudFront, cutting content download time by approximately 50%
-      - heading: Database schema versioning and automated updates with Flyway
-        points:
-          - Schema changes were missed as multiple developers modified tables, causing database structures to differ between development and production
-          - Managed table creation and modification history as versioned SQL files with Flyway
-          - Applied only pending database changes in order based on migration history, keeping development and production schemas consistent
-      - heading: Concurrent bidding race condition
-        points:
-          - Reproduced the issue with a 100-bidder concurrency test → applied Redis-based distributed locking so only one request at a time processes a bid for a given auction item
-          - "@DistributedLock annotation + AOP for a reusable, business-logic-free lock component"
-  - slug: look-us
-    name: Look US — Fashion Community Service
-    one_liner: A fashion community where users share daily looks and discover styles by color.
-    period: 2024.07 - 2024.08 (1 month)
-    role: Fastcampus Kernel 360 (team project)
-    team: Backend 4
-    repo: https://github.com/Kernel360/E2E2-LOOK-US
-    tags: [Java, Spring Boot, JPA, MySQL, Redis, GCP, Nginx, Docker, GitHub Actions]
-    contributions:
-      - heading: Build and deployment automation with GitHub Actions
-        points:
-          - Gradle build → build and push a Docker image to Docker Hub → connect to the GCP server via SSH → redeploy with Docker Compose
-          - Hardened the web tier with HTTPS via Nginx + OpenSSL
-      - heading: Image attribute extraction
-        points:
-          - Async Google Cloud Vision API calls on upload to identify objects (shirts, pants, shoes) and extract dominant colors (RGB)
-      - heading: Social login
-        points:
-          - Implemented social sign-up and login with Spring Security and the OAuth 2.0 client library
-      - heading: Troubleshooting — accumulating Docker images
-        points:
-          - Unused Docker images pushed GCP instance disk usage above 90%, causing server instability
-          - "Added docker image prune -af --filter \"until=24h\" to the workflow for auto-cleanup"
-
-  - slug: chathub
-    name: ChatHub — Developer Coffee-Chat with Live Video
-    one_liner: A coffee-chat service where developers meet online over real-time video.
-    period: 2024.03 - 2024.06 (3 months)
-    role: Kyonggi University (team project)
-    team: Backend 2 / Frontend 1
-    repo: https://github.com/24-1Capstone/backend
-    tags: [Java, Spring Boot, JPA, MySQL, Naver Cloud Platform, Amazon Chime SDK]
-    contributions:
-      - heading: Real-time video chat
-        points:
-          - Built real-time bi-directional audio and video communication with Amazon Chime SDK
-          - Managed meeting and attendee lifecycles with CreateMeeting, CreateAttendee, and DeleteMeeting from the Amazon Chime SDK Meetings API
-      - heading: Social login
-        points:
-          - Implemented social sign-up and login with GitHub OAuth
-          - Used Spring Security with the OAuth 2.0 client library
-
+- slug: omocha
+  name: OMOCHA — Limited-edition Goods Auction
+  one_liner: An auction platform for hard-to-find limited-edition merchandise.
+  period: 2024.09 - 2024.12 (3 months)
+  role: Fastcampus Kernel 360 (team project)
+  team: Backend 3 / Frontend 2
+  repo: https://github.com/Kernel360/F2-omocha-BE
+  tags:
+  - Java
+  - Spring Boot
+  - Spring Data JPA
+  - PostgreSQL
+  - Redis
+  - AWS
+  - Docker
+  - WebSocket
+  contributions:
+  - heading: Real-time chat
+    points:
+    - Bi-directional client–server communication via WebSocket + STOMP
+    - Used RabbitMQ as the STOMP message broker to relay chat messages to subscribers
+    - Directly implemented the chat UI and WebSocket connection in Next.js using SockJS
+      and Stomp.js
+  - heading: WebP conversion + S3 + CloudFront
+    points:
+    - Converted JPEG / PNG to WebP (image size reduced by approximately 70%)
+    - AWS S3 + Amazon CloudFront, cutting content download time by approximately 50%
+  - heading: Database schema versioning and automated updates with Flyway
+    points:
+    - Schema changes were missed as multiple developers modified tables, causing database
+      structures to differ between development and production
+    - Managed table creation and modification history as versioned SQL files with
+      Flyway
+    - Applied only pending database changes in order based on migration history, keeping
+      development and production schemas consistent
+  - heading: Concurrent bidding race condition
+    points:
+    - Reproduced the issue with a 100-bidder concurrency test → applied Redis-based
+      distributed locking so only one request at a time processes a bid for a given
+      auction item
+    - "@DistributedLock annotation + AOP for a reusable, business-logic-free lock
+      component"
+- slug: look-us
+  name: Look US — Fashion Community Service
+  one_liner: A fashion community where users share daily looks and discover styles
+    by color.
+  period: 2024.07 - 2024.08 (1 month)
+  role: Fastcampus Kernel 360 (team project)
+  team: Backend 4
+  repo: https://github.com/Kernel360/E2E2-LOOK-US
+  tags:
+  - Java
+  - Spring Boot
+  - JPA
+  - MySQL
+  - Redis
+  - GCP
+  - Nginx
+  - Docker
+  - GitHub Actions
+  contributions:
+  - heading: Build and deployment automation with GitHub Actions
+    points:
+    - Gradle build → build and push a Docker image to Docker Hub → connect to the
+      GCP server via SSH → redeploy with Docker Compose
+    - Hardened the web tier with HTTPS via Nginx + OpenSSL
+  - heading: Image attribute extraction
+    points:
+    - Async Google Cloud Vision API calls on upload to identify objects (shirts, pants,
+      shoes) and extract dominant colors (RGB)
+  - heading: Social login
+    points:
+    - Implemented social sign-up and login with Spring Security and the OAuth 2.0
+      client library
+  - heading: Troubleshooting — accumulating Docker images
+    points:
+    - Unused Docker images pushed GCP instance disk usage above 90%, causing server
+      instability
+    - Added docker image prune -af --filter "until=24h" to the workflow for auto-cleanup
+- slug: chathub
+  name: ChatHub — Developer Coffee-Chat with Live Video
+  one_liner: A coffee-chat service where developers meet online over real-time video.
+  period: 2024.03 - 2024.06 (3 months)
+  role: Kyonggi University (team project)
+  team: Backend 2 / Frontend 1
+  repo: https://github.com/24-1Capstone/backend
+  tags:
+  - Java
+  - Spring Boot
+  - JPA
+  - MySQL
+  - Naver Cloud Platform
+  - Amazon Chime SDK
+  contributions:
+  - heading: Real-time video chat
+    points:
+    - Built real-time bi-directional audio and video communication with Amazon Chime
+      SDK
+    - Managed meeting and attendee lifecycles with CreateMeeting, CreateAttendee,
+      and DeleteMeeting from the Amazon Chime SDK Meetings API
+  - heading: Social login
+    points:
+    - Implemented social sign-up and login with GitHub OAuth
+    - Used Spring Security with the OAuth 2.0 client library
 education:
-  - school: Fastcampus — Kernel 360 Backend Bootcamp
-    degree: Backend Developer Bootcamp (Completed)
-    period: 2024.07 - 2025.01
-    notes: Full-cycle experience across planning, build, deployment, and operations
-
-  - school: Kyonggi University
-    degree: B.S. in Computer Science
-    period: 2019.03 - 2025.02
-    notes: CES 2024 · Singapore SW Project · Purdue University SW Program
-
-  - school: American School of Warsaw
-    degree: High school diploma
-    period: 2014.08 - 2017.06
-
+- school: Fastcampus — Kernel 360 Backend Bootcamp
+  degree: Backend Developer Bootcamp (Completed)
+  period: 2024.07 - 2025.01
+  notes: Full-cycle experience across planning, build, deployment, and operations
+- school: Kyonggi University
+  degree: B.S. in Computer Science
+  period: 2019.03 - 2025.02
+  notes: CES 2024 · Singapore SW Project · Purdue University SW Program
+- school: American School of Warsaw
+  degree: High school diploma
+  period: 2014.08 - 2017.06
 skills:
-  Language: [Java]
-  Framework: [Spring Boot, Spring Data JPA, Spring Security]
-  Database: [PostgreSQL, MySQL, Redis]
-  Infrastructure: [AWS, Nginx, Docker, Kubernetes, GitHub Actions]
-  Tools: [GitHub, Notion, IntelliJ]
-
+  Language:
+  - TypeScript
+  - JavaScript
+  - Java
+  Backend:
+  - NestJS
+  - Express
+  - Spring Boot
+  Database / Cache:
+  - MySQL
+  - PostgreSQL
+  - Redis
+  - DynamoDB
+  API / ORM:
+  - REST API
+  - GraphQL
+  - Apollo Federation
+  - Prisma
+  - Spring Data JPA
+  Infrastructure:
+  - AWS
+  - Docker
+  - Nginx
+  - Kubernetes
+  - OpenSearch
+  - SQS
 certifications:
-  - name: OPIc English (IH)
-    issuer: ACTFL
-    date: 2026.09.10
-  - name: Engineer Information Processing
-    issuer: HRD Korea
-    date: 2024.06.18
-  - name: CSTS (SW Test Specialist) FL
-    issuer: KAIT
-    date: 2023.11.18
-  - name: SQLD
-    issuer: KDATA
-    date: 2023.10.06
-
-languages:
-  - name: Korean
-    level: Native
-  - name: English
-    level: Business (OPIc IH · 10+ years living abroad)
+- name: OPIc English (IH)
+  issuer: ACTFL
+  date: 2026.09.10
+- name: Engineer Information Processing
+  issuer: HRD Korea
+  date: 2024.06.18
+- name: CSTS (SW Test Specialist) FL
+  issuer: KAIT
+  date: 2023.11.18
+- name: SQLD
+  issuer: KDATA
+  date: 2023.10.06
+languages: []

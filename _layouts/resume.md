@@ -4,6 +4,8 @@ layout: default
 ---
 {% if page.lang == 'ko' %}
 {% include resume-career.html %}
+{% elsif page.lang == 'en' %}
+{% include resume-career-en.html %}
 {% else %}
 
 {%- assign lng = page.lang | default: 'ko' -%}
