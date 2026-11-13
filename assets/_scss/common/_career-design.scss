@@ -268,14 +268,15 @@ $career-line: #e2e8ed;
 }
 .resume .resume-project-card .resume-project-info .resume-project-context { margin: 0; min-width: 0; font-size: 10.5px; line-height: 1.65; }
 .resume .resume-project-card .resume-project-links {
-  display: flex; flex-wrap: nowrap; align-items: center; gap: 6px; margin: 0; justify-self: end; white-space: nowrap;
+  display: flex; flex-wrap: nowrap; align-items: center; gap: 12px; margin: 0; justify-self: end; white-space: nowrap;
 }
 .resume .resume-project-card .resume-project-links a {
-  display: inline-flex; align-items: center; gap: 5px; padding: 5px 8px; min-height: 28px;
-  border: 1px solid #e2e8ed; border-radius: 5px; background: #f7f9fa;
-  color: #29466b; font-size: 11px; font-weight: 500; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 4px; padding: 4px 0; min-height: 28px;
+  border: 0; border-radius: 0; background: transparent;
+  color: #356469; font-size: 11px; font-weight: 600; text-decoration: none;
 }
-.resume .resume-project-card .resume-project-links a:hover { background: #edf2f5; border-color: #b7c8d1; text-decoration: none; }
+.resume .resume-project-card .resume-project-links a + a { border-left: 1px solid #dce3e9; padding-left: 12px; }
+.resume .resume-project-card .resume-project-links a:hover { color: #192638; background: transparent; text-decoration: underline; text-underline-offset: 3px; }
 @media screen and (max-width: 640px) {
   .resume .resume-project-card .resume-project-info { gap: 8px; }
   .resume .resume-project-card .resume-project-links a { min-height: 36px; }
@@ -283,5 +284,6 @@ $career-line: #e2e8ed;
 
 @media screen and (max-width: 480px) {
   .resume .resume-project-card .resume-project-links { flex-direction: column; align-items: stretch; gap: 5px; }
-  .resume .resume-project-card .resume-project-links a { justify-content: center; }
+  .resume .resume-project-card .resume-project-links a { justify-content: flex-start; }
+  .resume .resume-project-card .resume-project-links a + a { border-left: 0; padding-left: 0; }
 }

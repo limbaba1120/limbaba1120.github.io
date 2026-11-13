@@ -108,7 +108,7 @@ layout: default
           <div class="resume-project-info">
           {% if p.role or p.team %}<p class="resume-project-context">{% if p.role %}<span>{{ p.role }}</span>{% endif %}{% if p.team %}<span>{{ p.team }}</span>{% endif %}</p>{% endif %}
           <p class="resume-project-links">
-            {% if p.repo %}<a href="{{ p.repo }}" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i> GitHub <span aria-hidden="true">↗</span></a>{% endif %}
+            {% if p.repo %}<a href="{{ p.repo }}" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>{% endif %}
             {% if p.slug %}{%- if lng == 'en' %}{%- assign portfolio_url = '/portfolio/en/#' | append: p.slug -%}{% else %}{%- assign portfolio_url = '/portfolio/#' | append: p.slug -%}{% endif %}<a class="resume-portfolio-link no-print" href="{{ site.baseurl }}{{ portfolio_url }}">{{ t_portfolio_link }}</a>{% endif %}
           </p>
           </div>
