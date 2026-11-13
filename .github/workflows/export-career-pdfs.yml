@@ -1,16 +1,6 @@
 name: Export resume and portfolio PDFs
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '_data/resume/**'
-      - '_layouts/resume*'
-      - '_layouts/portfolio*'
-      - '_portfolio/**'
-      - 'assets/_scss/common/_career-print.scss'
-      - 'scripts/export-pdf.mjs'
-      - '.github/workflows/export-career-pdfs.yml'
 permissions:
   contents: read
 jobs:
