@@ -108,6 +108,9 @@ skills:
   Tools: [GitHub, Notion, IntelliJ]
 
 certifications:
+  - name: OPIc English (IH)
+    issuer: ACTFL
+    date: 2026.09.10
   - name: Engineer Information Processing
     issuer: HRD Korea
     date: 2024.06.18
@@ -117,9 +120,6 @@ certifications:
   - name: SQLD
     issuer: KDATA
     date: 2023.10.06
-  - name: OPIc English (IH)
-    issuer: ACTFL
-    date: 2026.09.10
 
 languages:
   - name: Korean

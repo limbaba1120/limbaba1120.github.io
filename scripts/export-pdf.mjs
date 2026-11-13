@@ -43,26 +43,32 @@ await new Promise((res, rej) => {
 });
 
 const targets = [
-  { lang: 'ko', path: '/resume/' },
-  { lang: 'en', path: '/resume/en/' },
+  { name: 'resume.ko', path: '/resume/' },
+  { name: 'resume.en', path: '/resume/en/' },
+  { name: 'portfolio.ko', path: '/portfolio/' },
+  { name: 'portfolio.en', path: '/portfolio/en/' },
 ];
 
 const browser = await chromium.launch();
 try {
   const ctx = await browser.newContext();
-  for (const { lang, path: p } of targets) {
+  for (const { name, path: p } of targets) {
     const url = `http://localhost:${PORT}${p}`;
-    const out = resolve(OUT_DIR, `resume.${lang}.pdf`);
-    console.log(`[export-pdf] ${lang}: ${url} -> ${out}`);
+    const out = resolve(OUT_DIR, `${name}.pdf`);
+    console.log(`[export-pdf] ${name}: ${url} -> ${out}`);
     const page = await ctx.newPage();
     await page.goto(url, { waitUntil: 'networkidle' });
     await page.emulateMedia({ media: 'print' });
+    await page.evaluate(async () => {
+      document.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
+      await document.fonts.ready;
+      await Promise.all(Array.from(document.images, img => img.decode().catch(() => {})));
+    });
     await page.pdf({
       path: out,
       format: 'A4',
       printBackground: true,
       preferCSSPageSize: true,
-      margin: { top: 0, right: 0, bottom: 0, left: 0 },
     });
     await page.close();
   }

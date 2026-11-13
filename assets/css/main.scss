@@ -290,3 +290,7 @@
 {% if resume_page_exist or portfolio_page_exist %}
   @import "common/career-design";
 {% endif %}
+
+{% if resume_page_exist or portfolio_page_exist %}
+  @import "common/career-print";
+{% endif %}

@@ -1,0 +1,61 @@
+// Loaded last so screen breakpoints and legacy print rules cannot hide content.
+@media print {
+  @page { size: A4; margin: 14mm 14mm 16mm; }
+  html, body { width: auto !important; height: auto !important; min-height: 0 !important; background: #fff !important; }
+  *, *::before, *::after { box-sizing: border-box; }
+  .no-print, .preview-nav { display: none !important; }
+  #main-wrapper, .main-container { padding: 0 !important; margin: 0 !important; width: 100% !important; max-width: none !important; }
+  .resume, .portfolio-page, .portfolio-detail {
+    width: 100%; max-width: none; min-height: 0; margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none;
+    font-size: 10pt; color: #192638; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    orphans: 3; widows: 3;
+  }
+  .resume a::after, .portfolio-page a::after, .portfolio-detail a::after { content: none !important; }
+  .resume h1, .resume h2, .resume h3, .portfolio-page h1, .portfolio-page h2, .portfolio-page h3 { break-after: avoid; page-break-after: avoid; }
+  .resume .resume-header { gap: 12px 20px; margin-bottom: 18px; padding-bottom: 16px; break-inside: avoid; }
+  .resume .resume-name { font-size: 26pt; }
+  .resume .resume-title { font-size: 11pt; margin: 5px 0 8px; }
+  .resume .resume-summary { font-size: 9.5pt; line-height: 1.65; margin-bottom: 0; }
+  .resume .resume-header-photo img { width: 76px; height: 94px; }
+  .resume .resume-header > .resume-contact { font-size: 9pt; }
+  .resume .resume-section { margin-top: 20px; }
+  .resume .resume-section-title { font-size: 13pt; margin-bottom: 12px; padding-bottom: 7px; }
+  .resume .resume-project-card { break-inside: auto; page-break-inside: auto; padding-bottom: 16px; margin-bottom: 18px; }
+  .resume .resume-project-card .resume-project-name { font-size: 15pt; }
+  .resume .resume-project-card .resume-project-desc { font-size: 10pt; margin-bottom: 8px; }
+  .resume .resume-project-card .resume-project-context { font-size: 8.5pt; margin-bottom: 8px; }
+  .resume .resume-contrib-list { margin-top: 12px; }
+  .resume .resume-contrib { break-inside: avoid; page-break-inside: avoid; margin-bottom: 10px; }
+  .resume .resume-contrib-head { font-size: 10pt; margin-bottom: 3px; }
+  .resume .resume-contrib-points li { font-size: 9.5pt; line-height: 1.6; margin-bottom: 3px; }
+  .resume .resume-skills { gap: 7px 14px; }
+  .resume .resume-project-links { font-size: 8.5pt; }
+  .portfolio-page .portfolio-hero { padding-bottom: 15px; margin-bottom: 20px; }
+  .portfolio-page .portfolio-hero-title { font-size: 26pt; margin-bottom: 0; }
+  .portfolio-page .portfolio-approach { display: block !important; margin-bottom: 20px; }
+  .portfolio-page .portfolio-approach > ol > li { break-inside: avoid; padding-top: 12px; padding-bottom: 12px; }
+  .portfolio-page .portfolio-approach li h3 { font-size: 10.5pt; }
+  .portfolio-page .portfolio-approach li p { font-size: 9.5pt; line-height: 1.65; }
+  .portfolio-page .portfolio-keywords { break-inside: avoid; }
+  .portfolio-page .portfolio-keywords li { min-height: 86px; padding: 14px 8px; }
+  .portfolio-page .portfolio-keywords li i { font-size: 24px; }
+  .portfolio-blocks { display: block; }
+  .portfolio-block { break-before: page; page-break-before: always; break-inside: auto; page-break-inside: auto; }
+  .portfolio-block + .portfolio-block { padding-top: 0; border-top: 0; }
+  .portfolio-block-head { break-inside: avoid; margin-bottom: 14px; }
+  .portfolio-block-head .portfolio-block-title { font-size: 19pt; }
+  .portfolio-block-meta { font-size: 9pt; }
+  .portfolio-block-head .portfolio-block-links { display: flex !important; }
+  .portfolio-block-links a { font-size: 9pt; min-height: 0; padding: 5px 9px; }
+  .portfolio-block-stack li { font-size: 8pt; padding: 3px 6px; }
+  .portfolio-block-hero { break-inside: avoid; margin: 0 0 16px; text-align: center; }
+  .portfolio-block-hero img { max-height: 58mm; max-width: 100%; padding: 8px; object-fit: contain; }
+  .portfolio-block-body.markdown-style {
+    p, ul, ol, li, li p { font-size: 10pt; line-height: 1.7; }
+    h2 { font-size: 13pt; margin: 22px 0 12px; padding-bottom: 7px; }
+    h3 { font-size: 11pt; margin: 16px 0 8px; }
+    li { break-inside: avoid; }
+    pre, blockquote { break-inside: avoid; }
+    .pf-reflection p { break-inside: avoid; }
+  }
+}

@@ -12,6 +12,7 @@ layout: default
   {%- assign t_title = 'Portfolio' -%}
   {%- assign t_intro = 'Backend projects spanning real-time communication, concurrency control, and deployment automation. Explore my contributions and the problems I solved.' -%}
   {%- assign t_alt_preview = 'preview' -%}
+  {%- assign t_print = 'Save as PDF' -%}
   {%- assign t_resume = 'View resume →' -%}
   {%- assign t_switch = '한국어' -%}
   {%- assign t_index = 'Index' -%}
@@ -42,6 +43,7 @@ layout: default
   {%- assign t_title = 'Portfolio' -%}
   {%- assign t_intro = '실시간 통신, 동시성 제어, 배포 자동화를 구현한 백엔드 프로젝트입니다. 서비스별 담당 기능과 문제 해결 과정을 정리했습니다.' -%}
   {%- assign t_alt_preview = '미리보기' -%}
+  {%- assign t_print = 'PDF로 저장' -%}
   {%- assign t_resume = '이력서 보기 →' -%}
   {%- assign t_switch = 'English' -%}
   {%- assign t_index = '목차' -%}
@@ -74,6 +76,7 @@ layout: default
     <p class="portfolio-eyebrow">BACKEND DEVELOPER · {{ site.data.resume[lng].profile.name }}</p>
     <h1 class="portfolio-hero-title">{{ t_title }}</h1>
     <div class="portfolio-hero-actions no-print">
+      <button type="button" class="portfolio-pill" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;{{ t_print }}</button>
       <a class="portfolio-pill" href="{{ site.baseurl }}{{ resume_url }}"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;{{ t_resume }}</a>
       <a class="portfolio-pill portfolio-pill-ghost" href="{{ site.baseurl }}{{ other_url }}"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;{{ t_switch }}</a>
     </div>
@@ -139,7 +142,7 @@ layout: default
               </ul>
             {%- endif %}
             {%- if p.links and p.links.size > 0 %}
-              <ul class="portfolio-block-links no-print">
+              <ul class="portfolio-block-links">
                 {%- for link in p.links %}
                   {%- assign icon = 'fa-external-link' -%}
                   {%- assign href_low = link.href | downcase -%}

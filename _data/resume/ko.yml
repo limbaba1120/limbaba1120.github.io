@@ -114,6 +114,9 @@ skills:
   Tools: [GitHub, Notion, IntelliJ]
 
 certifications:
+  - name: OPIc 영어 (IH)
+    issuer: ACTFL
+    date: 2026.09.10
   - name: 정보처리기사
     issuer: 한국산업인력공단
     date: 2024.06.18
@@ -123,9 +126,6 @@ certifications:
   - name: SQLD
     issuer: 한국데이터베이스진흥센터
     date: 2023.10.06
-  - name: OPIc 영어 (IH)
-    issuer: ACTFL
-    date: 2026.09.10
 
 languages:
   - name: 한국어
