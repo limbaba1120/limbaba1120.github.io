@@ -102,13 +102,16 @@ layout: default
           <div class="resume-item-head">
             <h3 class="resume-project-name">{{ p.display_name | default: p.name }}{% if p.category %}<span class="resume-project-category">{{ p.category }}</span>{% endif %}</h3>
             {% if p.period %}<span class="resume-item-meta">{{ p.period }}</span>{% endif %}
+
+          </div>
+          {% if p.one_liner %}<p class="resume-project-desc">{{ p.one_liner }}</p>{% endif %}
+          <div class="resume-project-info">
+          {% if p.role or p.team %}<p class="resume-project-context">{% if p.role %}<span>{{ p.role }}</span>{% endif %}{% if p.team %}<span>{{ p.team }}</span>{% endif %}</p>{% endif %}
           <p class="resume-project-links">
             {% if p.repo %}<a href="{{ p.repo }}" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i> GitHub <span aria-hidden="true">↗</span></a>{% endif %}
             {% if p.slug %}{%- if lng == 'en' %}{%- assign portfolio_url = '/portfolio/en/#' | append: p.slug -%}{% else %}{%- assign portfolio_url = '/portfolio/#' | append: p.slug -%}{% endif %}<a class="resume-portfolio-link no-print" href="{{ site.baseurl }}{{ portfolio_url }}">{{ t_portfolio_link }}</a>{% endif %}
           </p>
           </div>
-          {% if p.one_liner %}<p class="resume-project-desc">{{ p.one_liner }}</p>{% endif %}
-          {% if p.role or p.team %}<p class="resume-project-context">{% if p.role %}<span>{{ p.role }}</span>{% endif %}{% if p.team %}<span>{{ p.team }}</span>{% endif %}</p>{% endif %}
           {% if p.tags and p.tags.size > 0 %}<p class="resume-tags">{% for tag in p.tags %}<span class="resume-tag">{{ tag }}</span>{% endfor %}</p>{% endif %}
           {% if p.contributions and p.contributions.size > 0 %}
           <ul class="resume-contrib-list">

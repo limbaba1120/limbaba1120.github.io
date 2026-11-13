@@ -262,23 +262,21 @@ $career-line: #e2e8ed;
   .resume .resume-header > .resume-contact { grid-row: 4; }
 }
 
-// Project actions belong to the heading, rather than the end of a long entry.
-.resume .resume-project-card .resume-item-head {
-  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; align-items: center;
+// Keep context and project actions together in one compact information row.
+.resume .resume-project-card .resume-project-info {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 0 0 14px;
 }
-.resume .resume-project-card .resume-project-name { grid-column: 1; grid-row: 1; }
-.resume .resume-project-card .resume-item-meta { grid-column: 1; grid-row: 2; margin-left: 0; }
+.resume .resume-project-card .resume-project-info .resume-project-context { margin: 0; }
 .resume .resume-project-card .resume-project-links {
-  grid-column: 2; grid-row: 1 / 3; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; align-self: start;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 0 auto;
 }
-.resume .resume-project-links a {
-  display: inline-flex; align-items: center; gap: 5px; padding: 7px 10px; min-height: 34px;
-  border: 1px solid #dce3e9; border-radius: 6px; background: #f5f7f9;
+.resume .resume-project-card .resume-project-links a {
+  display: inline-flex; align-items: center; gap: 5px; padding: 5px 8px; min-height: 28px;
+  border: 1px solid #e2e8ed; border-radius: 5px; background: #f7f9fa;
   color: #29466b; font-size: 11px; font-weight: 500; text-decoration: none;
 }
-.resume .resume-project-links a:hover { background: #edf2f5; border-color: #b7c8d1; text-decoration: none; }
+.resume .resume-project-card .resume-project-links a:hover { background: #edf2f5; border-color: #b7c8d1; text-decoration: none; }
 @media screen and (max-width: 640px) {
-  .resume .resume-project-card .resume-item-head { grid-template-columns: minmax(0, 1fr); }
-  .resume .resume-project-card .resume-project-links { grid-column: 1; grid-row: 3; margin: 5px 0; }
-  .resume .resume-project-links a { min-height: 40px; }
+  .resume .resume-project-card .resume-project-links { margin-left: 0; }
+  .resume .resume-project-card .resume-project-links a { min-height: 36px; }
 }
