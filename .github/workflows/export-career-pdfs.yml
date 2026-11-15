@@ -1,5 +1,11 @@
 name: Export resume and portfolio PDFs
 on:
+  push:
+    branches: [main, improve/portfolio-pdf-print]
+    paths:
+      - 'assets/_scss/common/_career-print.scss'
+      - 'scripts/export-pdf.mjs'
+      - '.github/workflows/export-career-pdfs.yml'
   workflow_dispatch:
 permissions:
   contents: read
