@@ -64,3 +64,48 @@
   .resume .resume-project-card .resume-item-head { break-inside: avoid; }
   .resume .resume-project-links a { min-height: 0; padding: 4px 7px; font-size: 8pt; }
 }
+
+// Portfolio PDF: consistent A4 typography and predictable page boundaries.
+@media print {
+  .portfolio-page { font-size: 10pt; line-height: 1.65; }
+  .portfolio-page .portfolio-eyebrow { font-size: 8pt; letter-spacing: .08em; }
+  .portfolio-page .portfolio-hero { margin-bottom: 6mm; }
+  .portfolio-page .portfolio-approach > ol { margin: 0; }
+  .portfolio-page .portfolio-approach > ol > li { display: block; padding: 3mm 0; }
+  .portfolio-page .portfolio-approach li h3 { margin: 0 0 1.5mm; }
+  .portfolio-page .portfolio-approach li p { margin: 0; }
+  .portfolio-page .portfolio-keywords { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin: 4mm 0 6mm; }
+  .portfolio-page .portfolio-keywords li { min-height: 20mm; padding: 3mm 2mm; border-radius: 3mm; }
+  .portfolio-page .portfolio-keywords li i { font-size: 18pt; margin-bottom: 2mm; }
+  .portfolio-page .portfolio-keywords li span { font-size: 8.5pt; }
+  .portfolio-page .portfolio-toc { break-inside: avoid; margin: 5mm 0 0; }
+  .portfolio-page .portfolio-toc a { padding: 3mm 0; }
+  .portfolio-page .portfolio-toc-title { font-size: 11pt; }
+  .portfolio-page .portfolio-toc-title small { font-size: 9pt; line-height: 1.5; }
+  .portfolio-page .portfolio-toc-period { font-size: 8pt; }
+  .portfolio-page .portfolio-block { margin: 0; padding: 0; border: 0; }
+  .portfolio-page .portfolio-block-head { break-after: avoid; margin-bottom: 4mm; }
+  .portfolio-page .portfolio-block-num { font-size: 9pt; margin: 0 0 1mm; }
+  .portfolio-page .portfolio-block-title { line-height: 1.35; margin: 2mm 0 3mm; }
+  .portfolio-page .portfolio-block-tagrow { display: block; }
+  .portfolio-page .portfolio-block-links { margin: 2mm 0 0; padding: 0; }
+  .portfolio-page .portfolio-block-hero { margin: 0 0 4mm; }
+  .portfolio-page .portfolio-block-hero img { display: block; width: auto; max-width: 100%; height: auto; max-height: 48mm; margin: auto; padding: 0; border: 0; box-shadow: none; }
+  .portfolio-page .portfolio-block-body.markdown-style {
+    h2 { margin: 6mm 0 3mm; padding-bottom: 2mm; break-after: avoid; }
+    h3 { margin: 4mm 0 2mm; break-after: avoid; }
+    p, li, li p { font-size: 10pt; line-height: 1.65; overflow-wrap: anywhere; }
+    p { margin: 0 0 3mm; }
+    ul, ol { margin-top: 2mm; margin-bottom: 3mm; }
+    li { margin-bottom: 1.5mm; }
+    code { font-size: 9pt; white-space: normal; overflow-wrap: anywhere; }
+    pre { white-space: pre-wrap; overflow: visible; }
+    .pf-contrib, .pf-trouble, .pf-reflection { break-inside: auto; }
+    .pf-contrib h3 { padding-left: 8mm; }
+    .pf-contrib h3::before { font-size: 8pt; }
+    .pf-contrib ul, .pf-contrib h3 + p { margin-left: 0; }
+    .pf-trouble, .pf-reflection { padding-left: 4mm; }
+    .pf-reflection p { margin-bottom: 3mm; }
+    img { max-width: 100%; max-height: 65mm; object-fit: contain; break-inside: avoid; }
+  }
+}

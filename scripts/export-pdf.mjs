@@ -64,11 +64,16 @@ try {
       await document.fonts.ready;
       await Promise.all(Array.from(document.images, img => img.decode().catch(() => {})));
     });
+    const brokenImages = await page.locator('.portfolio-page img, .resume img').evaluateAll(images => images.filter(img => !img.complete || img.naturalWidth === 0).map(img => img.src));
+    if (brokenImages.length) throw new Error(`Images failed to load: ${brokenImages.join(', ')}`);
     await page.pdf({
       path: out,
       format: 'A4',
       printBackground: true,
       preferCSSPageSize: true,
+      displayHeaderFooter: name.startsWith('portfolio'),
+      headerTemplate: '<span></span>',
+      footerTemplate: '<div style="font-size:8px;color:#667586;width:100%;padding:0 14mm;display:flex;justify-content:space-between"><span>Geonwoo Lim · Portfolio</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>',
     });
     await page.close();
   }
