@@ -73,8 +73,11 @@ layout: default
 
 <div class="portfolio-page">
   <header class="portfolio-hero">
-    <p class="portfolio-eyebrow">BACKEND DEVELOPER · {{ site.data.resume[lng].profile.name }}</p>
-    <h1 class="portfolio-hero-title">{{ t_title }}</h1>
+    <div class="portfolio-hero-heading">
+      <p class="portfolio-eyebrow">BACKEND DEVELOPER · {{ site.data.resume[lng].profile.name }}</p>
+      <h1 class="portfolio-hero-title">{{ t_title }}</h1>
+    </div>
+    {% include portfolio-profile.html %}
     <div class="portfolio-hero-actions no-print">
       <button type="button" class="portfolio-pill" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i>&nbsp;{{ t_print }}</button>
       <a class="portfolio-pill" href="{{ site.baseurl }}{{ resume_url }}"><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;{{ t_resume }}</a>

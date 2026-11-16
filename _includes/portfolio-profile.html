@@ -1,0 +1,9 @@
+{%- assign profile = site.data.resume[lng].profile -%}
+<div class="portfolio-profile">
+  <img class="portfolio-profile-photo" src="{{ profile.photo | relative_url }}" alt="{{ profile.name | escape }}" width="180" height="180" loading="eager" decoding="async">
+  <ul class="portfolio-profile-contact">
+    <li><a href="mailto:{{ profile.contact.email | escape }}"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>{{ profile.contact.email }}</span></a></li>
+    <li><a href="tel:{{ profile.contact.phone | remove: ' ' | remove: '-' }}"><i class="fa fa-phone" aria-hidden="true"></i><span>{{ profile.contact.phone }}</span></a></li>
+    <li><a href="{{ profile.contact.github | escape }}"><i class="fa fa-github" aria-hidden="true"></i><span>{{ profile.contact.github | remove: 'https://' }}</span></a></li>
+  </ul>
+</div>
