@@ -52,3 +52,15 @@
   .portfolio-page .portfolio-block-tagrow { display:contents; }
   .portfolio-page .portfolio-block-head { grid-template-columns:minmax(0,1fr) auto; }
 }
+
+/* Named software credentials, aligned with the other keyword cards. */
+.portfolio-page .portfolio-keywords li { display:grid; grid-template-rows:32px 22px 36px; align-content:center; justify-items:center; gap:7px; min-height:156px; padding:22px 10px; }
+.portfolio-page .portfolio-keywords li i { font-size:27px; align-self:center; }
+.portfolio-page .portfolio-keywords li span { font-size:14px; align-self:center; }
+.portfolio-page .portfolio-keywords .cert-detail { display:block; font-size:10px; line-height:1.8; color:#677586; font-weight:400; letter-spacing:-.2px; text-align:center; margin:0; }
+@media print {
+ .portfolio-page .portfolio-keywords li { grid-template-rows:6mm 5mm 8mm; gap:1mm; min-height:27mm; padding:3mm 1mm; }
+ .portfolio-page .portfolio-keywords li i { font-size:18pt; }
+ .portfolio-page .portfolio-keywords li span { font-size:9pt; }
+ .portfolio-page .portfolio-keywords .cert-detail { font-size:7pt; line-height:1.6; }
+}

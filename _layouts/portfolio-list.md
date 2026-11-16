@@ -106,7 +106,7 @@ layout: default
       <p class="portfolio-keywords-label">{{ t_keywords }}</p>
       <ul>
         <li><i class="fa fa-heartbeat" aria-hidden="true"></i><span>{{ t_keyword_1 }}</span></li>
-        <li><i class="fa fa-certificate" aria-hidden="true"></i><span>{{ t_keyword_2 }}</span></li>
+        <li><i class="fa fa-certificate" aria-hidden="true"></i><span>{{ t_keyword_2 }}</span><small class="cert-detail">{% if lng == "en" %}Engineer Information Processing · SQLD{% else %}정보처리기사 · SQLD{% endif %}<br>CSTS FL · TOPCIT Level 3</small></li>
         <li><i class="fa fa-globe" aria-hidden="true"></i><span>{{ t_keyword_3 }}</span></li>
         <li><i class="fa fa-comments-o" aria-hidden="true"></i><span>{{ t_keyword_4 }}</span></li>
       </ul>
