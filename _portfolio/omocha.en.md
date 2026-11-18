@@ -4,7 +4,7 @@ slug: omocha
 lang: en
 date: 2024-12-20
 period: 2024.09 - 2024.12 (3 months)
-role: Backend (3) · Fastcampus Kernel 360 team project
+role: Fastcampus Kernel 360 team project · 3 backend / 2 frontend engineers
 tags: [Java, Spring Boot, Spring Data JPA, PostgreSQL, Redis, AWS, Docker, RabbitMQ, WebSocket]
 hero: /assets/img/portfolio/omocha/hero.jpg
 permalink: /portfolio/omocha/en/
@@ -17,12 +17,7 @@ links:
 
 ## Summary
 
-A trading platform for limited-edition goods that are hard to find through normal channels. Planned, built, and operated together with the team.
-
-## Team
-
-- 3 backend / 2 frontend engineers
-- Tools: GitHub · Notion · Discord
+An auction platform for buying and selling hard-to-find, limited-edition collectibles.
 
 ## What I owned
 
@@ -34,21 +29,21 @@ A trading platform for limited-edition goods that are hard to find through norma
 - Used **RabbitMQ** as the STOMP message broker to relay chat messages to subscribers
 - Directly implemented the chat UI and WebSocket connection in **Next.js** using **SockJS** and **Stomp.js**
 
-### WebP conversion + S3 + CloudFront
+### Image size and loading time optimization
 
-- Converted existing JPEG / PNG to **WebP** (image size reduced by **approximately 70%**)
-- Reduced content download time by **approximately 50%** with **AWS S3 + Amazon CloudFront**
+- Reduced image size by **approximately 70% through resizing and WebP/AVIF conversion**
+- Reduced image loading time from **2.5 seconds to 0.8 seconds** through image optimization and **S3/CDN delivery**
 
 ### Database schema versioning and automated updates with Flyway
 
 - Schema changes were missed as multiple developers modified tables, causing database structures to differ between development and production
 - Introduced **Flyway** to manage table creation and modification history as versioned SQL files
-- Configured Flyway to check the migration history and apply only pending database changes in order, keeping development and production schemas consistent
+- Applied pending migrations in order to **keep database schemas consistent across development and production**
 
-### User feedback loop
+### Service improvements based on user feedback
 
-- Collected **50+ pieces** of user feedback via surveys
-- Prioritized and shipped **10+ improvements** through agile sprints
+- Recruited **100 survey participants** through personal contacts and social media
+- Delivered **10+ improvements based on user feedback**, including faster image loading and a new category feature
 
 </section>
 
@@ -58,12 +53,12 @@ A trading platform for limited-edition goods that are hard to find through norma
 
 ### The problem
 
-When 100 users bid at the same time, **multiple bids could succeed concurrently**. Multiple bid requests hitting the database simultaneously caused a classic concurrency issue.
+Multiple bids at the same price could succeed for the same auction, even though only one should have been accepted.
 
 ### The fix
 
-- Wrote a **test that simulates concurrent bidders** to reliably reproduce the issue and pin down the root cause.
-- Introduced **Redis-based distributed locking** to control concurrent bids, allowing only **one request at a time** to process a bid for a given auction item.
-- Built a **`@DistributedLock` annotation** with custom `waitTime` / `leaseTime`, and used **AOP** to keep business logic clean and the lock reusable as a component.
+- Wrote a test submitting 100 bids at the same price to reproduce the issue and verify that **one succeeds and the remaining 99 are rejected**.
+- Applied **Redis distributed locking** to process bids one at a time for each auction.
+- Separated the locking logic using **a custom annotation and AOP**, making it reusable across features.
 
 </section>

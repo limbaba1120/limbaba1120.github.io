@@ -45,7 +45,7 @@
   .portfolio-profile-contact i { font-size:9pt; }
   .portfolio-page .portfolio-hero-actions { display:none!important; }
   .portfolio-page .portfolio-keywords { display:block; }
-  .portfolio-page .portfolio-keywords ul { width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .portfolio-page .portfolio-keywords ul { width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)); }
   .portfolio-page .portfolio-approach > ol > li { padding-left:9mm; }
   .portfolio-page .portfolio-approach > ol > li::before { top:3.5mm; }
   .portfolio-page .portfolio-toc { display:block!important; }
@@ -64,3 +64,6 @@
  .portfolio-page .portfolio-keywords li span { font-size:9pt; }
  .portfolio-page .portfolio-keywords .cert-detail { font-size:7pt; line-height:1.6; }
 }
+
+.portfolio-page .portfolio-keywords ul { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
+@media screen and (max-width:480px) { .portfolio-page .portfolio-keywords ul { grid-template-columns:1fr; } }

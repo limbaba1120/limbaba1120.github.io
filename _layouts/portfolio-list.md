@@ -33,9 +33,8 @@ layout: default
   {%- assign t_approach_3_b = 'With an outgoing and positive personality, I strive to keep the team atmosphere energetic.' -%}
   {%- assign t_keywords = 'A few things about me' -%}
   {%- assign t_keyword_1 = 'I enjoy sports' -%}
-  {%- assign t_keyword_2 = '4 software certifications' -%}
+  {%- assign t_keyword_2 = 'Software qualifications & skills' -%}
   {%- assign t_keyword_3 = '10+ years abroad' -%}
-  {%- assign t_keyword_4 = 'OPIc IH' -%}
   {%- assign other_url = '/portfolio/' -%}
   {%- assign resume_url = '/resume/en/' -%}
 {%- else -%}
@@ -57,16 +56,15 @@ layout: default
   {%- assign t_stat_focus_value = '실시간 통신 · 동시성 제어 · 인프라 자동화' -%}
   {%- assign t_approach = '저는 이런 개발자입니다' -%}
   {%- assign t_approach_1_h = '배움을 나누고 함께 성장하는 것을 좋아합니다!' -%}
-  {%- assign t_approach_1_b = '스터디를 하며 지식을 나누고 팀원들과 함께 성장하려고 합니다. 해외 프로그램에 관심 있는 후배들을 위해 설명회를 개최하여 경험과 노하우를 전달했습니다.' -%}
-  {%- assign t_approach_2_h = '새로운 기술 습득에 적극적이며 망설이지 않습니다!' -%}
-  {%- assign t_approach_2_b = '도전적인 과제를 해결했을 때 큰 성취감을 느끼며, 실패를 두려워하지 않고 끊임없이 도전합니다. 다양한 프로젝트를 통해 기획, 개발, 테스트, 배포, 운영 경험을 쌓았습니다.' -%}
-  {%- assign t_approach_3_h = '다양한 사람들과 소통하며 협력하는 것을 좋아합니다!' -%}
-  {%- assign t_approach_3_b = '활발하고 긍정적인 성격으로 팀 분위기를 활기차게 유지하려고 노력합니다.' -%}
+  {%- assign t_approach_1_b = '스터디에서 배운 내용을 공유하고, 해외 프로그램에 관심 있는 후배들을 위한 설명회를 열어 준비 과정과 현지 경험을 전달했습니다.' -%}
+  {%- assign t_approach_2_h = '새로운 것을 배우는 데 주저하지 않습니다!' -%}
+  {%- assign t_approach_2_b = '프로젝트를 하면서 필요한 기술을 익히고, 기획부터 개발·테스트·배포·운영까지 경험했습니다. 잘 모르는 부분도 직접 해보면서 배우려고 합니다.' -%}
+  {%- assign t_approach_3_h = '사람들과 의견을 나누고 함께 만들어가는 것을 좋아합니다!' -%}
+  {%- assign t_approach_3_b = '팀원들과 생각을 나누고, 서로의 아이디어를 더해가는 과정이 좋습니다. 편하게 의견을 주고받을 수 있도록 먼저 다가가고 대화하려고 합니다.' -%}
   {%- assign t_keywords = '저를 설명하는 키워드' -%}
   {%- assign t_keyword_1 = '운동을 좋아함' -%}
-  {%- assign t_keyword_2 = 'SW 관련 자격증 4개' -%}
+  {%- assign t_keyword_2 = 'SW 자격·역량' -%}
   {%- assign t_keyword_3 = '해외 경험 10년 이상' -%}
-  {%- assign t_keyword_4 = 'OPIc IH' -%}
   {%- assign other_url = '/portfolio/en/' -%}
   {%- assign resume_url = '/resume/' -%}
 {%- endif -%}
@@ -105,10 +103,9 @@ layout: default
     <div class="portfolio-keywords" aria-label="{{ t_keywords }}">
       <p class="portfolio-keywords-label">{{ t_keywords }}</p>
       <ul>
-        <li><i class="fa fa-heartbeat" aria-hidden="true"></i><span>{{ t_keyword_1 }}</span></li>
+        <li><i class="fa fa-heartbeat" aria-hidden="true"></i><span>{{ t_keyword_1 }}</span><small class="cert-detail">{% if lng == "en" %}Football · Basketball · Baseball{% else %}축구 · 농구 · 야구{% endif %}</small></li>
         <li><i class="fa fa-certificate" aria-hidden="true"></i><span>{{ t_keyword_2 }}</span><small class="cert-detail">{% if lng == "en" %}Engineer Information Processing · SQLD{% else %}정보처리기사 · SQLD{% endif %}<br>CSTS FL · TOPCIT Level 3</small></li>
-        <li><i class="fa fa-globe" aria-hidden="true"></i><span>{{ t_keyword_3 }}</span></li>
-        <li><i class="fa fa-comments-o" aria-hidden="true"></i><span>{{ t_keyword_4 }}</span></li>
+        <li><i class="fa fa-globe" aria-hidden="true"></i><span>{{ t_keyword_3 }}</span><small class="cert-detail">{% if lng == "en" %}Poland · Netherlands{% else %}폴란드 · 네덜란드{% endif %}</small></li>
       </ul>
     </div>
   </section>

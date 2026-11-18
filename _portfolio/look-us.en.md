@@ -4,7 +4,7 @@ slug: look-us
 lang: en
 date: 2024-08-30
 period: 2024.07 - 2024.08 (1 month)
-role: Backend (4) · Fastcampus Kernel 360 team project
+role: Fastcampus Kernel 360 team project · 4 backend engineers
 tags: [Java, Spring Boot, JPA, MySQL, Redis, GCP, Nginx, Docker, GitHub Actions]
 hero: /assets/img/portfolio/look-us/hero.jpg
 permalink: /portfolio/look-us/en/
@@ -17,12 +17,7 @@ links:
 
 ## Summary
 
-A fashion community service for sharing daily outfits and discovering styles by color. Planned, designed, built, and operated together with the team.
-
-## Team
-
-- 4 backend engineers
-- Tools: GitHub · Notion · Discord
+A community service where users share daily outfits and find fashion styles by color.
 
 ## What I owned
 
@@ -36,7 +31,7 @@ A fashion community service for sharing daily outfits and discovering styles by 
 
 ### Social login (Spring Security + OAuth 2.0)
 
-- Implemented social login with Spring Security and the OAuth 2.0 client library
+- Implemented **sign-up and login with Google and Naver accounts** using Spring Security and OAuth 2.0
 
 ### Image object and color extraction
 
@@ -45,7 +40,7 @@ A fashion community service for sharing daily outfits and discovering styles by 
 
 ### Collaboration and code quality
 
-- Maintained **70%+ test coverage** across Controller / Service / Repository layers to catch bugs early
+- Wrote **unit and integration tests and maintained 70%+ test coverage**
 - Found bugs and improved code quality through **pair programming and code reviews**
 
 </section>
@@ -61,7 +56,7 @@ Each deployment left **unused Docker images on the GCP instance**, driving disk 
 ### The fix
 
 - Logs alone didn't surface the cause. Reviewing the **GitHub Actions workflow** revealed that the **image-pruning step was missing**.
-- Added the following command to the workflow to **auto-delete unused images older than 24 hours**:
+- Added the following command to the workflow to **delete unused images created more than 24 hours ago**:
 
 ```bash
 sudo docker image prune -af --filter "until=24h"
